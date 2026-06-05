@@ -26,7 +26,6 @@ const pages = [
   'furdoszoba-felujitas.html',
   'referenciak.html',
   'rolunk.html',
-  'kapcsolat.html',
   'ingyenes-felmeres.html',
 ];
 for (const file of pages) {

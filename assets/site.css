@@ -1597,3 +1597,40 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
   .portfolio-hd { align-items: flex-start; }
   .portfolio-hd .section-sub { align-self: flex-start !important; }
 }
+
+/* ==========================================================
+   HERO FIXES + SECTION COHESION  (overrides — keep at end)
+   ========================================================== */
+/* Hero fits the viewport instead of overflowing / looking huge */
+.hero-inner { grid-template-columns: 1.05fr 0.95fr; min-height: clamp(560px, calc(100svh - var(--nav-h)), 800px); }
+.hero-media img { object-position: center 32%; animation-duration: 26s; }
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.045); } }
+/* darker, readable overlay so the photo tag + credential pop */
+.hero-media::after { background: linear-gradient(115deg, rgba(28,25,23,0.12) 0%, transparent 32%), linear-gradient(0deg, rgba(28,25,23,0.42) 0%, transparent 26%); }
+.hero-credential { left: 1.5rem; bottom: 1.5rem; }
+@media (max-width: 920px) { .hero-credential { left: var(--pad-x); right: var(--pad-x); bottom: 1.25rem; } }
+
+/* Hero entrance — eases in on load (independent of scroll-reveal) */
+@keyframes heroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes heroReveal { from { opacity: 0; transform: translateX(34px) scale(1.03); } to { opacity: 1; transform: none; } }
+#hero .hero-copy > * { opacity: 0; animation: heroUp 0.85s cubic-bezier(0.16,1,0.3,1) forwards; }
+#hero .hero-copy > .kicker { animation-delay: 0.10s; }
+#hero .hero-copy > .hero-rating { animation-delay: 0.20s; }
+#hero .hero-copy > .hero-title { animation-delay: 0.30s; }
+#hero .hero-copy > .hero-sub { animation-delay: 0.42s; }
+#hero .hero-copy > .hero-actions { animation-delay: 0.54s; }
+#hero .hero-copy > .hero-chips { animation-delay: 0.66s; }
+#hero .hero-media { opacity: 0; animation: heroReveal 1.05s cubic-bezier(0.16,1,0.3,1) 0.12s forwards; }
+#hero .hero-scroll { opacity: 0; animation: heroUp 0.7s ease 1s forwards; }
+@media (prefers-reduced-motion: reduce) {
+  #hero .hero-copy > *, #hero .hero-media, #hero .hero-scroll { animation: none; opacity: 1; }
+  .hero-media img { animation: none; }
+}
+
+/* Rotating word — single element, clean fade swap (fixes the overlap/ghost bug) */
+.rotate-word { display: inline-block; position: static; min-height: 0; color: var(--accent); font-style: italic;
+  transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
+
+/* Consistent centered section intros (cohesion) */
+.sec-hd-center .kicker { justify-content: center; margin-bottom: 1.25rem; }
+.sec-hd-center .kicker .kicker-label { white-space: normal; }

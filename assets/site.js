@@ -304,7 +304,7 @@
     });
   });
 
-  /* ---------- Hero rotating word ---------- */
+  /* ---------- Hero rotating word (single element, fade swap) ---------- */
   (function () {
     var host = document.querySelector('.rotate-word');
     if (!host) return;
@@ -312,28 +312,17 @@
     if (words.length < 2) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var idx = 0;
-    var item = document.createElement('span');
-    item.className = 'rw-item';
-    item.textContent = words[0];
-    host.textContent = '';
-    host.appendChild(item);
+    host.textContent = words[0];
     setInterval(function () {
-      idx = (idx + 1) % words.length;
-      var next = document.createElement('span');
-      next.className = 'rw-item';
-      next.style.opacity = '0';
-      next.style.transform = 'translateY(0.25em)';
-      next.textContent = words[idx];
-      host.appendChild(next);
-      // force reflow then animate in / out
-      void next.offsetWidth;
-      item.classList.add('rw-out');
-      next.style.opacity = '1';
-      next.style.transform = 'none';
-      var dying = item;
-      setTimeout(function () { if (dying && dying.parentNode) dying.parentNode.removeChild(dying); }, 600);
-      item = next;
-    }, 2600);
+      host.style.opacity = '0';
+      host.style.transform = 'translateY(0.32em)';
+      setTimeout(function () {
+        idx = (idx + 1) % words.length;
+        host.textContent = words[idx];
+        host.style.opacity = '1';
+        host.style.transform = 'none';
+      }, 400);
+    }, 3000);
   })();
 
   /* ---------- Sticky quote bar (appears after hero) ---------- */
