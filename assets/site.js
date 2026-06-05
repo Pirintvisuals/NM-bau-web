@@ -1,0 +1,168 @@
+/* ==========================================================
+   NM BAU — shared JS for sub-pages with forms
+   (kapcsolat.html, ingyenes-felmeres.html)
+   Handles: sticky nav, mobile menu, scroll-reveal,
+   photo upload (preview + remove, drag & drop), form submit.
+   NOTE: forms are visual-only for now — submit shows a
+   client-side confirmation. PHASE 2 wires them to a backend.
+   ========================================================== */
+(function () {
+  'use strict';
+
+  /* ---------- Sticky nav: hide on scroll-down ---------- */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    var lastY = 0;
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > 80) nav.classList.toggle('nav-hidden', y > lastY);
+      else nav.classList.remove('nav-hidden');
+      nav.classList.toggle('scrolled', y > 50);
+      lastY = y;
+    }, { passive: true });
+  }
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('nav-burger');
+  var mobileNav = document.getElementById('nav-mobile');
+  if (burger && mobileNav) {
+    var open = false;
+    var toggleMobile = function (force) {
+      open = force !== undefined ? force : !open;
+      mobileNav.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      var spans = burger.querySelectorAll('span');
+      if (open) {
+        spans[0].style.transform = 'rotate(45deg) translate(4.5px, 4.5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(4.5px, -4.5px)';
+      } else {
+        spans[0].style.transform = spans[2].style.transform = '';
+        spans[1].style.opacity = '';
+      }
+    };
+    burger.addEventListener('click', function () { toggleMobile(); });
+    mobileNav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { toggleMobile(false); });
+    });
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  var reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  /* ---------- Photo upload (preview, remove, drag & drop) ---------- */
+  var MAX_FILES = 5;
+  var MAX_SIZE = 12 * 1024 * 1024; // 12 MB per file
+
+  document.querySelectorAll('input[type="file"]').forEach(function (input) {
+    var zone = input.closest('.f-upload');
+    var group = input.closest('.f-group');
+    var previews = group ? group.querySelector('.f-previews') : null;
+    if (!previews) return;
+
+    // Keep our own list so we can add/remove and resync the input's FileList.
+    var files = [];
+
+    var syncInput = function () {
+      var dt = new DataTransfer();
+      files.forEach(function (f) { dt.items.add(f); });
+      input.files = dt.files;
+    };
+
+    var render = function () {
+      previews.innerHTML = '';
+      files.forEach(function (file, idx) {
+        var cell = document.createElement('div');
+        cell.className = 'f-preview';
+
+        if (file.type && file.type.indexOf('image/') === 0) {
+          var img = document.createElement('img');
+          img.alt = file.name;
+          img.src = URL.createObjectURL(file);
+          img.onload = function () { URL.revokeObjectURL(img.src); };
+          cell.appendChild(img);
+        } else {
+          var doc = document.createElement('div');
+          doc.className = 'f-preview-doc';
+          doc.textContent = file.name;
+          cell.appendChild(doc);
+        }
+
+        var rm = document.createElement('button');
+        rm.type = 'button';
+        rm.className = 'f-preview-remove';
+        rm.setAttribute('aria-label', 'Kép eltávolítása: ' + file.name);
+        rm.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+        rm.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          files.splice(idx, 1);
+          syncInput();
+          render();
+        });
+        cell.appendChild(rm);
+        previews.appendChild(cell);
+      });
+    };
+
+    var addFiles = function (list) {
+      Array.prototype.forEach.call(list, function (file) {
+        if (files.length >= MAX_FILES) return;
+        if (file.size > MAX_SIZE) return;
+        // de-dupe by name + size
+        var dup = files.some(function (f) { return f.name === file.name && f.size === file.size; });
+        if (!dup) files.push(file);
+      });
+      syncInput();
+      render();
+    };
+
+    input.addEventListener('change', function () {
+      // The browser put freshly picked files on input.files — merge then resync.
+      addFiles(input.files);
+    });
+
+    if (zone) {
+      ['dragenter', 'dragover'].forEach(function (ev) {
+        zone.addEventListener(ev, function (e) { e.preventDefault(); zone.classList.add('dragover'); });
+      });
+      ['dragleave', 'drop'].forEach(function (ev) {
+        zone.addEventListener(ev, function (e) { e.preventDefault(); zone.classList.remove('dragover'); });
+      });
+      zone.addEventListener('drop', function (e) {
+        if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+      });
+    }
+  });
+
+  /* ---------- Form submit (visual confirmation) ---------- */
+  document.querySelectorAll('form[data-success]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Minimal required-field check (native validity).
+      if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      var success = document.getElementById(form.getAttribute('data-success'));
+      form.style.display = 'none';
+      if (success) {
+        success.classList.add('show');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+
+})();
