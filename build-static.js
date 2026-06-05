@@ -1,19 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
+// Clean build: remove any stale output (e.g. deleted pages) before copying.
+// Note: recursive fs.rmSync silently no-ops on OneDrive-synced trees on Windows,
+// so we empty the directory entry-by-entry, which is reliable.
+function emptyDir(dir) {
+  if (!fs.existsSync(dir)) return;
+  for (const entry of fs.readdirSync(dir)) {
+    const p = path.join(dir, entry);
+    if (fs.lstatSync(p).isDirectory()) {
+      emptyDir(p);
+      fs.rmdirSync(p);
+    } else {
+      fs.unlinkSync(p);
+    }
+  }
+}
+emptyDir('dist');
 fs.mkdirSync('dist', { recursive: true });
 fs.mkdirSync(path.join('dist', 'assets'), { recursive: true });
 
 // HTML pages
 const pages = [
   'index.html',
-  'csomag-alap.html',
-  'csomag-komplett.html',
-  'csomag-premium.html',
   'kapcsolat.html',
   'ingyenes-felmeres.html',
   'szolgaltatasok.html',
-  'csomagok.html',
   'rolunk.html',
   'folyamat.html',
   'referenciak.html',
