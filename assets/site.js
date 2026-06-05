@@ -272,6 +272,70 @@
     }
   });
 
+  /* ---------- Anatomy hotspots ---------- */
+  (function () {
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.hs-dot'));
+    if (!dots.length) return;
+    var closeAll = function (except) {
+      dots.forEach(function (d) { if (d !== except) { d.classList.remove('active'); d.setAttribute('aria-expanded', 'false'); } });
+    };
+    dots.forEach(function (dot) {
+      dot.setAttribute('aria-expanded', 'false');
+      dot.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = dot.classList.toggle('active');
+        dot.setAttribute('aria-expanded', String(open));
+        if (open) closeAll(dot);
+      });
+    });
+    document.addEventListener('click', function () { closeAll(null); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(null); });
+  })();
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    if (!q || !a) return;
+    q.addEventListener('click', function () {
+      var open = item.classList.toggle('open');
+      a.classList.toggle('open', open);
+      q.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  /* ---------- Hero rotating word ---------- */
+  (function () {
+    var host = document.querySelector('.rotate-word');
+    if (!host) return;
+    var words = (host.getAttribute('data-words') || '').split('|').filter(Boolean);
+    if (words.length < 2) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var idx = 0;
+    var item = document.createElement('span');
+    item.className = 'rw-item';
+    item.textContent = words[0];
+    host.textContent = '';
+    host.appendChild(item);
+    setInterval(function () {
+      idx = (idx + 1) % words.length;
+      var next = document.createElement('span');
+      next.className = 'rw-item';
+      next.style.opacity = '0';
+      next.style.transform = 'translateY(0.25em)';
+      next.textContent = words[idx];
+      host.appendChild(next);
+      // force reflow then animate in / out
+      void next.offsetWidth;
+      item.classList.add('rw-out');
+      next.style.opacity = '1';
+      next.style.transform = 'none';
+      var dying = item;
+      setTimeout(function () { if (dying && dying.parentNode) dying.parentNode.removeChild(dying); }, 600);
+      item = next;
+    }, 2600);
+  })();
+
   /* ---------- Sticky quote bar (appears after hero) ---------- */
   var quoteBar = document.getElementById('quote-bar');
   if (quoteBar) {

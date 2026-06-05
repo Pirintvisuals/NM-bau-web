@@ -12,6 +12,22 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/site.css">
+
+  <!-- FAQ structured data (rich results + AI citations) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Mennyibe kerül egy fürdőszoba-felújítás?", "acceptedAnswer": { "@type": "Answer", "text": "Minden fürdőszoba más, ezért a végleges ár a helyszíni felmérés és a kiválasztott anyagok után válik pontossá. Az ingyenes felmérésen tételes, átlátható árajánlatot adunk, kötelezettség nélkül." } },
+      { "@type": "Question", "name": "Mennyi ideig tart egy felújítás?", "acceptedAnswer": { "@type": "Answer", "text": "Egy átlagos, teljes fürdőszoba-felújítás jellemzően 2–4 hét, a mérettől és a tartalomtól függően. A pontos ütemtervet az árajánlatban rögzítjük." } },
+      { "@type": "Question", "name": "Tényleg minden szakmát Önök intéznek?", "acceptedAnswer": { "@type": "Answer", "text": "Igen. Gépészet, vízszigetelés, burkolás, villanyszerelés és szaniterek — minden egy kézben, egyetlen felelős kivitelezővel. Önnek nem kell külön mestereket keresnie és összehangolnia." } },
+      { "@type": "Question", "name": "Van garancia a munkára?", "acceptedAnswer": { "@type": "Answer", "text": "Minden elvégzett munkánkra 2 év munkagaranciát vállalunk, írásban — az átadás után is számíthat ránk." } },
+      { "@type": "Question", "name": "Tudok magam anyagot választani?", "acceptedAnswer": { "@type": "Answer", "text": "Természetesen, sőt segítünk is benne: prémium márkák kínálatából válogatunk az ízléséhez és a kerethez igazítva, a burkolatoktól a szaniterekig." } },
+      { "@type": "Question", "name": "Milyen területen vállalnak munkát?", "acceptedAnswer": { "@type": "Answer", "text": "Elsősorban Sopronban és környékén dolgozunk. Ha bizonytalan, hogy az Ön települése belefér-e, hívjon minket, és egyeztetünk." } }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -60,7 +76,14 @@
           <span class="kicker-label">Fürdőszoba-felújítás · Sopron</span>
           <span class="kicker-rule"></span>
         </div>
-        <h1 class="hero-title reveal d1">Fürdőszoba,<br><em>amilyet</em> mindig<br>is szerettél volna.</h1>
+        <!-- PHASE 2: replace with real aggregate Google rating + review count -->
+        <div class="hero-rating reveal d1">
+          <span class="hr-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg>
+          </span>
+          <span class="hr-text"><strong>Kiváló</strong> — ügyfeleink ajánlása alapján</span>
+        </div>
+        <h1 class="hero-title reveal d1">Fürdőszoba, amilyet<br>mindig is <span class="rotate-word" data-words="szerettél volna|megérdemelsz|elképzeltél|megálmodtál">szerettél volna</span></h1>
         <p class="hero-sub reveal d2">
           Komplett fürdőszoba-felújítás egyetlen felelős csapattal — a helyszíni
           felméréstől a kulcsátadásig. Prémium anyagok, precíz kivitelezés, 2 év garancia.
@@ -72,21 +95,11 @@
           </a>
           <a href="referenciak.html" class="btn btn-outline">Referenciák</a>
         </div>
-        <div class="hero-mini reveal d4">
-          <div class="hero-mini-item">
-            <span class="hero-mini-num">2020<span>.</span></span>
-            <span class="hero-mini-label">óta Sopronban</span>
-          </div>
-          <span class="hero-mini-divider"></span>
-          <div class="hero-mini-item">
-            <span class="hero-mini-num">2 <span>év</span></span>
-            <span class="hero-mini-label">munkagarancia</span>
-          </div>
-          <span class="hero-mini-divider"></span>
-          <div class="hero-mini-item">
-            <span class="hero-mini-num">1 <span>csapat</span></span>
-            <span class="hero-mini-label">egy felelős kivitelező</span>
-          </div>
+        <div class="hero-chips reveal d4">
+          <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2 év garancia</span>
+          <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ingyenes felmérés</span>
+          <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2020 óta Sopronban</span>
+          <span class="hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Egy felelős kivitelező</span>
         </div>
       </div>
 
@@ -104,6 +117,10 @@
           </span>
         </div>
       </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Görgessen</span>
+      <span class="hs-line"></span>
     </div>
   </header>
 
@@ -126,39 +143,94 @@
     </div>
   </div>
 
-  <!-- ===================== POSITIONING / FOCUS ===================== -->
+  <!-- ===================== SCOPE — what a complete bathroom reno includes ===================== -->
   <section class="s-white grain">
     <div class="container">
-      <div class="ed-head reveal">
-        <span class="ed-num">02</span>
-        <div class="kicker">
-          <span class="kicker-label">Amivel foglalkozunk</span>
-          <span class="kicker-rule"></span>
+      <div class="scope-head reveal">
+        <div>
+          <div class="kicker"><span class="kicker-idx">02</span><span class="kicker-label">Amivel foglalkozunk</span><span class="kicker-rule"></span></div>
+          <h2 class="section-title">Mi csak egy dolgot csinálunk — azt viszont kifogástalanul.</h2>
         </div>
-        <h2 class="section-title" style="font-size:clamp(2rem,4.6vw,3.5rem);max-width:14ch;">Mi csak egy dolgot csinálunk. Azt viszont kifogástalanul.</h2>
+        <p class="scope-statement">A fürdőszoba a lakás legösszetettebb helyisége. 2020 óta <strong>kizárólag</strong> erre szakosodtunk, így mind az öt szakma egyetlen felelős kivitelezőnél fut össze.</p>
       </div>
+      <div class="scope-grid">
+        <article class="scope-card reveal">
+          <div class="scope-num">01</div>
+          <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v6m0 0a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
+          <h3 class="scope-t">Gépészet</h3>
+          <p class="scope-d">Víz- és lefolyóvezetékek, Geberit rendszer, elszívás — pontosan méretezve.</p>
+        </article>
+        <article class="scope-card reveal d1">
+          <div class="scope-num">02</div>
+          <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14c4-6 12-6 16 0M2 18h20"/></svg></div>
+          <h3 class="scope-t">Vízszigetelés</h3>
+          <p class="scope-d">A fürdő legfontosabb rétege, szakszerűen — kiemelten a zuhanyzónákban.</p>
+        </article>
+        <article class="scope-card reveal d2">
+          <div class="scope-num">03</div>
+          <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+          <h3 class="scope-t">Burkolás</h3>
+          <p class="scope-d">Csempe, nagyméretű lap, mikrocement vagy falpanel — letisztult felülettel.</p>
+        </article>
+        <article class="scope-card reveal d3">
+          <div class="scope-num">04</div>
+          <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <h3 class="scope-t">Villanyszerelés</h3>
+          <p class="scope-d">Világítás, tükörvilágítás, dugaljak és elszívás — biztonságos kiosztással.</p>
+        </article>
+        <article class="scope-card reveal d4">
+          <div class="scope-num">05</div>
+          <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6"/></svg></div>
+          <h3 class="scope-t">Szaniter &amp; bútor</h3>
+          <p class="scope-d">Walk-in zuhany, kád, WC, mosdó, csaptelepek és bútorok precíz beépítése.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);align-items:start;" class="focus-split">
-        <p class="about-body dropcap reveal d1" style="font-size:1.0625rem;">
-          A fürdőszoba a lakás legösszetettebb helyisége: gépészet, vízszigetelés,
-          burkolás, elektromosság és szaniterek találkoznak néhány négyzetméteren.
-          Nálunk ez nem egy a sok szolgáltatás közül — ez <strong style="color:var(--accent)">a</strong> szakterületünk.
-          2020 óta kizárólag fürdőszobákra szakosodtunk Sopronban és környékén, így minden
-          munkafázist mi koordinálunk, egyetlen felelős kivitelezőként.
-        </p>
-        <div class="reveal d2" style="display:grid;gap:1rem;">
-          <div class="why-feat">
-            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6L9 17l-5-5"/></svg></span>
-            <div><div class="why-feat-title">Egy kézben minden szakma</div><div class="why-feat-desc">Víz-fűtés, burkolás, villany, kőműves és szaniter — egyetlen csapat, egy kontakt, nulla koordinációs káosz.</div></div>
-          </div>
-          <div class="why-feat">
-            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg></span>
-            <div><div class="why-feat-title">Prémium minőség</div><div class="why-feat-desc">Ismert márkák anyagaival dolgozunk, és személyesen segítünk a burkolatok és szaniterek kiválasztásában.</div></div>
-          </div>
-          <div class="why-feat">
-            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></span>
-            <div><div class="why-feat-title">Precíz munka</div><div class="why-feat-desc">A pontosan kivitelezett munka évtizedekig kitart. Ez a mi védjegyünk — és 2 év garanciánk alapja.</div></div>
-          </div>
+  <!-- ===================== ANATOMY (hidden work hotspots) ===================== -->
+  <section class="s-white" id="anatomia">
+    <div class="container">
+      <div class="anatomy-grid">
+        <div class="reveal-left">
+          <div class="kicker"><span class="kicker-label">A részletek, amik számítanak</span><span class="kicker-rule"></span></div>
+          <h2 class="section-title">A szépség a csempén van.<br>A minőség alatta.</h2>
+          <p class="section-sub" style="max-width:42ch;">
+            Egy fürdőszoba ott romlik el, ahol nem látszik: a vízszigetelésnél, a
+            lejtésnél, a gépészetnél. Kattintson a pontokra a képen, és nézze meg, mi
+            rejlik a felület mögött — pontosan ezért tart ki évtizedekig, amit építünk.
+          </p>
+          <ul class="anatomy-legend">
+            <li><span class="lg-n">1</span><span><strong>Tükörvilágítás</strong> — előre kiépített, páramentes elektromos csatlakozás</span></li>
+            <li><span class="lg-n">2</span><span><strong>Vízszigetelés</strong> — teljes felületű réteg a csempe alatt</span></li>
+            <li><span class="lg-n">3</span><span><strong>Gépészet</strong> — milliméterre pontos víz- és lefolyókiállás</span></li>
+            <li><span class="lg-n">4</span><span><strong>Villanyszerelés</strong> — páravédett dugaljak és elszívás</span></li>
+            <li><span class="lg-n">5</span><span><strong>Aljzat &amp; lejtés</strong> — hogy a víz mindig a helyére folyjon</span></li>
+          </ul>
+          <span class="anatomy-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg>Kattintson a + jelekre a képen</span>
+        </div>
+        <div class="anatomy-stage reveal-right">
+          <div class="anatomy-img"><img src="hero.jpg" alt="Felújított fürdőszoba Sopronban, a rejtett munkafázisok megjelölésével"></div>
+          <button type="button" class="hs-dot pop-down" style="left:40%;top:20%" aria-label="Tükörvilágítás részletei">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span class="hs-pop"><span class="hs-tag">Villanyszerelés</span><h4>Tükörvilágítás</h4><p>Háttérvilágítású, páramentes tükör — előre kiépített elektromos csatlakozással, rejtett vezetékezéssel.</p></span>
+          </button>
+          <button type="button" class="hs-dot pop-left" style="left:73%;top:38%" aria-label="Vízszigetelés részletei">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span class="hs-pop"><span class="hs-tag">Vízszigetelés</span><h4>A csempe alatt</h4><p>Teljes felületű, bevonatos vízszigetelés. Ez akadályozza meg a beázást — a leggyakoribb, mégis láthatatlan hiba forrását.</p></span>
+          </button>
+          <button type="button" class="hs-dot pop-up" style="left:32%;top:64%" aria-label="Gépészet részletei">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span class="hs-pop"><span class="hs-tag">Gépészet</span><h4>Víz- és lefolyókiállás</h4><p>Pontosan pozícionált kiállások, hogy a csaptelep és a mosdó milliméterre passzoljon — semmi toldozás-foltozás.</p></span>
+          </button>
+          <button type="button" class="hs-dot pop-right" style="left:11%;top:56%" aria-label="Villanyszerelés részletei">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span class="hs-pop"><span class="hs-tag">Villanyszerelés</span><h4>Páravédett dugaljak</h4><p>A fürdőszobai szabványnak megfelelő, biztonságos kiosztás — dugaljak, kapcsolók és elszívás a helyén.</p></span>
+          </button>
+          <button type="button" class="hs-dot pop-up" style="left:50%;top:88%" aria-label="Aljzat és lejtés részletei">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span class="hs-pop"><span class="hs-tag">Aljzat &amp; burkolás</span><h4>Lejtésképzés</h4><p>Gondosan kialakított aljzat és lejtés a folyásirányba, hogy ne álljon meg a víz — a tartós burkolat alapja.</p></span>
+          </button>
         </div>
       </div>
     </div>
@@ -191,6 +263,96 @@
           <div class="why-feat">
             <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
             <div><div class="why-feat-title">2 év munkagarancia</div><div class="why-feat-desc">Minden elvégzett munkánkra. Egy pozitív ajánlás a legjobb reklám — ezért nem engedhetünk a minőségből.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STRENGTHS / WHY TRUST US ===================== -->
+  <section class="s-dark grain">
+    <div class="container">
+      <div class="sec-hd-center reveal">
+        <div class="eyebrow" style="justify-content:center;">Miért bíznak bennünk</div>
+        <h2 class="section-title">A bizalom nem ígéret kérdése — hanem a részleteké.</h2>
+      </div>
+      <div class="strength-grid reveal">
+        <div class="strength-cell">
+          <div class="st-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div>
+          <h3>Saját, képzett csapat</h3>
+          <p>Víz-fűtés szerelő, burkoló és kőműves szakember a házon belül, bevált alvállalkozói hálózattal — folyamatos szakmai továbbképzéssel.</p>
+        </div>
+        <div class="strength-cell">
+          <div class="st-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>2 év írásos garancia</h3>
+          <p>Minden elvégzett munkánkra — feketén-fehéren, nem csak szóban. A minőségünk mögött kiállunk, az átadás után is.</p>
+        </div>
+        <div class="strength-cell">
+          <div class="st-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div>
+          <h3>A jó hírnév a tét</h3>
+          <p>Egy pozitív ajánlás a legjobb reklám. 2020 óta kizárólag fürdőszobából élünk — ezért egyetlen részletben sem engedhetünk a precizitásból.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section class="s-white" id="compare">
+    <div class="container">
+      <div class="sec-hd-center reveal">
+        <div class="eyebrow" style="justify-content:center;">Hasonlítsa össze</div>
+        <h2 class="section-title">Amiben többet adunk, mint egy átlagos kivitelező</h2>
+        <p class="section-sub">Egy fürdőszoba-felújítás ott dől el, hogy valaki a teljes folyamatért felel-e. Tételesen megmutatjuk, miben különbözünk.</p>
+      </div>
+
+      <div class="compare reveal">
+        <div class="compare-row compare-head">
+          <div class="compare-c crit">Szempont</div>
+          <div class="compare-c us"><span class="cmp-brandtag">NM Bau</span></div>
+          <div class="compare-c them">Átlagos kivitelező</div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-c crit">Felelősség a projektért</div>
+          <div class="compare-c us"><span class="cmp-label">NM Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Egy felelős kivitelező, egy kontakt</div>
+          <div class="compare-c them"><span class="cmp-label">Más cég</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Több külön mester, Önnek kell egyeztetni</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-c crit">Árajánlat</div>
+          <div class="compare-c us"><span class="cmp-label">NM Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Fix, tételes, átlátható</div>
+          <div class="compare-c them"><span class="cmp-label">Más cég</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Gyakran hiányos vagy menet közben csúszó</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-c crit">Vízszigetelés</div>
+          <div class="compare-c us"><span class="cmp-label">NM Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Szakszerű, minőségi anyaggal</div>
+          <div class="compare-c them"><span class="cmp-label">Más cég</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Sokszor elnagyolt, később beázás</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-c crit">Munkagarancia</div>
+          <div class="compare-c us"><span class="cmp-label">NM Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2 év, minden elvégzett munkára</div>
+          <div class="compare-c them"><span class="cmp-label">Más cég</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Ritkán, vagy semmilyen</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-c crit">Anyagválasztás</div>
+          <div class="compare-c us"><span class="cmp-label">NM Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Személyes tanácsadás, prémium márkák</div>
+          <div class="compare-c them"><span class="cmp-label">Más cég</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Önre bízva, segítség nélkül</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-c crit">Munkaterület</div>
+          <div class="compare-c us"><span class="cmp-label">NM Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Pormentes kivitelezés, napi takarítás</div>
+          <div class="compare-c them"><span class="cmp-label">Más cég</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Por és rendetlenség az egész lakásban</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-c crit">Szakterület</div>
+          <div class="compare-c us"><span class="cmp-label">NM Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Csak fürdőszoba — 2020 óta</div>
+          <div class="compare-c them"><span class="cmp-label">Más cég</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Mindent vállal, semmiben sem profi</div>
+        </div>
+
+        <div class="compare-foot">
+          <div class="cf-spacer"></div>
+          <div class="cf-cta">
+            <span>Kérjen ingyenes, tételes árajánlatot — kötelezettség nélkül.</span>
+            <a class="btn btn-primary" href="ingyenes-felmeres.html">Árajánlat kérése<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -326,6 +488,50 @@
         <div class="stat-cell"><div class="stat-num"><span class="trust-num" data-count="2" data-suffix=" év">0 év</span></div><div class="stat-label">Munkagarancia</div></div>
         <div class="stat-cell"><div class="stat-num">100%</div><div class="stat-label">Fürdőszobára szakosodva</div></div>
         <div class="stat-cell"><div class="stat-num">1</div><div class="stat-label">Felelős kivitelező</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="s-cream" id="gyik">
+    <div class="container">
+      <div class="faq-split">
+        <div class="faq-aside reveal-left">
+          <div class="kicker"><span class="kicker-idx">06</span><span class="kicker-label">GYIK</span><span class="kicker-rule"></span></div>
+          <h2 class="section-title">Gyakori kérdések</h2>
+          <p class="faq-aside-note">Nem találja a választ? Hívjon, és szívesen segítünk — kötelezettség nélkül.</p>
+          <div class="faq-aside-cta">
+            <a href="ingyenes-felmeres.html" class="btn btn-primary">Ingyenes felmérés<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="tel:+36202546624" class="btn btn-outline">+36 20 254 6624</a>
+          </div>
+        </div>
+
+        <div class="faq reveal-right">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-1">Mennyibe kerül egy fürdőszoba-felújítás?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <div class="faq-a" id="faq-a-1"><div class="faq-a-inner">Minden fürdőszoba más, ezért a végleges ár a helyszíni felmérés és a kiválasztott anyagok után válik pontossá. Az <a href="ingyenes-felmeres.html">ingyenes felmérésen</a> tételes, átlátható árajánlatot adunk — kötelezettség nélkül.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-2">Mennyi ideig tart egy felújítás?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <div class="faq-a" id="faq-a-2"><div class="faq-a-inner">Egy átlagos, teljes fürdőszoba-felújítás jellemzően 2–4 hét, a mérettől és a tartalomtól függően. A pontos ütemtervet az árajánlatban rögzítjük — és tartjuk is.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-3">Tényleg minden szakmát Önök intéznek?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <div class="faq-a" id="faq-a-3"><div class="faq-a-inner">Igen. Gépészet, vízszigetelés, burkolás, villanyszerelés és szaniterek — minden egy kézben, egyetlen felelős kivitelezővel. Önnek nem kell külön mestereket keresnie és összehangolnia.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-4">Van garancia a munkára?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <div class="faq-a" id="faq-a-4"><div class="faq-a-inner">Minden elvégzett munkánkra <strong>2 év munkagaranciát</strong> vállalunk, írásban — az átadás után is számíthat ránk.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-5">Tudok magam anyagot választani?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <div class="faq-a" id="faq-a-5"><div class="faq-a-inner">Természetesen, sőt segítünk is benne: prémium márkák kínálatából válogatunk az ízléséhez és a kerethez igazítva, a burkolatoktól a szaniterekig.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-6">Milyen területen vállalnak munkát?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+            <div class="faq-a" id="faq-a-6"><div class="faq-a-inner">Elsősorban Sopronban és környékén dolgozunk. Ha bizonytalan, hogy az Ön települése belefér-e, <a href="kapcsolat.html">hívjon minket</a>, és egyeztetünk.</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
