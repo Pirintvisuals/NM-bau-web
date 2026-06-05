@@ -3,2372 +3,404 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NM Bau – Komplett Fürdőszoba Felújítás Sopron</title>
-  <meta name="description" content="NM Bau – Komplett fürdőszoba felújítás specialistái Sopronban. Prémium minőség, átlátható árak, 2 év garancia. Kérjen ingyenes helyszíni felmérést!">
+  <title>NM Bau – Komplett Fürdőszoba Felújítás Sopronban</title>
+  <meta name="description" content="NM Bau – Sopron fürdőszoba-felújítás specialistái 2020 óta. Egyetlen felelős csapat a felméréstől a kulcsátadásig, prémium anyagok, precíz kivitelezés, 2 év garancia. Kérjen ingyenes helyszíni felmérést!">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Playfair Display (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
-  <style>
-    /* ==========================================================
-       CSS VARIABLES — light warm luxury palette
-       ========================================================== */
-    :root {
-      --bg:            #FAFAF7;
-      --bg-cream:      #F0EAD8;
-      --bg-dark:       #1C1917;
-      --bg-dark2:      #252220;
-      --bg-card:       #FFFFFF;
-      --border:        #DDD8CA;
-      --border-subtle: #EDEAE2;
-      --accent:        #B8860B;
-      --accent-h:      #D4A017;
-      --accent-dim:    rgba(184,134,11,0.12);
-      --text:          #1C1917;
-      --text-2:        #57534E;
-      --text-3:        #9C9690;
-      --on-dark:       #F5F0E8;
-      --on-dark-2:     rgba(245,240,232,0.65);
-      --on-dark-3:     rgba(245,240,232,0.38);
-      /* legacy aliases so existing rules still compile */
-      --bg-primary:    var(--bg);
-      --bg-secondary:  var(--bg-cream);
-      --bg-card-alias: var(--bg-card);
-      --text-primary:  var(--text);
-      --text-secondary:var(--text-2);
-      --text-muted:    var(--text-3);
-      --border-subtle-alias: var(--border-subtle);
-      --nav-h:         68px;
-      --max-w:         1200px;
-      --pad-x:         clamp(1.25rem, 5vw, 3rem);
-      --section-py:    clamp(5rem, 10vw, 8.5rem);
-      --pill:          50px;
-    }
-
-    /* ==========================================================
-       RESET & BASE
-       ========================================================== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { font-family: inherit; }
-
-    /* ==========================================================
-       TYPOGRAPHY
-       ========================================================== */
-    h1, h2, h3, h4 {
-      font-family: 'DM Serif Display', serif;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-
-    /* ==========================================================
-       LAYOUT UTILITIES
-       ========================================================== */
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-    }
-    section { padding: var(--section-py) 0; }
-
-    /* Eye-brow label above section headings */
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.625rem;
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-    .eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      color: var(--text);
-      margin-bottom: 1.125rem;
-    }
-    .section-sub {
-      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-      color: var(--text-2);
-      line-height: 1.75;
-      max-width: 520px;
-    }
-
-    /* ==========================================================
-       BUTTONS — pill shape
-       ========================================================== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.875rem 1.875rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      cursor: pointer;
-      border: none;
-      border-radius: var(--pill);
-      transition: all 0.26s cubic-bezier(0.16,1,0.3,1);
-      white-space: nowrap;
-      line-height: 1;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn svg { width: 16px; height: 16px; flex-shrink: 0; transition: transform 0.22s ease; }
-    .btn:hover svg { transform: translateX(3px); }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #FAFAF7;
-      font-weight: 600;
-      box-shadow: 0 2px 12px rgba(184,134,11,0.22);
-    }
-    .btn-primary:hover {
-      background: var(--accent-h);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(184,134,11,0.32);
-    }
-    .btn-primary:active { transform: translateY(0); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-    }
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-dim);
-    }
-    /* outline variant on dark backgrounds */
-    .btn-outline-light {
-      background: transparent;
-      color: var(--on-dark);
-      border: 1.5px solid rgba(245,240,232,0.35);
-      border-radius: var(--pill);
-      display: inline-flex; align-items: center; gap: 0.55rem;
-      padding: 0.875rem 1.875rem;
-      font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 500;
-      cursor: pointer; transition: all 0.26s ease; white-space: nowrap; line-height: 1;
-    }
-    .btn-outline-light svg { width:16px; height:16px; flex-shrink:0; transition: transform 0.22s ease; }
-    .btn-outline-light:hover { border-color: var(--accent); color: var(--accent); background: rgba(184,134,11,0.08); }
-    .btn-outline-light:hover svg { transform: translateX(3px); }
-
-    /* ==========================================================
-       SCROLL REVEAL — fade-up, left, right variants
-       ========================================================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.72s cubic-bezier(0.16,1,0.3,1),
-                  transform 0.72s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal-left {
-      opacity: 0; transform: translateX(-32px);
-      transition: opacity 0.72s cubic-bezier(0.16,1,0.3,1),
-                  transform 0.72s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal-right {
-      opacity: 0; transform: translateX(32px);
-      transition: opacity 0.72s cubic-bezier(0.16,1,0.3,1),
-                  transform 0.72s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal.in-view, .reveal-left.in-view, .reveal-right.in-view {
-      opacity: 1; transform: none;
-    }
-    .d1 { transition-delay: 0.10s; }
-    .d2 { transition-delay: 0.20s; }
-    .d3 { transition-delay: 0.30s; }
-    .d4 { transition-delay: 0.40s; }
-    .d5 { transition-delay: 0.50s; }
-
-    /* Floating animation for decorative elements */
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      33%       { transform: translateY(-10px) rotate(1.5deg); }
-      66%       { transform: translateY(6px) rotate(-1deg); }
-    }
-    @keyframes float2 {
-      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-      50%       { transform: translateY(-14px) rotate(-2deg) scale(1.03); }
-    }
-    @keyframes pulse-ring {
-      0%   { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.85); opacity: 0; }
-    }
-    @keyframes gold-line {
-      from { transform: scaleX(0); }
-      to   { transform: scaleX(1); }
-    }
-    @keyframes counter-tick {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: none; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
-      * { animation-duration: 0.01ms !important; }
-    }
-
-    /* ==========================================================
-       NAVIGATION — frosted, hides on scroll-down
-       ========================================================== */
-    #nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 200;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      background: rgba(240,234,216,0.92);
-      backdrop-filter: blur(18px) saturate(160%);
-      -webkit-backdrop-filter: blur(18px) saturate(160%);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 16px rgba(28,25,23,0.05);
-      transform: translateY(0);
-      transition: transform 0.38s cubic-bezier(0.16,1,0.3,1),
-                  background 0.35s, border-color 0.35s, box-shadow 0.35s;
-    }
-    #nav.nav-hidden { transform: translateY(-110%); }
-    #nav.scrolled {
-      background: rgba(236,228,208,0.96);
-      border-bottom-color: var(--border);
-      box-shadow: 0 2px 24px rgba(28,25,23,0.09);
-    }
-
-    .nav-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .nav-logo { flex-shrink: 0; display: block; line-height: 0; }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-2);
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0; right: 0;
-      height: 1px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s ease;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-
-    .nav-cta { font-size: 0.8125rem; padding: 0.625rem 1.25rem; }
-
-    /* Hamburger */
-    .nav-burger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      cursor: pointer;
-      padding: 6px;
-      background: none;
-      border: none;
-    }
-    .nav-burger span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--text);
-      transition: all 0.28s ease;
-    }
-
-    /* Mobile nav overlay */
-    .nav-mobile {
-      position: fixed;
-      inset: var(--nav-h) 0 0 0;
-      z-index: 199;
-      background: rgba(250,250,247,0.97);
-      backdrop-filter: blur(20px);
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.75rem;
-    }
-    .nav-mobile.open { display: flex; }
-    .nav-mobile a {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.25rem;
-      color: var(--text);
-      transition: color 0.2s;
-    }
-    .nav-mobile a:hover { color: var(--accent); }
-
-    @media (max-width: 820px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-burger { display: flex; }
-    }
-
-    /* ==========================================================
-       HERO — warm light, editorial, animated
-       ========================================================== */
-    #hero {
-      min-height: 100svh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding-top: var(--nav-h);
-      background: var(--bg);
-    }
-
-    /* Warm radial glow */
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 70% at 68% 45%, rgba(184,134,11,0.07) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 50% at 15% 80%, rgba(184,134,11,0.04) 0%, transparent 55%);
-      pointer-events: none;
-    }
-
-    /* Decorative floating shapes */
-    .hero-shape-1 {
-      position: absolute;
-      top: 18%; right: 8%;
-      width: 320px; height: 320px;
-      border: 1px solid rgba(184,134,11,0.14);
-      border-radius: 50%;
-      animation: float 8s ease-in-out infinite;
-      pointer-events: none;
-    }
-    .hero-shape-2 {
-      position: absolute;
-      top: 32%; right: 12%;
-      width: 180px; height: 180px;
-      border: 1px solid rgba(184,134,11,0.09);
-      border-radius: 50%;
-      animation: float2 11s ease-in-out infinite 2s;
-      pointer-events: none;
-    }
-    .hero-shape-3 {
-      position: absolute;
-      bottom: 20%; left: 5%;
-      width: 90px; height: 90px;
-      background: rgba(184,134,11,0.06);
-      border-radius: 50%;
-      animation: float2 9s ease-in-out infinite 1s;
-      pointer-events: none;
-    }
-    /* Decorative vertical rule */
-    .hero-rule {
-      position: absolute;
-      top: 0; bottom: 0;
-      right: 40%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent 0%, var(--border) 30%, var(--border) 70%, transparent 100%);
-      pointer-events: none;
-    }
-    /* Large faint background text */
-    .hero-bg-text {
-      position: absolute;
-      right: -2%;
-      bottom: -4%;
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(8rem, 18vw, 18rem);
-      line-height: 1;
-      color: rgba(28,25,23,0.03);
-      letter-spacing: -0.04em;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: clamp(3rem, 8vw, 6rem) var(--pad-x);
-      display: grid;
-      grid-template-columns: 1fr 0.85fr;
-      gap: clamp(2.5rem, 5vw, 5rem);
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.75rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 32px; height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .hero-h1 {
-      font-size: clamp(3rem, 6vw, 5.75rem);
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.625rem;
-      color: var(--text);
-    }
-    .hero-h1 em { font-style: italic; color: var(--accent); }
-
-    .hero-p {
-      font-size: clamp(1rem, 1.5vw, 1.125rem);
-      color: var(--text-2);
-      line-height: 1.8;
-      max-width: 460px;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* Animated gold accent line under heading */
-    .hero-gold-line {
-      display: block;
-      width: 64px; height: 2px;
-      background: var(--accent);
-      margin-bottom: 1.875rem;
-      transform-origin: left;
-      animation: gold-line 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s both;
-    }
-
-    /* Hero image side */
-    .hero-img-wrap {
-      position: relative;
-      aspect-ratio: 4/5;
-      max-height: 580px;
-    }
-
-    .hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    /* Floating stat badge */
-    .hero-badge {
-      position: absolute;
-      bottom: -1.25rem; left: -1.25rem;
-      background: var(--accent);
-      color: #FAFAF7;
-      padding: 1.25rem 1.625rem;
-      pointer-events: none;
-      border-radius: 4px;
-      box-shadow: 0 8px 32px rgba(184,134,11,0.3);
-      animation: float2 7s ease-in-out infinite 0.5s;
-    }
-    .hero-badge strong {
-      display: block;
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.5rem;
-      line-height: 1;
-    }
-    .hero-badge span {
-      font-size: 0.6875rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-    }
-
-    /* Pulsing ring behind badge */
-    .hero-badge::before {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      border: 1px solid rgba(184,134,11,0.3);
-      border-radius: 6px;
-      animation: pulse-ring 2.5s cubic-bezier(0.215,0.61,0.355,1) infinite;
-    }
-
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-eyebrow, .hero-actions { justify-content: center; }
-      .hero-p { max-width: 100%; margin-left: auto; margin-right: auto; }
-      .hero-img-wrap { max-width: 380px; margin: 0 auto; }
-      .hero-badge { left: 50%; transform: translateX(-50%); bottom: -1rem; }
-      .hero-gold-line { margin-left: auto; margin-right: auto; }
-      .hero-shape-1, .hero-shape-2 { opacity: 0.4; }
-    }
-    @media (max-width: 480px) {
-      .hero-actions { flex-direction: column; width: 100%; }
-      .hero-actions .btn { width: 100%; justify-content: center; }
-    }
-
-    /* ==========================================================
-       TRUST BAR — dark charcoal strip
-       ========================================================== */
-    #trust {
-      padding: 0;
-      background: var(--bg-dark);
-    }
-
-    .trust-grid {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .trust-item {
-      padding: 2.75rem 1.5rem;
-      text-align: center;
-      border-right: 1px solid rgba(245,240,232,0.08);
-      position: relative;
-    }
-    .trust-item:last-child { border-right: none; }
-
-    .trust-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--accent-h);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-    .trust-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(245,240,232,0.45);
-    }
-
-    @media (max-width: 640px) {
-      .trust-grid { grid-template-columns: repeat(2, 1fr); }
-      .trust-item:nth-child(2) { border-right: none; }
-      .trust-item:nth-child(1),
-      .trust-item:nth-child(2) { border-bottom: 1px solid rgba(245,240,232,0.08); }
-    }
-
-    /* ==========================================================
-       SERVICES — light, cards with hover lift
-       ========================================================== */
-    #services { background: var(--bg); }
-
-    .services-hd { margin-bottom: clamp(3rem, 6vw, 4.5rem); }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1.45fr 1fr;
-      gap: 1.5rem;
-    }
-
-    /* Featured service card — bathroom */
-    .svc-card.featured {
-      border-color: var(--border);
-      box-shadow: 0 2px 18px rgba(28,25,23,0.07);
-    }
-    .svc-featured-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--accent);
-      color: #FAFAF7;
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 50px;
-      margin-bottom: 1rem;
-    }
-
-    .svc-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 4px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.32s cubic-bezier(0.16,1,0.3,1),
-                  box-shadow 0.32s ease,
-                  border-color 0.25s;
-    }
-    .svc-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 56px rgba(28,25,23,0.1);
-      border-color: var(--border);
-    }
-
-    /* Gold sweep on bottom */
-    .svc-card-body {
-      padding: clamp(1.5rem, 3vw, 2.25rem);
-      position: relative;
-    }
-    .svc-card-body::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-    }
-    .svc-card:hover .svc-card-body::after { transform: scaleX(1); }
-
-    /* PHASE 2: replace .svc-img with <img> */
-    .svc-img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: var(--bg-cream);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-3);
-      font-size: 0.625rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      overflow: hidden;
-    }
-    .svc-img svg { width: 28px; height: 28px; opacity: 0.25; }
-
-    .svc-icon {
-      width: 46px; height: 46px;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-      background: var(--accent-dim);
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .svc-card:hover .svc-icon { background: var(--accent); border-color: var(--accent); color: #FAFAF7; }
-    .svc-icon svg { width: 20px; height: 20px; }
-
-    .svc-num {
-      font-size: 0.8125rem;
-      color: var(--text-3);
-      font-family: 'DM Serif Display', serif;
-      margin-bottom: 0.625rem;
-    }
-    .svc-title { font-size: 1.3125rem; margin-bottom: 0.75rem; color: var(--text); }
-    .svc-desc { font-size: 0.9375rem; color: var(--text-2); line-height: 1.72; }
-    .svc-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1.375rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      transition: gap 0.22s;
-    }
-    .svc-card:hover .svc-more { gap: 0.875rem; }
-    .svc-more svg { width: 13px; height: 13px; }
-
-    @media (max-width: 820px) {
-      .services-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ==========================================================
-       PACKAGES — three tiers (S / M / L), cards link to pages
-       ========================================================== */
-    #packages { background: var(--bg-cream); }
-    .packages-hd { text-align: center; max-width: 640px; margin: 0 auto clamp(3rem, 6vw, 4.5rem); }
-    .packages-hd .eyebrow { justify-content: center; }
-    .packages-hd .section-sub { margin-left: auto; margin-right: auto; }
-
-    .tier-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      align-items: stretch;
-    }
-
-    .tier-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: clamp(1.75rem, 3vw, 2.5rem);
-      color: var(--text);
-      position: relative;
-      transition: transform 0.32s cubic-bezier(0.16,1,0.3,1),
-                  box-shadow 0.32s ease, border-color 0.25s;
-    }
-    .tier-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 60px rgba(28,25,23,0.12);
-      border-color: var(--border);
-    }
-    /* Featured middle tier */
-    .tier-card.featured {
-      border-color: var(--accent);
-      box-shadow: 0 10px 38px rgba(184,134,11,0.16);
-    }
-    .tier-popular {
-      position: absolute;
-      top: 0; left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      background: var(--accent);
-      color: #FAFAF7;
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.85rem;
-      border-radius: var(--pill);
-      white-space: nowrap;
-      box-shadow: 0 4px 14px rgba(184,134,11,0.3);
-    }
-
-    .tier-name-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.875rem; }
-    .tier-name { font-size: 1.5rem; color: var(--text); }
-    .tier-letter {
-      font-family: 'DM Serif Display', serif;
-      font-size: 0.8125rem;
-      color: var(--accent);
-      border: 1px solid var(--border);
-      background: var(--accent-dim);
-      border-radius: 50%;
-      width: 30px; height: 30px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .tier-desc { font-size: 0.9rem; color: var(--text-2); line-height: 1.65; margin-bottom: 1.5rem; min-height: 2.6em; }
-
-    .tier-price-label {
-      font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-3); margin-bottom: 0.35rem;
-    }
-    .tier-price {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem; color: var(--text); line-height: 1; letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-    .tier-price small { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-3); }
-
-    .tier-list { list-style: none; display: grid; gap: 0.7rem; margin: 0 0 1.875rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); }
-    .tier-list li { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.9rem; color: var(--text-2); line-height: 1.5; }
-    .tier-list li svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
-
-    .tier-cta {
-      margin-top: auto;
-      display: inline-flex; align-items: center; justify-content: space-between;
-      gap: 0.75rem;
-      font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--accent);
-      padding-top: 0.5rem;
-    }
-    .tier-cta svg { width: 15px; height: 15px; transition: transform 0.22s ease; }
-    .tier-card:hover .tier-cta svg { transform: translateX(4px); }
-
-    .tier-foot { text-align: center; margin-top: clamp(2rem, 4vw, 3rem); font-size: 0.95rem; color: var(--text-2); }
-    .tier-foot a { color: var(--accent); text-decoration: underline; }
-
-    @media (max-width: 900px) {
-      .tier-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
-      .tier-card.featured { order: -1; }
-    }
-
-    /* ==========================================================
-       ABOUT / RÓLUNK — white, story + team + image stack
-       ========================================================== */
-    #about { background: var(--bg); overflow: hidden; }
-
-    .about-inner {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: clamp(3rem, 7vw, 6rem);
-      align-items: center;
-    }
-
-    .about-lead {
-      font-size: clamp(1.0625rem, 1.7vw, 1.25rem);
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-    }
-    .about-lead strong { color: var(--accent); font-weight: 600; }
-    .about-body { font-size: 0.9688rem; color: var(--text-2); line-height: 1.8; margin-bottom: 1.5rem; }
-
-    /* Team trades */
-    .about-team-label {
-      font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--text-3);
-      margin: 2rem 0 1rem;
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .about-team-label::before { content:''; width:24px; height:1px; background: var(--border); }
-
-    .about-trades { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-bottom: 1.75rem; }
-    .trade-chip {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--bg-cream);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--pill);
-      padding: 0.5rem 1rem;
-      font-size: 0.8438rem; font-weight: 500; color: var(--text);
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .trade-chip:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(28,25,23,0.07); }
-    .trade-chip svg { width: 14px; height: 14px; color: var(--accent); flex-shrink: 0; }
-    .trade-chip.sub { background: transparent; color: var(--text-2); border-style: dashed; }
-    .trade-chip.sub svg { color: var(--text-3); }
-
-    /* Signature line */
-    .about-sign {
-      display: flex; align-items: center; gap: 0.875rem;
-      padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);
-    }
-    .about-sign-quote {
-      font-family: 'DM Serif Display', serif;
-      font-style: italic;
-      font-size: 1.375rem;
-      color: var(--accent);
-      line-height: 1.2;
-    }
-
-    /* About image stack */
-    .about-imgs { position: relative; padding-bottom: 2.75rem; padding-left: 2rem; }
-    .about-main {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      background: var(--bg-cream);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 0.75rem;
-      color: var(--text-3);
-    }
-    .about-main svg { width: 30px; height: 30px; opacity: 0.3; }
-    .about-main span { font-size: 0.625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-
-    /* Floating credential card — references real 2023 training */
-    .about-credential {
-      position: absolute;
-      bottom: 0; left: 0;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.125rem 1.375rem;
-      box-shadow: 0 12px 40px rgba(28,25,23,0.12);
-      display: flex; align-items: center; gap: 0.875rem;
-      max-width: 84%;
-    }
-    .about-cred-icon {
-      width: 40px; height: 40px; flex-shrink: 0;
-      background: var(--accent-dim);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent);
-    }
-    .about-cred-icon svg { width: 18px; height: 18px; }
-    .about-cred-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.15rem; }
-    .about-cred-val { font-size: 0.875rem; font-weight: 600; color: var(--text); line-height: 1.3; }
-
-    .about-est {
-      position: absolute;
-      top: 1.25rem; left: -0.5rem;
-      background: var(--accent);
-      color: #FAFAF7;
-      font-family: 'DM Serif Display', serif;
-      padding: 0.625rem 0.875rem;
-      border-radius: 4px;
-      box-shadow: 0 8px 24px rgba(184,134,11,0.28);
-      text-align: center;
-      line-height: 1;
-    }
-    .about-est strong { display: block; font-size: 1.375rem; }
-    .about-est span { font-size: 0.5625rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; }
-
-    @media (max-width: 900px) {
-      .about-inner { grid-template-columns: 1fr; }
-      .about-imgs { max-width: 420px; padding-left: 1.5rem; order: -1; }
-    }
-
-    /* ==========================================================
-       WHY NM BAU — warm cream background
-       ========================================================== */
-    #why { background: var(--bg-cream); overflow: hidden; }
-
-    .why-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(3rem, 7vw, 6.5rem);
-      align-items: center;
-    }
-
-    .why-features {
-      margin-top: 2.625rem;
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .why-feat {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 1.125rem;
-      align-items: start;
-    }
-
-    .why-feat-icon {
-      width: 44px; height: 44px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: 2px;
-      transition: background 0.2s, border-color 0.2s, transform 0.22s;
-      box-shadow: 0 2px 8px rgba(28,25,23,0.06);
-    }
-    .why-feat:hover .why-feat-icon {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #FAFAF7;
-      transform: scale(1.08);
-    }
-    .why-feat-icon svg { width: 17px; height: 17px; }
-
-    .why-feat-title {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-    .why-feat-desc {
-      font-size: 0.875rem;
-      color: var(--text-2);
-      line-height: 1.68;
-    }
-
-    /* Why image stack */
-    .why-imgs {
-      position: relative;
-      padding-bottom: 2.5rem;
-      padding-right: 2rem;
-    }
-
-    .why-accent-bar {
-      position: absolute;
-      left: -1.375rem;
-      top: 1.5rem;
-      width: 3px;
-      height: 58%;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .why-main {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      background: white;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      color: var(--text-3);
-    }
-    .why-main svg { width: 30px; height: 30px; opacity: 0.3; }
-    .why-main span { font-size: 0.625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-
-    .why-inset {
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 52%;
-      aspect-ratio: 1;
-      background: var(--bg-cream);
-      border: 3px solid var(--bg-cream);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      color: var(--text-3);
-    }
-    .why-inset svg { width: 22px; height: 22px; opacity: 0.25; }
-    .why-inset span { font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-
-    @media (max-width: 900px) {
-      .why-inner { grid-template-columns: 1fr; }
-      .why-imgs { max-width: 420px; padding-right: 1.5rem; }
-      .why-accent-bar { display: none; }
-    }
-
-    /* ==========================================================
-       PROCESS — vertical timeline
-       ========================================================== */
-    #process { background: var(--bg-dark); }
-    #process .eyebrow { color: var(--accent-h); }
-    #process .eyebrow::before { background: var(--accent-h); }
-    #process .section-title { color: var(--on-dark); }
-    #process .section-sub { color: var(--on-dark-2); }
-
-    .process-hd {
-      max-width: 620px;
-      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
-    }
-
-    /* Timeline wrapper */
-    .process-timeline {
-      position: relative;
-      max-width: 820px;
-    }
-
-    /* Spine — the vertical line */
-    .pt-spine {
-      position: absolute;
-      left: 21px;       /* centre of 42px node */
-      top: 21px;
-      bottom: 21px;
-      width: 1px;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .pt-spine-track {
-      position: absolute;
-      inset: 0;
-      background: rgba(245,240,232,0.07);
-    }
-    .pt-spine-fill {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 0;
-      background: linear-gradient(to bottom,
-        var(--accent) 0%,
-        rgba(184,134,11,0.4) 100%);
-      transition: height 1.8s cubic-bezier(0.16,1,0.3,1);
-    }
-    /* Trigger draw when section enters viewport */
-    .process-timeline.draw .pt-spine-fill { height: 100%; }
-
-    /* Each row */
-    .pt-item {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 1.75rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Left column: the node */
-    .pt-marker {
-      padding-top: 0.75rem; /* align node centre with button text baseline */
-    }
-
-    .pt-node {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid rgba(245,240,232,0.18);
-      background: var(--bg-dark2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      /* entrance pop-in (staggered via inline style) */
-      opacity: 0;
-      transform: scale(0.65);
-      transition:
-        border-color 0.38s ease,
-        box-shadow   0.38s ease,
-        background   0.38s ease,
-        opacity      0.55s cubic-bezier(0.16,1,0.3,1),
-        transform    0.55s cubic-bezier(0.34,1.2,0.64,1);
-    }
-    .process-timeline.draw .pt-node { opacity: 1; transform: scale(1); }
-
-    .pt-node-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 0.75rem;
-      color: rgba(245,240,232,0.5);
-      line-height: 1;
-      position: relative;
-      z-index: 1;
-      transition: color 0.3s;
-    }
-
-    /* outer glow ring */
-    .pt-node-ring {
-      position: absolute;
-      inset: -5px;
-      border-radius: 50%;
-      border: 1px solid transparent;
-      transition:
-        border-color 0.38s ease,
-        transform    0.38s cubic-bezier(0.34,1.56,0.64,1);
-    }
-
-    /* Active node */
-    .pt-item.active .pt-node {
-      border-color: var(--accent);
-      background:   linear-gradient(rgba(184,134,11,0.14), rgba(184,134,11,0.14)) var(--bg-dark2);
-      box-shadow:   0 0 0 4px rgba(184,134,11,0.1),
-                    0 0 22px rgba(184,134,11,0.18);
-    }
-    .pt-item.active .pt-node-num { color: var(--accent); }
-    .pt-item.active .pt-node-ring {
-      border-color: rgba(184,134,11,0.28);
-      transform: scale(1.22);
-    }
-
-    /* Right column: button + collapsible body */
-    .pt-btn {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.875rem 0;
-      background: none;
-      border: none;
-      border-bottom: 1px solid rgba(245,240,232,0.07);
-      cursor: pointer;
-      text-align: left;
-      transition: border-color 0.25s;
-    }
-    .pt-item.active .pt-btn { border-color: rgba(184,134,11,0.22); }
-
-    .pt-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1875rem;
-      color: rgba(245,240,232,0.45);
-      line-height: 1.25;
-      transition: color 0.25s;
-    }
-    .pt-item.active .pt-title  { color: var(--on-dark); }
-    .pt-btn:hover .pt-title    { color: rgba(245,240,232,0.75); }
-
-    .pt-chevron {
-      color: rgba(245,240,232,0.22);
-      flex-shrink: 0;
-      transition:
-        transform 0.4s cubic-bezier(0.16,1,0.3,1),
-        color     0.25s;
-    }
-    .pt-chevron svg { width: 17px; height: 17px; display: block; }
-    .pt-item.active .pt-chevron { transform: rotate(180deg); color: var(--accent); }
-
-    /* Collapsible body */
-    .pt-body {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.52s cubic-bezier(0.16,1,0.3,1);
-    }
-    .pt-body.open { max-height: 720px; }
-
-    .pt-body-inner {
-      padding: 1.125rem 0 1.875rem;
-    }
-
-    .pt-intro {
-      font-size: 0.9375rem;
-      color: var(--on-dark-2);
-      line-height: 1.78;
-      margin-bottom: 0.875rem;
-    }
-    .pt-list {
-      list-style: none; padding: 0;
-      margin: 0 0 0.875rem;
-      display: grid; gap: 0.5rem;
-    }
-    .pt-list li {
-      display: flex; align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.9375rem;
-      color: var(--on-dark-2);
-      line-height: 1.7;
-    }
-    .pt-list li::before {
-      content: '';
-      width: 16px; height: 16px;
-      border: 1px solid rgba(202,138,4,0.4);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 0.2rem;
-      background: radial-gradient(circle, var(--accent) 35%, transparent 36%);
-    }
-    .pt-note {
-      border-left: 2px solid rgba(212,160,23,0.38);
-      padding-left: 1rem;
-      font-size: 0.875rem;
-      color: rgba(245,240,232,0.62);
-      line-height: 1.72;
-      font-style: italic;
-    }
-
-    /* Why-choose callout */
-    .why-choose-box {
-      margin-top: 3rem;
-      background: rgba(245,240,232,0.04);
-      border: 1px solid rgba(245,240,232,0.1);
-      padding: clamp(1.5rem, 3vw, 2.5rem);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: end;
-    }
-    .why-choose-box .eyebrow { color: var(--accent-h); }
-    .why-choose-box .eyebrow::before { background: var(--accent-h); }
-    .why-choose-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-    }
-    .wc-item {
-      display: flex; align-items: center;
-      gap: 0.625rem;
-      font-size: 0.9375rem;
-      color: var(--on-dark-2);
-    }
-    .wc-item svg { width: 15px; height: 15px; color: var(--accent-h); flex-shrink: 0; }
-
-    @media (max-width: 640px) {
-      .pt-item { gap: 1.125rem; }
-      .pt-node { width: 34px; height: 34px; }
-      .pt-spine { left: 17px; top: 17px; bottom: 17px; }
-      .pt-marker { padding-top: 0.875rem; }
-      .why-choose-box { grid-template-columns: 1fr; }
-    }
-
-    /* ==========================================================
-       PORTFOLIO — light with hover reveal
-       ========================================================== */
-    #portfolio { background: var(--bg); }
-
-    .portfolio-hd {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: clamp(2.5rem, 5vw, 4rem);
-      flex-wrap: wrap;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 270px;
-      gap: clamp(0.625rem, 1.25vw, 1rem);
-    }
-    .portfolio-grid > :nth-child(1) {
-      grid-column: 1 / 3;
-      grid-row: 1 / 3;
-    }
-
-    .port-item {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 3px;
-    }
-
-    .port-ph {
-      width: 100%;
-      height: 100%;
-      background: var(--bg-cream);
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.625rem;
-      color: var(--text-3);
-      transition: background 0.3s;
-    }
-    .port-ph svg { width: 24px; height: 24px; opacity: 0.25; }
-    .port-ph span {
-      font-size: 0.625rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-    }
-    .port-item:hover .port-ph { background: #E5DFD2; }
-
-    .port-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(28,25,23,0);
-      display: flex;
-      align-items: flex-end;
-      padding: 1.5rem;
-      transition: background 0.32s ease;
-    }
-    .port-item:hover .port-overlay { background: rgba(28,25,23,0.55); }
-
-    .port-info {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-    }
-    .port-item:hover .port-info { opacity: 1; transform: none; }
-    .port-info h3 { font-size: 0.9375rem; color: #FAFAF7; margin-bottom: 0.2rem; }
-    .port-info p { font-size: 0.8rem; color: rgba(245,240,232,0.7); }
-
-    @media (max-width: 768px) {
-      .portfolio-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
-      .portfolio-grid > :nth-child(1) { grid-column: 1 / 3; grid-row: auto; }
-    }
-    @media (max-width: 480px) {
-      .portfolio-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
-      .portfolio-grid > :nth-child(1) { grid-column: auto; }
-    }
-
-    /* ==========================================================
-       CTA BANNER — warm gold gradient section
-       ========================================================== */
-    #cta-banner {
-      padding: clamp(5rem, 11vw, 9rem) 0;
-      background: linear-gradient(135deg, #6B4A00 0%, #B8860B 40%, #D4A017 70%, #B8860B 100%);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Noise texture overlay */
-    #cta-banner::before {
-      content: '';
-      position: absolute; inset: 0;
-      opacity: 0.06;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-    /* Decorative circle */
-    .cta-glow {
-      position: absolute;
-      top: -40%; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .cta-inner { position: relative; z-index: 1; }
-    .cta-inner .eyebrow { color: rgba(255,255,255,0.7); }
-    .cta-inner .eyebrow::before { background: rgba(255,255,255,0.5); }
-    .cta-title {
-      font-size: clamp(2.25rem, 5.5vw, 4.625rem);
-      letter-spacing: -0.03em;
-      max-width: 780px;
-      margin: 0 auto 1.375rem;
-      color: #FAFAF7;
-    }
-    .cta-title em { font-style: italic; color: rgba(255,255,255,0.85); }
-    .cta-sub {
-      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-      color: rgba(255,255,255,0.75);
-      max-width: 440px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.78;
-    }
-    .cta-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .cta-actions .btn { font-size: 1rem; padding: 1rem 2.25rem; }
-    /* White primary CTA on gold bg */
-    .cta-actions .btn-primary {
-      background: rgba(255,255,255,0.95);
-      color: #6B4A00;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-    .cta-actions .btn-primary:hover {
-      background: #FFFFFF;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    }
-
-    /* ==========================================================
-       CONTACT — warm cream
-       ========================================================== */
-    #contact { background: var(--bg-cream); }
-
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: clamp(3rem, 7vw, 7rem);
-      align-items: start;
-    }
-
-    .contact-details { margin-top: 2.625rem; display: grid; gap: 1.625rem; }
-
-    .cd-item { display: flex; gap: 1rem; align-items: flex-start; }
-    .cd-icon {
-      width: 42px; height: 42px;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      background: white;
-      box-shadow: 0 2px 8px rgba(28,25,23,0.05);
-    }
-    .cd-icon svg { width: 17px; height: 17px; }
-    .cd-label {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 0.25rem;
-    }
-    .cd-val { font-size: 1rem; color: var(--text); }
-    .cd-val a { color: var(--text); transition: color 0.2s; }
-    .cd-val a:hover { color: var(--accent); }
-
-    /* Form card */
-    .contact-form {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: clamp(2rem, 4vw, 3rem);
-      box-shadow: 0 4px 30px rgba(28,25,23,0.07);
-    }
-    .form-h { font-size: 1.5rem; margin-bottom: 0.375rem; color: var(--text); }
-    .form-sub { font-size: 0.9rem; color: var(--text-2); margin-bottom: 2rem; }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .f-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4375rem;
-      margin-bottom: 1rem;
-    }
-    .f-group:last-of-type { margin-bottom: 0; }
-    .f-label {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-3);
-    }
-    .f-input, .f-select, .f-textarea {
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9375rem;
-      padding: 0.875rem 1rem;
-      width: 100%;
-      outline: none;
-      transition: border-color 0.22s, box-shadow 0.22s;
-      appearance: none;
-    }
-    .f-input::placeholder, .f-textarea::placeholder { color: var(--text-3); }
-    .f-input:focus, .f-select:focus, .f-textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(184,134,11,0.12);
-    }
-    .f-textarea { resize: vertical; min-height: 128px; }
-    .f-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239C9690' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.75rem;
-      cursor: pointer;
-    }
-    .f-select option { background: white; color: var(--text); }
-
-    .f-submit {
-      margin-top: 1.5rem;
-      width: 100%;
-      justify-content: center;
-      padding: 1rem 2rem;
-      font-size: 0.9375rem;
-    }
-    .f-note {
-      margin-top: 0.875rem;
-      font-size: 0.8rem;
-      color: var(--text-3);
-      text-align: center;
-      line-height: 1.6;
-    }
-    .f-note a { color: var(--accent); text-decoration: underline; }
-
-    @media (max-width: 900px) {
-      .contact-inner { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 480px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
-
-    /* ==========================================================
-       FOOTER — dark charcoal
-       ========================================================== */
-    #footer {
-      background: var(--bg-dark);
-      padding: clamp(3.5rem, 7vw, 6rem) 0 2rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.8fr 1fr 1fr;
-      gap: clamp(2rem, 4vw, 3.5rem);
-      margin-bottom: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .ft-logo { display: inline-block; margin-bottom: 0.875rem; }
-
-    .ft-tagline {
-      font-size: 0.875rem;
-      color: var(--on-dark-2);
-      line-height: 1.7;
-      max-width: 250px;
-      margin-bottom: 1.625rem;
-    }
-
-    .ft-social { display: flex; gap: 0.625rem; }
-    .ft-social-a {
-      width: 36px; height: 36px;
-      border: 1px solid rgba(245,240,232,0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--on-dark-2);
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-    }
-    .ft-social-a:hover { border-color: var(--accent-h); color: var(--accent-h); background: rgba(212,160,23,0.1); }
-    .ft-social-a svg { width: 15px; height: 15px; }
-
-    .ft-col-title {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--on-dark);
-      margin-bottom: 1.125rem;
-    }
-    .ft-links { list-style: none; display: grid; gap: 0.75rem; }
-    .ft-links a {
-      font-size: 0.875rem;
-      color: var(--on-dark-2);
-      transition: color 0.2s;
-    }
-    .ft-links a:hover { color: var(--on-dark); }
-    .ft-links li.plain {
-      font-size: 0.875rem;
-      color: var(--on-dark-2);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(245,240,232,0.1);
-      padding-top: 1.875rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .ft-copy { font-size: 0.8125rem; color: var(--on-dark-3); }
-    .ft-legal { display: flex; gap: 1.5rem; }
-    .ft-legal a {
-      font-size: 0.8125rem;
-      color: var(--on-dark-3);
-      transition: color 0.2s;
-    }
-    .ft-legal a:hover { color: var(--on-dark-2); }
-
-    @media (max-width: 900px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid > :first-child { grid-column: span 2; }
-    }
-    @media (max-width: 480px) {
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-grid > :first-child { grid-column: auto; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ===== Homepage teasers (link to full sub-pages) ===== */
-    .teaser-split {
-      display: grid; grid-template-columns: 1.1fr 0.9fr;
-      gap: clamp(2.5rem, 6vw, 5rem); align-items: center;
-    }
-    .teaser-media {
-      aspect-ratio: 4/3; background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 6px; display: flex; flex-direction: column; align-items: center;
-      justify-content: center; gap: 0.6rem; color: var(--text-3);
-      box-shadow: 0 8px 30px rgba(28,25,23,0.06);
-    }
-    .teaser-media svg { width: 30px; height: 30px; opacity: 0.3; }
-    .teaser-media span { font-size: 0.625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-    @media (max-width: 820px) { .teaser-split { grid-template-columns: 1fr; } }
-
-    .proc-mini { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: clamp(2rem, 4vw, 3rem); }
-    .proc-mini-step { background: rgba(245,240,232,0.04); border: 1px solid rgba(245,240,232,0.1); border-radius: 8px; padding: 1.5rem 1.375rem; transition: border-color 0.25s, transform 0.25s; }
-    .proc-mini-step:hover { border-color: rgba(184,134,11,0.4); transform: translateY(-4px); }
-    .proc-mini-num { font-family: 'DM Serif Display', serif; font-size: 1.75rem; color: var(--accent-h); line-height: 1; margin-bottom: 0.75rem; }
-    .proc-mini-t { font-size: 1rem; font-weight: 600; color: var(--on-dark); margin-bottom: 0.4rem; }
-    .proc-mini-d { font-size: 0.85rem; color: var(--on-dark-2); line-height: 1.6; }
-    @media (max-width: 820px) { .proc-mini { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 460px) { .proc-mini { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-  <!-- =====================================================
-       NAVIGATION
-       ===================================================== -->
-  <nav id="nav" aria-label="Főnavigáció">
+  <!-- ===================== NAV ===================== -->
+  <nav id="nav">
     <div class="nav-inner">
-
-      <a class="nav-logo" href="#hero" aria-label="NM Bau főoldal">
-        <img src="new%20logo.png" alt="NM Bau" style="height:42px;width:auto;display:block;">
+      <a href="index.html" class="nav-logo" aria-label="NM Bau – kezdőlap">
+        <span class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M6 44 6 20 24 6 42 20 42 44Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+            <rect x="16.5" y="26" width="7.5" height="18" stroke="currentColor" stroke-width="2.2"/>
+            <rect x="21.5" y="33" width="14" height="11" stroke="#B6B0A6" stroke-width="2.2"/>
+          </svg>
+          <span class="brand-wordmark">
+            <span class="brand-name">NM BAU</span>
+            <span class="brand-tag">Sopron</span>
+          </span>
+        </span>
       </a>
-
-      <ul class="nav-links" role="list">
-        <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
-        <li><a href="rolunk.html">Rólunk</a></li>
-        <li><a href="folyamat.html">Folyamat</a></li>
+      <ul class="nav-links">
+        <li><a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a></li>
         <li><a href="referenciak.html">Referenciák</a></li>
+        <li><a href="rolunk.html">Rólunk</a></li>
         <li><a href="kapcsolat.html">Kapcsolat</a></li>
       </ul>
-
       <a href="ingyenes-felmeres.html" class="btn btn-primary nav-cta">Ingyenes felmérés</a>
-
-      <button class="nav-burger" id="nav-burger" aria-label="Menü" aria-expanded="false" aria-controls="nav-mobile">
+      <button class="nav-burger" id="nav-burger" aria-label="Menü" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-
-  <!-- Mobile nav -->
-  <div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobilnavigáció">
-    <a href="szolgaltatasok.html">Szolgáltatások</a>
-    <a href="rolunk.html">Rólunk</a>
-    <a href="folyamat.html">Folyamat</a>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a>
     <a href="referenciak.html">Referenciák</a>
+    <a href="rolunk.html">Rólunk</a>
     <a href="kapcsolat.html">Kapcsolat</a>
-    <a href="ingyenes-felmeres.html" class="btn btn-primary" style="margin-top:0.5rem;">Ingyenes felmérés kérése</a>
+    <a href="ingyenes-felmeres.html" style="color:var(--accent)">Ingyenes felmérés</a>
   </div>
 
-
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-rule"></div>
-    <div class="hero-shape-1" aria-hidden="true"></div>
-    <div class="hero-shape-2" aria-hidden="true"></div>
-    <div class="hero-shape-3" aria-hidden="true"></div>
-    <div class="hero-bg-text" aria-hidden="true">NM BAU</div>
-
+  <!-- ===================== HERO ===================== -->
+  <header id="hero">
     <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-eyebrow">Komplett Fürdőszoba Felújítás — Sopron</div>
-
-        <h1 class="hero-h1">
-          Álmai fürdőszobája<br>
-          <em>egy kézben,</em><br>
-          garanciával.
-        </h1>
-        <span class="hero-gold-line" aria-hidden="true"></span>
-
-        <p class="hero-p">
-          Komplett fürdőszoba felújítás — a felméréstől az átadásig minden
-          munkafázist mi koordinálunk. Prémium anyagok, tiszta munkavégzés,
-          2 év garancia.
-        </p>
-
-        <div class="hero-actions">
-          <a href="ingyenes-felmeres.html" class="btn btn-primary">
-            Ingyenes helyszíni felmérés
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="folyamat.html" class="btn btn-outline">Hogyan dolgozunk?</a>
+      <div class="hero-copy">
+        <div class="kicker reveal">
+          <span class="kicker-idx">01</span>
+          <span class="kicker-label">Fürdőszoba-felújítás · Sopron</span>
+          <span class="kicker-rule"></span>
         </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-img-wrap">
-          <img src="hero.jpg" alt="NM Bau – prémium fürdőszoba felújítás Sopron" class="hero-img">
-
-          <div class="hero-badge" aria-hidden="true">
-            <!-- PHASE 2: update number if different -->
-            <strong>15+</strong>
-            <span>Év tapasztalat</span>
+        <h1 class="hero-title reveal d1">Fürdőszoba,<br><em>amilyet</em> mindig<br>is szerettél volna.</h1>
+        <p class="hero-sub reveal d2">
+          Komplett fürdőszoba-felújítás egyetlen felelős csapattal — a helyszíni
+          felméréstől a kulcsátadásig. Prémium anyagok, precíz kivitelezés, 2 év garancia.
+        </p>
+        <div class="hero-actions reveal d3">
+          <a href="ingyenes-felmeres.html" class="btn btn-primary">
+            Ingyenes árajánlat
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="referenciak.html" class="btn btn-outline">Referenciák</a>
+        </div>
+        <div class="hero-mini reveal d4">
+          <div class="hero-mini-item">
+            <span class="hero-mini-num">2020<span>.</span></span>
+            <span class="hero-mini-label">óta Sopronban</span>
+          </div>
+          <span class="hero-mini-divider"></span>
+          <div class="hero-mini-item">
+            <span class="hero-mini-num">2 <span>év</span></span>
+            <span class="hero-mini-label">munkagarancia</span>
+          </div>
+          <span class="hero-mini-divider"></span>
+          <div class="hero-mini-item">
+            <span class="hero-mini-num">1 <span>csapat</span></span>
+            <span class="hero-mini-label">egy felelős kivitelező</span>
           </div>
         </div>
       </div>
+
+      <div class="hero-media reveal-right">
+        <!-- Real NM Bau project photo -->
+        <img src="hero.jpg" alt="NM Bau által felújított fürdőszoba Sopronban — zöld függőleges burkolat, kör alakú háttérvilágítású tükör, sárgaréz csaptelep, fa mosdópult">
+        <span class="hero-photo-tag">Sopron · 2024</span>
+        <div class="hero-credential">
+          <span class="hc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <span>
+            <span class="hc-label">Minden projektre</span>
+            <span class="hc-val">2 év teljes körű<br>munkagarancia</span>
+          </span>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
-
-  <!-- =====================================================
-       TRUST BAR
-       ===================================================== -->
-  <div id="trust" aria-label="Kulcsszámok">
-    <div class="trust-grid">
-      <!-- PHASE 2: replace numbers with verified figures -->
-      <div class="trust-item reveal">
-        <div class="trust-num" data-count="250" data-suffix="+">250+</div>
-        <div class="trust-label">Befejezett projekt</div>
-      </div>
-      <div class="trust-item reveal d1">
-        <div class="trust-num" data-count="15" data-suffix="+">15+</div>
-        <div class="trust-label">Év tapasztalat</div>
-      </div>
-      <div class="trust-item reveal d2">
-        <div class="trust-num" data-count="98" data-suffix="%">98%</div>
-        <div class="trust-label">Elégedett ügyfél</div>
-      </div>
-      <div class="trust-item reveal d3">
-        <div class="trust-num" data-count="2" data-suffix=" év">2 év</div>
-        <div class="trust-label">Munkavállalás</div>
-      </div>
+  <!-- ===================== TRADES MARQUEE ===================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v6m0 0a4 4 0 100 8 4 4 0 000-8z"/></svg>Víz- és fűtésszerelés</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>Hidegburkolás</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Villanyszerelés</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21V8l9-5 9 5v13M3 12h18"/></svg>Kőműves munkák</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14c4-6 12-6 16 0M2 18h20"/></svg>Vízszigetelés</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>Anyagválasztás</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v6m0 0a4 4 0 100 8 4 4 0 000-8z"/></svg>Víz- és fűtésszerelés</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>Hidegburkolás</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Villanyszerelés</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21V8l9-5 9 5v13M3 12h18"/></svg>Kőműves munkák</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14c4-6 12-6 16 0M2 18h20"/></svg>Vízszigetelés</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>Anyagválasztás</span>
     </div>
   </div>
 
-
-  <!-- =====================================================
-       SERVICES
-       ===================================================== -->
-  <section id="services">
+  <!-- ===================== POSITIONING / FOCUS ===================== -->
+  <section class="s-white grain">
     <div class="container">
-      <div class="services-hd">
-        <div class="eyebrow">Szolgáltatásaink</div>
-        <h2 class="section-title reveal">A fürdőszoba<br>a mi szakterületünk</h2>
-        <p class="section-sub reveal d1">
-          Komplett fürdőszoba felújítás és modern falpanel megoldások — az első
-          konzultációtól az átadásig minden munkafázist mi koordinálunk.
+      <div class="ed-head reveal">
+        <span class="ed-num">02</span>
+        <div class="kicker">
+          <span class="kicker-label">Amivel foglalkozunk</span>
+          <span class="kicker-rule"></span>
+        </div>
+        <h2 class="section-title" style="font-size:clamp(2rem,4.6vw,3.5rem);max-width:14ch;">Mi csak egy dolgot csinálunk. Azt viszont kifogástalanul.</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5rem);align-items:start;" class="focus-split">
+        <p class="about-body dropcap reveal d1" style="font-size:1.0625rem;">
+          A fürdőszoba a lakás legösszetettebb helyisége: gépészet, vízszigetelés,
+          burkolás, elektromosság és szaniterek találkoznak néhány négyzetméteren.
+          Nálunk ez nem egy a sok szolgáltatás közül — ez <strong style="color:var(--accent)">a</strong> szakterületünk.
+          2020 óta kizárólag fürdőszobákra szakosodtunk Sopronban és környékén, így minden
+          munkafázist mi koordinálunk, egyetlen felelős kivitelezőként.
         </p>
-      </div>
-
-      <div class="services-grid">
-
-        <!-- Service 1 — FEATURED: Bathroom renovation -->
-        <article class="svc-card featured reveal">
-          <!-- PHASE 2: insert bathroom photo — before/after split or luxury tiled bathroom.
-               Size: 900×506px, WebP. -->
-          <div class="svc-img" role="img" aria-label="Fürdőszoba felújítás fotó — 2. fázis">Fotó — 2. fázis</div>
-
-          <div class="svc-card-body">
-            <span class="svc-featured-badge">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="width:10px;height:10px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              Fő profil
-            </span>
-            <div class="svc-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/>
-              </svg>
-            </div>
-            <div class="svc-num">01</div>
-            <h3 class="svc-title">Komplett Fürdőszoba Felújítás</h3>
-            <p class="svc-desc">
-              A kapcsolatfelvételtől az átadásig minden lépést mi intézünk: felmérés,
-              tervezés, bontás, gépészet, vízszigetelés, burkolás, szaniterek — kulcsrakész
-              átadással. Csempe, nagyméretű lap, mikrocement, walk-in zuhany, Geberit rendszer.
-            </p>
-            <a href="szolgaltatasok.html" class="svc-more">
-              Részletek
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
+        <div class="reveal d2" style="display:grid;gap:1rem;">
+          <div class="why-feat">
+            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <div><div class="why-feat-title">Egy kézben minden szakma</div><div class="why-feat-desc">Víz-fűtés, burkolás, villany, kőműves és szaniter — egyetlen csapat, egy kontakt, nulla koordinációs káosz.</div></div>
           </div>
-        </article>
-
-        <!-- Service 2 — Wall panel installation (bathroom) -->
-        <article class="svc-card reveal d1">
-          <!-- PHASE 2: insert falpanel photo — fugátlan vízálló falpanel a fürdőszobában.
-               Size: 700×394px, WebP. -->
-          <div class="svc-img" role="img" aria-label="Falpanel kivitelezés fotó — 2. fázis">Fotó — 2. fázis</div>
-
-          <div class="svc-card-body">
-            <div class="svc-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 6h18M3 12h18M3 18h18"/>
-              </svg>
-            </div>
-            <div class="svc-num">02</div>
-            <h3 class="svc-title">Falpanel Kivitelezés</h3>
-            <p class="svc-desc">
-              Fugamentes, vízálló falpanel megoldások a fürdőszobába — a hagyományos
-              csempézés modern, gyorsan tisztítható alternatívája. Letisztult, varratmentes
-              felület, precíz illesztéssel.
-            </p>
-            <a href="szolgaltatasok.html" class="svc-more">
-              Részletek
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
+          <div class="why-feat">
+            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg></span>
+            <div><div class="why-feat-title">Prémium minőség</div><div class="why-feat-desc">Ismert márkák anyagaival dolgozunk, és személyesen segítünk a burkolatok és szaniterek kiválasztásában.</div></div>
           </div>
-        </article>
-
-      </div>
-
-      <div style="text-align:center;margin-top:clamp(2.5rem,5vw,3.5rem);" class="reveal">
-        <a href="szolgaltatasok.html" class="btn btn-outline">
-          Összes szolgáltatás megtekintése
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+          <div class="why-feat">
+            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></span>
+            <div><div class="why-feat-title">Precíz munka</div><div class="why-feat-desc">A pontosan kivitelezett munka évtizedekig kitart. Ez a mi védjegyünk — és 2 év garanciánk alapja.</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <!-- =====================================================
-       ABOUT TEASER — full story on rolunk.html
-       ===================================================== -->
-  <section id="about" style="background:var(--bg-cream);">
+  <!-- ===================== WHY NM BAU (pull quote) ===================== -->
+  <section class="s-cream">
     <div class="container">
-      <div class="teaser-split">
+      <div style="display:grid;grid-template-columns:0.95fr 1.05fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center;" class="why-split">
         <div class="reveal-left">
-          <div class="eyebrow">Rólunk</div>
-          <h2 class="section-title">2020 óta építjük<br>Sopron otthonait.</h2>
-          <p class="section-sub" style="margin-bottom:1.75rem;">
-            Kis, képzett csapat — víz-fűtés szerelő, burkoló és kőműves —, amely a
-            fürdőszoba-felújítást szakmaként éli meg. Minden munkafázis egy kézben,
-            egy felelős kivitelezővel, prémium anyagokból, 2 év garanciával.
-          </p>
-          <a href="rolunk.html" class="btn btn-outline">
-            Ismerjen meg minket
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <div class="kicker"><span class="kicker-idx">03</span><span class="kicker-label">Miért NM Bau</span><span class="kicker-rule"></span></div>
+          <blockquote class="ed-quote">
+            Nem csak felújítunk — a projektet az elejétől a végéig kézben tartjuk.
+            <cite>NM Bau · Szeretünk építeni</cite>
+          </blockquote>
         </div>
-        <div class="reveal-right d1">
-          <!-- PHASE 2: insert team / workshop photo. Size: 720×540px, WebP. -->
-          <div class="teaser-media" role="img" aria-label="NM Bau csapata — 2. fázis">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            <span>Csapatfotó — 2. fázis</span>
+        <div class="why-features reveal-right">
+          <div class="why-feat">
+            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+            <div><div class="why-feat-title">Ingyenes helyszíni felmérés</div><div class="why-feat-desc">Kiszállunk, felmérjük az igényeket és az adottságokat, majd részletes, átlátható árajánlatot adunk — kötelezettség nélkül.</div></div>
+          </div>
+          <div class="why-feat">
+            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></span>
+            <div><div class="why-feat-title">Átlátható, fix árajánlat</div><div class="why-feat-desc">Tételes költségterv, meglepetések nélkül. Pontosan tudja, mire költ, mielőtt bármi elkezdődik.</div></div>
+          </div>
+          <div class="why-feat">
+            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><div class="why-feat-title">Ütemezett kivitelezés</div><div class="why-feat-desc">Reális határidőt vállalunk, és tartjuk is. A munkaterület minden nap rendezett marad.</div></div>
+          </div>
+          <div class="why-feat">
+            <span class="why-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <div><div class="why-feat-title">2 év munkagarancia</div><div class="why-feat-desc">Minden elvégzett munkánkra. Egy pozitív ajánlás a legjobb reklám — ezért nem engedhetünk a minőségből.</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- =====================================================
-       PROCESS TEASER — full 10-step flow on folyamat.html
-       ===================================================== -->
-  <section id="process">
+  <!-- ===================== PROCESS TEASER (dark) ===================== -->
+  <section class="s-dark grain">
     <div class="container">
-      <div class="process-hd">
-        <div class="eyebrow">Hogyan dolgozunk</div>
-        <h2 class="section-title reveal">Fürdőszoba felújítás<br>lépésről lépésre</h2>
-        <p class="section-sub reveal d1">
-          Átlátható, jól strukturált folyamat — a kapcsolatfelvételtől a kulcsátadásig
-          minden lépést mi koordinálunk.
-        </p>
+      <div class="sec-hd-center reveal">
+        <div class="eyebrow" style="justify-content:center;">A folyamat</div>
+        <h2 class="section-title">Négy lépés a kész fürdőszobáig</h2>
+        <p class="section-sub">Áttekinthető, kiszámítható menet — végig egyetlen felelőssel.</p>
       </div>
       <div class="proc-mini">
-        <div class="proc-mini-step reveal"><div class="proc-mini-num">01</div><div class="proc-mini-t">Felmérés</div><div class="proc-mini-d">Helyszíni szemle, pontos méretek és a műszaki lehetőségek átbeszélése.</div></div>
-        <div class="proc-mini-step reveal d1"><div class="proc-mini-num">02</div><div class="proc-mini-t">Árajánlat</div><div class="proc-mini-d">Részletes, átlátható költségterv és ütemezés — meglepetések nélkül.</div></div>
-        <div class="proc-mini-step reveal d2"><div class="proc-mini-num">03</div><div class="proc-mini-t">Kivitelezés</div><div class="proc-mini-d">Bontás, gépészet, vízszigetelés, burkolás, szaniterek — precízen, tisztán.</div></div>
-        <div class="proc-mini-step reveal d3"><div class="proc-mini-num">04</div><div class="proc-mini-t">Átadás</div><div class="proc-mini-d">Takarítás, ellenőrzés, garanciavállalás és kulcsátadás.</div></div>
+        <div class="proc-mini-step reveal"><div class="proc-mini-num">01</div><div class="proc-mini-t">Helyszíni szemle</div><div class="proc-mini-d">Felmérjük az igényeket és az adottságokat a helyszínen, ingyen.</div></div>
+        <div class="proc-mini-step reveal d1"><div class="proc-mini-num">02</div><div class="proc-mini-t">Árajánlat</div><div class="proc-mini-d">Részletes, tételes és átlátható költségtervet készítünk.</div></div>
+        <div class="proc-mini-step reveal d2"><div class="proc-mini-num">03</div><div class="proc-mini-t">Kivitelezés</div><div class="proc-mini-d">Szakembereink precízen, ütemezetten, egy kézben dolgoznak.</div></div>
+        <div class="proc-mini-step reveal d3"><div class="proc-mini-num">04</div><div class="proc-mini-t">Átadás</div><div class="proc-mini-d">Ellenőrzés, takarítás, garanciavállalás és kulcsátadás.</div></div>
       </div>
-      <div style="margin-top:clamp(2rem,4vw,3rem);" class="reveal">
-        <a href="folyamat.html" class="btn-outline-light">
-          Teljes folyamat — mind a 10 lépés
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div style="text-align:center;margin-top:clamp(2.5rem,5vw,3.5rem);" class="reveal">
+        <a href="furdoszoba-felujitas.html" class="btn btn-outline-light">
+          A teljes folyamat lépésről lépésre
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-
-  <!-- =====================================================
-       PORTFOLIO TEASER
-       ===================================================== -->
-  <section id="portfolio">
+  <!-- ===================== BEFORE / AFTER ===================== -->
+  <section class="s-white">
     <div class="container">
-
       <div class="portfolio-hd">
-        <div>
-          <div class="eyebrow">Referenciáink</div>
-          <h2 class="section-title reveal">Válogatott<br>munkáink</h2>
+        <div class="reveal">
+          <div class="kicker"><span class="kicker-idx">04</span><span class="kicker-label">Az átalakulás</span><span class="kicker-rule"></span></div>
+          <h2 class="section-title" style="max-width:16ch;">Húzza el — és nézze meg a különbséget.</h2>
         </div>
-        <a href="referenciak.html" class="btn btn-outline reveal">
-          Teljes portfólió
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
+        <p class="section-sub reveal d1" style="align-self:flex-end;">
+          Egy elavult fürdőszobából néhány hét alatt lesz a nap fénypontja. Valós
+          előtte–utána felvételeink folyamatosan bővülnek.
+        </p>
       </div>
 
-      <div class="portfolio-grid">
-
-        <!-- Item 1 — featured (spans 2 cols × 2 rows) -->
-        <div class="port-item reveal">
-          <!-- PHASE 2: insert portfolio hero image here
-               Suggested: flagship bathroom project, wide shot of a finished luxury bathroom.
-               Size: 1200×900px, WebP. -->
-          <div class="port-ph" role="img" aria-label="Kiemelt fürdőszoba projekt fotó — 2. fázis">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18"/><polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Kiemelt projekt — 2. fázis</span>
-          </div>
-          <div class="port-overlay">
-            <div class="port-info">
-              <!-- PHASE 2: replace with real project name/type/year -->
-              <h3>Walk-in Zuhanyzós Fürdő</h3>
-              <p>Komplett felújítás · Sopron · 2024</p>
-            </div>
+      <div class="ba-slider reveal" id="ba1" aria-label="Előtte és utána összehasonlítás">
+        <!-- AFTER layer (real photo) -->
+        <div class="ba-layer ba-after">
+          <img src="hero.jpg" alt="A felújított fürdőszoba — utána">
+        </div>
+        <!-- BEFORE layer (PHASE 2: insert real 'előtte' photo of the same bathroom) -->
+        <div class="ba-layer ba-before">
+          <div class="ba-ph is-before">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg>
+            <span>Előtte — fotó (2. fázis)</span>
           </div>
         </div>
-
-        <!-- Item 2 -->
-        <div class="port-item reveal d1">
-          <!-- PHASE 2: insert portfolio image 2 here — Size: 600×450px, WebP. -->
-          <div class="port-ph" role="img" aria-label="Projekt fotó 2 — 2. fázis">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18"/><polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Projekt — 2. fázis</span>
-          </div>
-          <div class="port-overlay">
-            <div class="port-info">
-              <!-- PHASE 2: replace with real project name/type/year -->
-              <h3>Mikrocement Fürdőszoba</h3>
-              <p>Prémium felújítás · Sopron · 2024</p>
-            </div>
-          </div>
+        <span class="ba-tag ba-tag-before">Előtte</span>
+        <span class="ba-tag ba-tag-after">Utána</span>
+        <div class="ba-handle">
+          <button class="ba-grip" aria-label="Húzza az összehasonlításhoz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
         </div>
-
-        <!-- Item 3 -->
-        <div class="port-item reveal d2">
-          <!-- PHASE 2: insert portfolio image 3 here — Size: 600×450px, WebP. -->
-          <div class="port-ph" role="img" aria-label="Projekt fotó 3 — 2. fázis">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18"/><polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Projekt — 2. fázis</span>
-          </div>
-          <div class="port-overlay">
-            <div class="port-info">
-              <!-- PHASE 2: replace with real project name/type/year -->
-              <h3>Nagyméretű Lapburkolat</h3>
-              <p>Komplett felújítás · Fertőd · 2023</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="port-item reveal d1">
-          <!-- PHASE 2: insert portfolio image 4 here — Size: 600×450px, WebP. -->
-          <div class="port-ph" role="img" aria-label="Projekt fotó 4 — 2. fázis">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18"/><polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Projekt — 2. fázis</span>
-          </div>
-          <div class="port-overlay">
-            <div class="port-info">
-              <!-- PHASE 2: replace with real project name/type/year -->
-              <h3>Vendég Fürdőszoba</h3>
-              <p>Falpanel kivitelezés · Sopron · 2023</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="port-item reveal d2">
-          <!-- PHASE 2: insert portfolio image 5 here — Size: 600×450px, WebP. -->
-          <div class="port-ph" role="img" aria-label="Projekt fotó 5 — 2. fázis">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18"/><polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Projekt — 2. fázis</span>
-          </div>
-          <div class="port-overlay">
-            <div class="port-info">
-              <!-- PHASE 2: replace with real project name/type/year -->
-              <h3>Esőztető Zuhany Fürdő</h3>
-              <p>Prémium felújítás · Sopron · 2023</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="port-item reveal d3">
-          <!-- PHASE 2: insert portfolio image 6 here — Size: 600×450px, WebP. -->
-          <div class="port-ph" role="img" aria-label="Projekt fotó 6 — 2. fázis">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18"/><polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Projekt — 2. fázis</span>
-          </div>
-          <div class="port-overlay">
-            <div class="port-info">
-              <!-- PHASE 2: replace with real project name/type/year -->
-              <h3>Kis Fürdőszoba Felújítás</h3>
-              <p>Fürdőszoba felújítás · Sopron · 2022</p>
-            </div>
-          </div>
-        </div>
-
       </div>
-
-      <!-- PHASE 2: add 3 testimonials here with real name, project type, photo, and quote in Hungarian.
-           Recommended HTML structure:
-           <div class="testimonials-grid"> (3-col on desktop)
-             <blockquote class="testimonial">
-               <p>"Quote text..."</p>
-               <footer>
-                 <img src="photo.jpg" alt="Ügyfél neve">
-                 <div><strong>Kovács Béla</strong><span>Fürdőszoba felújítás, Sopron, 2024</span></div>
-               </footer>
-             </blockquote>
-           </div>
-      -->
-
     </div>
   </section>
 
+  <!-- ===================== PORTFOLIO TEASER ===================== -->
+  <section class="s-cream">
+    <div class="container">
+      <div class="portfolio-hd">
+        <div class="reveal">
+          <div class="kicker"><span class="kicker-idx">05</span><span class="kicker-label">Néhány munkánkból</span><span class="kicker-rule"></span></div>
+          <h2 class="section-title">Fürdőszobák, amikre büszkék vagyunk</h2>
+        </div>
+        <a href="referenciak.html" class="btn btn-outline reveal d1">Összes referencia<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
 
-  <!-- =====================================================
-       CTA BANNER
-       ===================================================== -->
-  <section id="cta-banner">
-    <div class="cta-glow" aria-hidden="true"></div>
+      <!-- PHASE 2: replace placeholder cells with real project photos -->
+      <div class="portfolio-grid featured-first reveal">
+        <div class="port-item">
+          <img src="hero.jpg" alt="Fürdőszoba felújítás — Sopron, 2024" style="width:100%;height:100%;object-fit:cover;">
+          <div class="port-overlay"><div class="port-info"><h3>Zöld kőhatású fürdőszoba</h3><p>Komplett felújítás · Sopron · 2024</p></div></div>
+        </div>
+        <div class="port-item"><div class="port-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Fotó — 2. fázis</span></div><div class="port-overlay"><div class="port-info"><h3>Walk-in zuhany</h3><p>Komplett felújítás · Sopron</p></div></div></div>
+        <div class="port-item"><div class="port-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Fotó — 2. fázis</span></div><div class="port-overlay"><div class="port-info"><h3>Mikrocement falfelület</h3><p>Komplett felújítás · Sopron</p></div></div></div>
+        <div class="port-item"><div class="port-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Fotó — 2. fázis</span></div><div class="port-overlay"><div class="port-info"><h3>Nagyméretű burkolólap</h3><p>Komplett felújítás · Sopron</p></div></div></div>
+        <div class="port-item"><div class="port-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Fotó — 2. fázis</span></div><div class="port-overlay"><div class="port-info"><h3>Kádas családi fürdő</h3><p>Komplett felújítás · Sopron</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="s-white">
+    <div class="container">
+      <div class="sec-hd-center reveal">
+        <div class="eyebrow" style="justify-content:center;">Ügyfeleink</div>
+        <h2 class="section-title">Amit a megrendelőink mondanak</h2>
+        <p class="section-sub">Egy pozitív ajánlás a legjobb reklám — ezért minden projektnél a megrendelő elégedettsége az elsődleges célunk.</p>
+      </div>
+      <!-- PHASE 2: replace placeholder testimonials with real client reviews -->
+      <div class="tm-grid">
+        <div class="tm-card reveal">
+          <div class="tm-stars" aria-label="5 csillag">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg>
+          </div>
+          <p class="tm-quote">„Egyetlen csapat intézett mindent a bontástól a kulcsátadásig. Végig tudtuk, mi a következő lépés — semmi stressz, kifogástalan eredmény."</p>
+          <div class="tm-author"><span class="tm-avatar">K</span><span><span class="tm-name">Kovács Anita</span><span class="tm-meta">Sopron · Társasházi fürdő</span></span></div>
+        </div>
+        <div class="tm-card reveal d1">
+          <div class="tm-stars" aria-label="5 csillag">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg>
+          </div>
+          <p class="tm-quote">„A precizitás meglátszik minden fugán. Drágább volt, mint más ajánlat, de pontosan azt kaptuk, amit ígértek — és többet."</p>
+          <div class="tm-author"><span class="tm-avatar">T</span><span><span class="tm-name">Tóth Gábor</span><span class="tm-meta">Sopron · Családi ház</span></span></div>
+        </div>
+        <div class="tm-card reveal d2">
+          <div class="tm-stars" aria-label="5 csillag">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg>
+          </div>
+          <p class="tm-quote">„Az anyagválasztásnál végig segítettek, így olyan fürdőnk lett, amit magunktól nem mertünk volna megálmodni. Ajánlom mindenkinek."</p>
+          <div class="tm-author"><span class="tm-avatar">N</span><span><span class="tm-name">Nagy Eszter</span><span class="tm-meta">Fertőd · Panellakás</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STAT BAND ===================== -->
+  <section class="s-cream" style="padding-top:0;">
+    <div class="container">
+      <div class="stat-band reveal">
+        <div class="stat-cell"><div class="stat-num">2020</div><div class="stat-label">Alapítva</div></div>
+        <div class="stat-cell"><div class="stat-num"><span class="trust-num" data-count="2" data-suffix=" év">0 év</span></div><div class="stat-label">Munkagarancia</div></div>
+        <div class="stat-cell"><div class="stat-num">100%</div><div class="stat-label">Fürdőszobára szakosodva</div></div>
+        <div class="stat-cell"><div class="stat-num">1</div><div class="stat-label">Felelős kivitelező</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BAND ===================== -->
+  <!-- PHASE 2: this button connects to the AI quoting widget -->
+  <section id="cta-band">
+    <span class="cta-glow"></span>
     <div class="container cta-inner">
-      <div class="eyebrow" style="justify-content:center;">Készen áll?</div>
-      <h2 class="cta-title reveal">
-        Indítsa el fürdőszoba<br>
-        felújítását még <em>ma.</em>
-      </h2>
-      <p class="cta-sub reveal d1">
-        Ingyenes helyszíni felmérés és árajánlat.
-        Vegye fel velünk a kapcsolatot — 48 órán belül visszahívjuk.
-      </p>
-      <div class="cta-actions reveal d2">
-        <a href="ingyenes-felmeres.html" class="btn btn-primary">
-          Ingyenes helyszíni felmérés
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="tel:+36202546624" class="btn-outline-light">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.42 2 2 0 013.6 1.24h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9a16 16 0 006 6l.94-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0121.73 16.92z"/>
-          </svg>
-          +36 20 254 6624
-        </a>
+      <div class="eyebrow">Készen áll?</div>
+      <h2 class="cta-title">Kérje ingyenes helyszíni<br>felmérését még ma.</h2>
+      <p class="cta-sub">Töltse ki pár perc alatt a kérdőívünket, vagy hívjon közvetlenül — és hamarosan tudni fogja, mibe kerül álmai fürdőszobája.</p>
+      <div class="cta-actions">
+        <a href="ingyenes-felmeres.html" class="btn btn-primary">Ingyenes árajánlat kérése<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="tel:+36202546624" class="btn btn-ghost">+36 20 254 6624</a>
       </div>
     </div>
   </section>
 
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- ===================== FOOTER ===================== -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
-
         <div>
-          <a class="ft-logo" href="#hero" aria-label="NM Bau főoldal">
-            <img src="new%20logo.png" alt="NM Bau" style="height:56px;width:auto;display:block;filter:brightness(0) invert(1);">
+          <a href="index.html" class="ft-logo ft-brand" aria-label="NM Bau">
+            <span class="brand">
+              <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M6 44 6 20 24 6 42 20 42 44Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+                <rect x="16.5" y="26" width="7.5" height="18" stroke="currentColor" stroke-width="2.2"/>
+                <rect x="21.5" y="33" width="14" height="11" stroke="#8A857B" stroke-width="2.2"/>
+              </svg>
+              <span class="brand-wordmark"><span class="brand-name">NM BAU</span><span class="brand-tag">Sopron</span></span>
+            </span>
           </a>
-          <p class="ft-tagline">
-            Prémium kivitelezés, felújítás és belső tér kialakítás igényes ügyfelek számára.
-            Minőség és megbízhatóság — minden egyes munkában.
-          </p>
-          <div class="ft-social" aria-label="Közösségi média">
-            <!-- PHASE 2: add real social URLs below -->
-            <a href="#" class="ft-social-a" aria-label="Facebook" title="PHASE 2: add real Facebook URL">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-              </svg>
-            </a>
-            <a href="#" class="ft-social-a" aria-label="Instagram" title="PHASE 2: add real Instagram URL">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </a>
-            <a href="#" class="ft-social-a" aria-label="LinkedIn" title="PHASE 2: add real LinkedIn URL">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
-                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-              </svg>
-            </a>
+          <p class="ft-tagline">Komplett fürdőszoba-felújítás Sopronban, egyetlen felelős csapattal. Szeretünk építeni.</p>
+          <div class="ft-social">
+            <a class="ft-social-a" href="https://www.facebook.com/" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-2c0-.6.4-1 1-1z"/></svg></a>
+            <a class="ft-social-a" href="https://www.instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
           </div>
         </div>
-
-
         <div>
-          <div class="ft-col-title">Navigáció</div>
+          <div class="ft-col-title">Oldalak</div>
           <ul class="ft-links">
-            <li><a href="#hero">Főoldal</a></li>
-            <li><a href="rolunk.html">Rólunk</a></li>
-            <li><a href="folyamat.html">Folyamat</a></li>
+            <li><a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a></li>
             <li><a href="referenciak.html">Referenciák</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
             <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            <li><a href="ingyenes-felmeres.html">Ingyenes felmérés</a></li>
           </ul>
         </div>
-
         <div>
-          <div class="ft-col-title">Elérhetőség</div>
+          <div class="ft-col-title">Kapcsolat</div>
           <ul class="ft-links">
             <li><a href="tel:+36202546624">+36 20 254 6624</a></li>
-            <!-- PHASE 2: insert real email address -->
-            <li><a href="mailto:info@nmbau.hu">info@nmbau.hu</a></li>
-            <!-- PHASE 2: insert real office address -->
-            <li class="plain">Tómalom utca, Sopron 9400</li>
+            <li><a href="mailto:nmbau@nmbau.hu">nmbau@nmbau.hu</a></li>
+            <li class="plain">Sopron és környéke</li>
           </ul>
         </div>
-
       </div>
-
       <div class="footer-bottom">
-        <p class="ft-copy">© 2025 NM Bau. Minden jog fenntartva.</p>
+        <span class="ft-copy">© 2025 NM Bau. Minden jog fenntartva.</span>
         <div class="ft-legal">
-          <!-- PHASE 2: link real privacy policy and terms pages -->
-          <a href="#">Adatkezelési tájékoztató</a>
-          <a href="#">Általános feltételek</a>
+          <a href="#">Adatkezelés</a>
+          <a href="#">Impresszum</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Sticky quote bar -->
+  <div class="quote-bar" id="quote-bar">
+    <div class="quote-bar-text"><strong>Ingyenes felmérés</strong><span>Sopron · 2 év garancia</span></div>
+    <a href="ingyenes-felmeres.html" class="btn btn-primary">Árajánlat<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
-  <script>
-    /* --- Hide-on-scroll nav --- */
-    const nav = document.getElementById('nav');
-    let lastY = 0;
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y > 80) nav.classList.toggle('nav-hidden', y > lastY);
-      else nav.classList.remove('nav-hidden');
-      nav.classList.toggle('scrolled', y > 50);
-      lastY = y;
-    }, { passive: true });
-
-    /* --- Mobile hamburger --- */
-    const burger = document.getElementById('nav-burger');
-    const mobileNav = document.getElementById('nav-mobile');
-    let open = false;
-
-    function toggleMobile(force) {
-      open = force !== undefined ? force : !open;
-      mobileNav.classList.toggle('open', open);
-      burger.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-      const [a, b, c] = burger.querySelectorAll('span');
-      if (open) {
-        a.style.transform = 'rotate(45deg) translate(4.5px, 4.5px)';
-        b.style.opacity = '0';
-        c.style.transform = 'rotate(-45deg) translate(4.5px, -4.5px)';
-      } else {
-        a.style.transform = b.style.opacity = c.style.transform = '';
-        b.style.opacity = '';
-      }
-    }
-
-    burger.addEventListener('click', () => toggleMobile());
-    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMobile(false)));
-
-    /* --- Scroll reveal (IntersectionObserver + CSS transitions)
-           Framer Motion DOM is skipped; IntersectionObserver gives identical
-           fade-up stagger animations without CDN dependency risk. --- */
-    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in-view');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
-      reveals.forEach(el => io.observe(el));
-    } else {
-      reveals.forEach(el => el.classList.add('in-view'));
-    }
-
-    /* --- Counter animation for trust bar --- */
-    const trustNums = document.querySelectorAll('.trust-num[data-count]');
-    if ('IntersectionObserver' in window && trustNums.length) {
-      const cio = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (!e.isIntersecting) return;
-          cio.unobserve(e.target);
-          const el = e.target;
-          const target = parseFloat(el.dataset.count);
-          const suffix = el.dataset.suffix || '';
-          const prefix = el.dataset.prefix || '';
-          const isDecimal = String(target).includes('.');
-          const duration = 1400;
-          const start = performance.now();
-          function step(now) {
-            const p = Math.min((now - start) / duration, 1);
-            const ease = 1 - Math.pow(1 - p, 3);
-            const val = target * ease;
-            el.textContent = prefix + (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
-            if (p < 1) requestAnimationFrame(step);
-          }
-          requestAnimationFrame(step);
-        });
-      }, { threshold: 0.3 });
-      trustNums.forEach(el => cio.observe(el));
-    }
-
-    /* --- Hero entrance animation (fires on load, no scroll needed) --- */
-    const heroEls = [
-      '.hero-eyebrow', '.hero-h1', '.hero-p',
-      '.hero-actions', '.hero-right'
-    ].map(s => document.querySelector(s)).filter(Boolean);
-
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      heroEls.forEach((el, i) => {
-        el.style.cssText += `opacity:0;transform:translateY(22px);
-          transition:opacity .7s cubic-bezier(.16,1,.3,1) ${i * 0.11}s,
-                     transform .7s cubic-bezier(.16,1,.3,1) ${i * 0.11}s`;
-      });
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        heroEls.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
-      }));
-    }
-
-    /* --- prefers-reduced-motion: show everything instantly --- */
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
-        .forEach(el => el.classList.add('in-view'));
-    }
-
-    /* --- Vertical timeline --- */
-    (function () {
-      const timeline = document.getElementById('process-timeline');
-      if (!timeline) return;
-
-      const items  = Array.from(timeline.querySelectorAll('.pt-item'));
-      const fill   = document.getElementById('pt-fill');
-      const TOTAL  = items.length;
-
-      /* Update spine fill: grows to centre of active item */
-      function updateFill(activeIdx) {
-        if (!fill) return;
-        /* percentage: active node centre relative to full spine height */
-        const pct = ((activeIdx + 0.5) / TOTAL) * 100;
-        fill.style.height = pct + '%';
-      }
-
-      /* Open a specific item (close all others) */
-      function openItem(idx) {
-        items.forEach((item, i) => {
-          const btn  = item.querySelector('.pt-btn');
-          const body = item.querySelector('.pt-body');
-          const on   = (i === idx);
-          item.classList.toggle('active', on);
-          btn.setAttribute('aria-expanded', String(on));
-          body.classList.toggle('open', on);
-        });
-        updateFill(idx);
-      }
-
-      /* Wire up click handlers */
-      items.forEach((item, i) => {
-        item.querySelector('.pt-btn').addEventListener('click', () => {
-          /* if already active, toggle it closed and reset fill */
-          if (item.classList.contains('active')) {
-            item.classList.remove('active');
-            item.querySelector('.pt-btn').setAttribute('aria-expanded', 'false');
-            item.querySelector('.pt-body').classList.remove('open');
-            if (fill) fill.style.height = ((i / TOTAL) * 100) + '%';
-          } else {
-            openItem(i);
-          }
-        });
-      });
-
-      /* Scroll-into-view: draw spine + pop-in nodes */
-      if ('IntersectionObserver' in window) {
-        const tio = new IntersectionObserver(([entry]) => {
-          if (!entry.isIntersecting) return;
-          tio.disconnect();
-          timeline.classList.add('draw');
-          /* set initial fill for first item being open */
-          setTimeout(() => updateFill(0), 50);
-        }, { threshold: 0.1 });
-        tio.observe(timeline);
-      } else {
-        timeline.classList.add('draw');
-        updateFill(0);
-      }
-    })();
-  </script>
-
+  <script src="assets/site.js"></script>
 </body>
 </html>

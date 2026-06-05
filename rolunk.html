@@ -8,56 +8,53 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-  <!-- ===================== NAV ===================== -->
   <nav id="nav" aria-label="Főnavigáció">
     <div class="nav-inner">
-      <a class="nav-logo" href="index.html#hero" aria-label="NM Bau főoldal">
-        <img src="new%20logo.png" alt="NM Bau" style="height:42px;width:auto;display:block;">
+      <a href="index.html" class="nav-logo" aria-label="NM Bau – kezdőlap">
+        <span class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 44 6 20 24 6 42 20 42 44Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><rect x="16.5" y="26" width="7.5" height="18" stroke="currentColor" stroke-width="2.2"/><rect x="21.5" y="33" width="14" height="11" stroke="#B6B0A6" stroke-width="2.2"/></svg>
+          <span class="brand-wordmark"><span class="brand-name">NM BAU</span><span class="brand-tag">Sopron</span></span>
+        </span>
       </a>
-      <ul class="nav-links" role="list">
-        <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
-        <li><a href="rolunk.html" class="current">Rólunk</a></li>
-        <li><a href="folyamat.html">Folyamat</a></li>
+      <ul class="nav-links">
+        <li><a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a></li>
         <li><a href="referenciak.html">Referenciák</a></li>
+        <li><a href="rolunk.html" class="current">Rólunk</a></li>
         <li><a href="kapcsolat.html">Kapcsolat</a></li>
       </ul>
       <a href="ingyenes-felmeres.html" class="btn btn-primary nav-cta">Ingyenes felmérés</a>
-      <button class="nav-burger" id="nav-burger" aria-label="Menü" aria-expanded="false" aria-controls="nav-mobile">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-burger" id="nav-burger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  <div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Mobilnavigáció">
-    <a href="szolgaltatasok.html">Szolgáltatások</a>
-    <a href="rolunk.html">Rólunk</a>
-    <a href="folyamat.html">Folyamat</a>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a>
     <a href="referenciak.html">Referenciák</a>
+    <a href="rolunk.html">Rólunk</a>
     <a href="kapcsolat.html">Kapcsolat</a>
-    <a href="ingyenes-felmeres.html" class="btn btn-primary" style="margin-top:0.5rem;">Ingyenes felmérés kérése</a>
+    <a href="ingyenes-felmeres.html" style="color:var(--accent)">Ingyenes felmérés</a>
   </div>
 
   <main class="lead-page">
 
-    <!-- ===================== BREADCRUMB ===================== -->
     <div class="container">
       <nav class="breadcrumb" aria-label="Útvonal">
-        <a href="index.html#hero">Főoldal</a>
+        <a href="index.html">Főoldal</a>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         <span class="current">Rólunk</span>
       </nav>
     </div>
 
-    <!-- ===================== HERO ===================== -->
+    <!-- HERO -->
     <section class="lead-hero">
       <div class="lead-hero-bg" aria-hidden="true"></div>
       <div class="container lead-hero-inner reveal">
         <div class="eyebrow">Rólunk</div>
-        <h1 class="lead-h1">2020 óta építjük<br>Sopron <em>otthonait.</em></h1>
+        <h1 class="lead-h1">2020 óta a<br>fürdőszoba <em>megszállottjai.</em></h1>
         <p class="lead-sub">
           Kis, képzett csapat, amely a fürdőszoba-felújítást nem tömegmunkaként,
           hanem szakmaként éli meg. Minden szakma egy kézben, egy felelős kivitelezővel.
@@ -65,14 +62,13 @@
       </div>
     </section>
 
-    <!-- ===================== STORY ===================== -->
+    <!-- STORY -->
     <section class="s-cream">
       <div class="container">
         <div class="about-inner">
           <div class="about-left">
-            <div class="eyebrow">A történetünk</div>
-            <h2 class="section-title reveal-left">Precizitás,<br>amit megérez.</h2>
-
+            <div class="kicker"><span class="kicker-idx">01</span><span class="kicker-label">A történetünk</span><span class="kicker-rule"></span></div>
+            <h2 class="section-title reveal-left" style="margin-bottom:1.25rem;">Precizitás,<br>amit megérez.</h2>
             <p class="about-lead reveal-left d1">
               Vállalkozásunk <strong>2020 óta</strong> dolgozik Sopronban és környékén.
               Fő profilunk a fürdőszobák komplett, belsőépítészeti kivitelezése —
@@ -82,7 +78,7 @@
               Hiszünk abban, hogy a minőségi munka önmagát hirdeti: egy elégedett
               ügyfél ajánlása a legjobb reklám. Ezért minden projektnél a precizitásra,
               a tiszta munkavégzésre és a prémium anyagokra fektetjük a hangsúlyt.
-              A szakembereink folyamatosan képzik magukat, hogy a legmodernebb
+              Szakembereink folyamatosan képzik magukat, hogy a legmodernebb
               technológiákat és megoldásokat hozzuk el az Ön otthonába.
             </p>
 
@@ -112,18 +108,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                 <span>Csapatfotó — 2. fázis</span>
               </div>
-              <div class="about-est" aria-hidden="true">
-                <strong>2020</strong>
-                <span>Alapítva</span>
-              </div>
+              <div class="about-est" aria-hidden="true"><strong>2020</strong><span>Alapítva</span></div>
               <div class="about-credential">
-                <div class="about-cred-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                </div>
-                <div>
-                  <div class="about-cred-label">Folyamatos képzés</div>
-                  <div class="about-cred-val">Kőműves &amp; hidegburkoló továbbképzés</div>
-                </div>
+                <div class="about-cred-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div><div class="about-cred-label">Folyamatos képzés</div><div class="about-cred-val">Kőműves &amp; hidegburkoló továbbképzés</div></div>
               </div>
             </div>
           </div>
@@ -131,14 +119,14 @@
       </div>
     </section>
 
-    <!-- ===================== VALUES ===================== -->
-    <section class="s-white">
+    <!-- VALUES -->
+    <section class="s-white grain">
       <div class="container">
         <div class="sec-hd-center">
-          <div class="eyebrow">Miért mi?</div>
+          <div class="eyebrow" style="justify-content:center;">Miért mi?</div>
           <h2 class="section-title reveal">Nem csak felújítunk.<br>Garanciát vállalunk.</h2>
           <p class="section-sub reveal d1">
-            Az NM Bau minden fürdőszoba felújításba a megbízhatóságot, az átláthatóságot
+            Az NM Bau minden fürdőszoba-felújításba a megbízhatóságot, az átláthatóságot
             és a prémium minőséget viszi magával — kompromisszumok nélkül.
           </p>
         </div>
@@ -146,84 +134,61 @@
         <div class="why-features" style="grid-template-columns:1fr 1fr;gap:2rem 3rem;max-width:920px;margin:0 auto;">
           <div class="why-feat reveal d1">
             <div class="why-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
-            <div>
-              <div class="why-feat-title">Igazolt szakmai tapasztalat</div>
-              <p class="why-feat-desc">Több száz sikeresen befejezett fürdőszoba felújítás Sopronban és környékén — minden méretben és stílusban.</p>
-            </div>
+            <div><div class="why-feat-title">Igazolt szakmai tapasztalat</div><p class="why-feat-desc">Számos befejezett fürdőszoba-felújítás Sopronban és környékén — minden méretben és stílusban.</p></div>
           </div>
           <div class="why-feat reveal d2">
             <div class="why-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div>
-              <div class="why-feat-title">Átlátható árazás, nulla meglepetés</div>
-              <p class="why-feat-desc">Részletes árajánlat, rögzített mérföldkövek, folyamatos tájékoztatás. Ön mindig tudja, hol tart a projekt és mennyibe kerül.</p>
-            </div>
+            <div><div class="why-feat-title">Átlátható árazás, nulla meglepetés</div><p class="why-feat-desc">Részletes árajánlat, rögzített mérföldkövek, folyamatos tájékoztatás. Mindig tudja, hol tart a projekt és mennyibe kerül.</p></div>
           </div>
           <div class="why-feat reveal d3">
             <div class="why-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div>
-              <div class="why-feat-title">Határidő-tartás</div>
-              <p class="why-feat-desc">Reális ütemtervet készítünk és tartjuk be. A pontos, átgondolt munkaszervezés nálunk alapelvárás.</p>
-            </div>
+            <div><div class="why-feat-title">Határidő-tartás</div><p class="why-feat-desc">Reális ütemtervet készítünk és tartjuk be. A pontos, átgondolt munkaszervezés nálunk alapelvárás.</p></div>
           </div>
           <div class="why-feat reveal d4">
             <div class="why-feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-            <div>
-              <div class="why-feat-title">Prémium anyagok, 2 éves garancia</div>
-              <p class="why-feat-desc">Kizárólag bevizsgált, minősített anyagokat alkalmazunk — csempétől szaniterig. Minden befejezett felújításra 2 éves garanciát vállalunk.</p>
-            </div>
+            <div><div class="why-feat-title">Prémium anyagok, 2 év garancia</div><p class="why-feat-desc">Kizárólag bevizsgált, minősített anyagokat alkalmazunk — csempétől szaniterig. Minden befejezett felújításra 2 év garanciát vállalunk.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CLOSING CTA ===================== -->
-    <section id="pkg-cta">
-      <div class="pkg-cta-glow" aria-hidden="true"></div>
-      <div class="container pkg-cta-inner">
+    <!-- CTA -->
+    <section id="cta-band">
+      <span class="cta-glow"></span>
+      <div class="container cta-inner">
         <div class="eyebrow">Ismerjük meg egymást</div>
-        <h2 class="pkg-cta-title reveal">Beszéljük át<br>a <em>fürdőszobáját.</em></h2>
-        <p class="pkg-cta-sub reveal d1">
-          Ingyenes helyszíni felmérés és pontos árajánlat — 48 órán belül visszahívjuk.
-        </p>
-        <div class="pkg-cta-actions reveal d2">
-          <a href="ingyenes-felmeres.html" class="btn btn-primary">
-            Ingyenes helyszíni felmérés
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="tel:+36202546624" class="btn-outline-light">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.42 2 2 0 013.6 1.24h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9a16 16 0 006 6l.94-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0121.73 16.92z"/></svg>
-            +36 20 254 6624
-          </a>
+        <h2 class="cta-title">Beszéljük át<br>a <em>fürdőszobáját.</em></h2>
+        <p class="cta-sub">Ingyenes helyszíni felmérés és pontos árajánlat — 48 órán belül visszahívjuk.</p>
+        <div class="cta-actions">
+          <a href="ingyenes-felmeres.html" class="btn btn-primary">Ingyenes felmérés kérése<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="tel:+36202546624" class="btn btn-ghost">+36 20 254 6624</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a class="ft-logo" href="index.html#hero" aria-label="NM Bau főoldal">
-            <img src="new%20logo.png" alt="NM Bau" style="height:56px;width:auto;display:block;filter:brightness(0) invert(1);">
+          <a href="index.html" class="ft-logo ft-brand" aria-label="NM Bau">
+            <span class="brand"><svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 44 6 20 24 6 42 20 42 44Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><rect x="16.5" y="26" width="7.5" height="18" stroke="currentColor" stroke-width="2.2"/><rect x="21.5" y="33" width="14" height="11" stroke="#8A857B" stroke-width="2.2"/></svg><span class="brand-wordmark"><span class="brand-name">NM BAU</span><span class="brand-tag">Sopron</span></span></span>
           </a>
-          <p class="ft-tagline">
-            Komplett fürdőszoba felújítás Sopronban és környékén — prémium minőség,
-            egy felelős kivitelező, 2 év garancia. Szeretünk építeni.
-          </p>
+          <p class="ft-tagline">Komplett fürdőszoba-felújítás Sopronban, egyetlen felelős csapattal. Szeretünk építeni.</p>
         </div>
         <div>
           <div class="ft-col-title">Oldalak</div>
           <ul class="ft-links">
-            <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
-            <li><a href="rolunk.html">Rólunk</a></li>
-            <li><a href="folyamat.html">Folyamat</a></li>
+            <li><a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a></li>
             <li><a href="referenciak.html">Referenciák</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            <li><a href="ingyenes-felmeres.html">Ingyenes felmérés</a></li>
           </ul>
         </div>
         <div>
-          <div class="ft-col-title">Elérhetőség</div>
+          <div class="ft-col-title">Kapcsolat</div>
           <ul class="ft-links">
             <li><a href="tel:+36202546624">+36 20 254 6624</a></li>
             <li><a href="mailto:nmbau@nmbau.hu">nmbau@nmbau.hu</a></li>
@@ -232,14 +197,16 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="ft-copy">© 2025 NM Bau. Minden jog fenntartva.</p>
-        <div class="ft-legal">
-          <a href="#">Adatkezelési tájékoztató</a>
-          <a href="#">Általános feltételek</a>
-        </div>
+        <span class="ft-copy">© 2025 NM Bau. Minden jog fenntartva.</span>
+        <div class="ft-legal"><a href="#">Adatkezelés</a><a href="#">Impresszum</a></div>
       </div>
     </div>
   </footer>
+
+  <div class="quote-bar" id="quote-bar">
+    <div class="quote-bar-text"><strong>Ingyenes felmérés</strong><span>Sopron · 2 év garancia</span></div>
+    <a href="ingyenes-felmeres.html" class="btn btn-primary">Árajánlat<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
 
   <script src="assets/site.js"></script>
 </body>

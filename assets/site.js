@@ -240,4 +240,48 @@
     }
   })();
 
+  /* ---------- Before / After slider(s) ---------- */
+  document.querySelectorAll('.ba-slider').forEach(function (slider) {
+    var dragging = false;
+    var setPos = function (clientX) {
+      var rect = slider.getBoundingClientRect();
+      var pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      slider.style.setProperty('--pos', pct + '%');
+    };
+    var start = function (e) { dragging = true; slider.classList.add('dragging'); setPos((e.touches ? e.touches[0] : e).clientX); };
+    var move = function (e) { if (!dragging) return; setPos((e.touches ? e.touches[0] : e).clientX); };
+    var end = function () { dragging = false; slider.classList.remove('dragging'); };
+    slider.addEventListener('mousedown', start);
+    slider.addEventListener('touchstart', start, { passive: true });
+    window.addEventListener('mousemove', move);
+    window.addEventListener('touchmove', move, { passive: true });
+    window.addEventListener('mouseup', end);
+    window.addEventListener('touchend', end);
+    // keyboard support on grip
+    var grip = slider.querySelector('.ba-grip');
+    if (grip) {
+      grip.setAttribute('tabindex', '0');
+      grip.setAttribute('role', 'slider');
+      grip.setAttribute('aria-label', 'Előtte / utána csúszka');
+      grip.addEventListener('keydown', function (e) {
+        var cur = parseFloat(getComputedStyle(slider).getPropertyValue('--pos')) || 50;
+        if (e.key === 'ArrowLeft') { slider.style.setProperty('--pos', Math.max(2, cur - 4) + '%'); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { slider.style.setProperty('--pos', Math.min(98, cur + 4) + '%'); e.preventDefault(); }
+      });
+    }
+  });
+
+  /* ---------- Sticky quote bar (appears after hero) ---------- */
+  var quoteBar = document.getElementById('quote-bar');
+  if (quoteBar) {
+    var trigger = document.getElementById('hero') || document.querySelector('.lead-hero, .pkg-page');
+    var threshold = function () { return trigger ? trigger.offsetTop + trigger.offsetHeight - 200 : 600; };
+    var toggleBar = function () {
+      quoteBar.classList.toggle('show', window.scrollY > threshold());
+    };
+    window.addEventListener('scroll', toggleBar, { passive: true });
+    toggleBar();
+  }
+
 })();

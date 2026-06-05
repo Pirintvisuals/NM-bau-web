@@ -23,12 +23,11 @@ fs.mkdirSync(path.join('dist', 'assets'), { recursive: true });
 // HTML pages
 const pages = [
   'index.html',
+  'furdoszoba-felujitas.html',
+  'referenciak.html',
+  'rolunk.html',
   'kapcsolat.html',
   'ingyenes-felmeres.html',
-  'szolgaltatasok.html',
-  'rolunk.html',
-  'folyamat.html',
-  'referenciak.html',
 ];
 for (const file of pages) {
   fs.copyFileSync(file, path.join('dist', file));
