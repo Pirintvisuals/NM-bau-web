@@ -12,6 +12,11 @@ const pages = [
   'csomag-premium.html',
   'kapcsolat.html',
   'ingyenes-felmeres.html',
+  'szolgaltatasok.html',
+  'csomagok.html',
+  'rolunk.html',
+  'folyamat.html',
+  'referenciak.html',
 ];
 for (const file of pages) {
   fs.copyFileSync(file, path.join('dist', file));
