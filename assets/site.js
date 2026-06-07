@@ -325,16 +325,107 @@
     }, 3000);
   })();
 
-  /* ---------- Sticky quote bar (appears after hero) ---------- */
-  var quoteBar = document.getElementById('quote-bar');
-  if (quoteBar) {
-    var trigger = document.getElementById('hero') || document.querySelector('.lead-hero, .pkg-page');
-    var threshold = function () { return trigger ? trigger.offsetTop + trigger.offsetHeight - 200 : 600; };
-    var toggleBar = function () {
-      quoteBar.classList.toggle('show', window.scrollY > threshold());
+  /* ---------- Sticky quote bar (retired) ----------
+     The floating chat launcher now owns the bottom-right corner and the
+     "always-available CTA" role, so the old quote-bar pill is hidden in CSS
+     to avoid two overlapping floating elements. JS left inert on purpose. */
+
+})();
+
+/* ==========================================================
+   NM BAU — Árajánló asszisztens (embedded chat widget)
+   Loads the external quoting widget, repoints the primary
+   "árajánlat" CTAs to open the chat, and proactively nudges
+   it open at the first high-intent moment. The full on-site
+   survey form stays reachable via the footer, the mobile menu
+   and the hero's secondary link.
+   ========================================================== */
+(function () {
+  'use strict';
+
+  var WIDGET_ORIGIN = 'https://nm-bau-quoting-agent.vercel.app';
+  var FORM_PAGE = 'ingyenes-felmeres.html';
+  var onFormPage = location.pathname.indexOf(FORM_PAGE) !== -1;
+
+  // widget.js reads this global when it boots.
+  window.NMBAU_CONFIG = {
+    apiUrl: WIDGET_ORIGIN + '/api/faq-agent',
+    assetsUrl: WIDGET_ORIGIN
+  };
+
+  // Inject the widget (async). The floating launcher + intro bubble then
+  // appear on every page that loads this file.
+  var ws = document.createElement('script');
+  ws.src = WIDGET_ORIGIN + '/widget.js';
+  ws.async = true;
+  document.body.appendChild(ws);
+
+  // Drive the widget's launcher button (it exposes no public JS API). If the
+  // widget hasn't mounted yet, poll briefly; if it never appears (offline or
+  // blocked), fall back to the form page so a CTA is never dead.
+  function openChat(fallbackHref) {
+    var launcher = document.querySelector('.faq-chat-launcher');
+    if (launcher) {
+      if (!launcher.classList.contains('active')) launcher.click();
+      return;
+    }
+    var tries = 0;
+    var iv = setInterval(function () {
+      var l = document.querySelector('.faq-chat-launcher');
+      if (l) {
+        clearInterval(iv);
+        if (!l.classList.contains('active')) l.click();
+      } else if (++tries > 33) { // ~5s
+        clearInterval(iv);
+        if (fallbackHref) window.location.href = fallbackHref;
+      }
+    }, 150);
+  }
+  window.nmbauOpenChat = openChat; // reusable hook for any inline trigger
+
+  // Repoint prominent CTAs (hero, CTA band, comparison, nav button, and
+  // anything tagged [data-open-chat]) to open the assistant. Footer, mobile
+  // menu and plain text links keep going to the full form page.
+  var CHAT_CTA = 'a.nav-cta, a.btn-primary[href$="' + FORM_PAGE + '"], [data-open-chat]';
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target && e.target.closest ? e.target.closest(CHAT_CTA) : null;
+    if (!a) return;
+    e.preventDefault();
+    openChat(a.getAttribute('href') || FORM_PAGE);
+  });
+
+  // ---- Proactive auto-open (once per session; never on the form page) ----
+  if (!onFormPage) {
+    var KEY = 'nmbau_chat_nudged';
+    var autoDone = false;
+    try { autoDone = sessionStorage.getItem(KEY) === '1'; } catch (err) {}
+
+    var autoOpen = function () {
+      if (autoDone) return;
+      var l = document.querySelector('.faq-chat-launcher');
+      if (l && l.classList.contains('active')) { autoDone = true; return; }
+      autoDone = true;
+      try { sessionStorage.setItem(KEY, '1'); } catch (err) {}
+      openChat();
     };
-    window.addEventListener('scroll', toggleBar, { passive: true });
-    toggleBar();
+
+    // A) visitor scrolls into a high-intent conversion section
+    var intentTarget = document.querySelector('#cta-band, #compare');
+    if (intentTarget && 'IntersectionObserver' in window) {
+      var aio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && !autoDone) setTimeout(autoOpen, 700);
+        });
+      }, { threshold: 0.4 });
+      aio.observe(intentTarget);
+    }
+
+    // B) desktop exit-intent (cursor leaves through the top of the viewport)
+    document.addEventListener('mouseout', function (e) {
+      if (autoDone) return;
+      if (!e.relatedTarget && e.clientY <= 0) autoOpen();
+    });
   }
 
 })();

@@ -1312,6 +1312,9 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
   transition: transform 0.42s cubic-bezier(0.16,1,0.3,1), opacity 0.42s ease;
 }
 .quote-bar.show { transform: none; opacity: 1; }
+/* Retired: the chat-widget launcher now owns the bottom-right CTA role.
+   Delete this line to bring the sticky quote pill back. */
+.quote-bar { display: none !important; }
 /* desktop: floating pill bottom-right */
 .quote-bar {
   right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem);
@@ -1430,7 +1433,19 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .rotate-word .rw-item.rw-out { opacity: 0; transform: translateY(-0.25em); position: absolute; left: 0; top: 0; }
 @media (prefers-reduced-motion: reduce) { .rotate-word .rw-item { transition: none; } }
 
-.hero-chips { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.5rem; }
+/* Árajánló asszisztens — hero callout pointing at the chat widget */
+.hero-assist { display: flex; align-items: flex-start; gap: 0.6rem; margin: 1.5rem 0 0; max-width: 480px; font-size: 0.9rem; line-height: 1.55; color: var(--text-2); }
+.hero-assist-dot { width: 9px; height: 9px; margin-top: 0.42rem; border-radius: 50%; background: #2ecc71; flex-shrink: 0; box-shadow: 0 0 0 0 rgba(46,204,113,0.5); animation: assistPulse 2.4s ease-out infinite; }
+@keyframes assistPulse { 0% { box-shadow: 0 0 0 0 rgba(46,204,113,0.45); } 70% { box-shadow: 0 0 0 8px rgba(46,204,113,0); } 100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); } }
+.hero-assist strong { color: var(--text); font-weight: 600; }
+.hero-assist-link { background: none; border: none; padding: 0; margin: 0; font: inherit; color: var(--accent); font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.hero-assist-link:hover { color: var(--accent-h); }
+.hero-assist a { color: var(--text-3); text-decoration: underline; text-underline-offset: 2px; }
+.hero-assist a:hover { color: var(--text-2); }
+#hero .hero-copy > .hero-assist { animation-delay: 0.60s; }
+@media (prefers-reduced-motion: reduce) { .hero-assist-dot { animation: none; } }
+
+.hero-chips { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 1.25rem; }
 .hero-chip { display: inline-flex; align-items: center; gap: 0.45rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--pill); padding: 0.5rem 0.95rem; font-size: 0.82rem; font-weight: 500; color: var(--text); }
 .hero-chip svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; }
 
