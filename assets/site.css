@@ -1311,8 +1311,8 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 }
 @media (max-width: 920px) {
   .hero-inner { grid-template-columns: 1fr; min-height: 0; }
-  .hero-copy { padding: clamp(2.5rem,7vw,3.5rem) var(--pad-x); }
-  .hero-media { min-height: 58vh; }
+  .hero-copy { padding: clamp(1.75rem,5vw,3rem) var(--pad-x) clamp(1.5rem,4vw,2.25rem); }
+  .hero-media { min-height: 0; }
   .hero-credential { left: var(--pad-x); right: var(--pad-x); max-width: none; bottom: 1.25rem; }
 }
 
@@ -1622,11 +1622,17 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .hero-media::after { background: linear-gradient(115deg, rgba(28,25,23,0.12) 0%, transparent 32%), linear-gradient(0deg, rgba(28,25,23,0.42) 0%, transparent 26%); }
 .hero-credential { left: 1.5rem; bottom: 1.5rem; }
 @media (max-width: 920px) { .hero-credential { left: var(--pad-x); right: var(--pad-x); bottom: 1.25rem; } }
-/* Re-assert the single-column hero on mobile — must come AFTER the override
-   above, otherwise its 2-column grid leaks down to phones (equal specificity,
-   later rule wins) and squishes the headline next to the photo. */
+/* Mobile hero: stack into one column and fit the WHOLE hero in a single
+   viewport. The copy keeps its natural height; the photo flex-shrinks to fill
+   only the leftover space, so text + image are visible without scrolling.
+   Must come AFTER the desktop override above (equal specificity, later wins). */
 @media (max-width: 920px) {
-  .hero-inner { grid-template-columns: 1fr; min-height: 0; }
+  .hero-inner {
+    display: flex; flex-direction: column;
+    min-height: calc(100svh - var(--nav-h));
+  }
+  .hero-copy { flex: 0 0 auto; }
+  .hero-media { flex: 1 1 auto; min-height: 160px; }
 }
 
 /* Hero entrance — eases in on load (independent of scroll-reveal) */
