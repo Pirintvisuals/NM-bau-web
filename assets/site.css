@@ -1615,7 +1615,13 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
    HERO FIXES + SECTION COHESION  (overrides — keep at end)
    ========================================================== */
 /* Hero fits the viewport instead of overflowing / looking huge */
-.hero-inner { grid-template-columns: 1.05fr 0.95fr; min-height: clamp(560px, calc(100svh - var(--nav-h)), 800px); }
+.hero-inner { grid-template-columns: 1.05fr 0.95fr; min-height: clamp(540px, calc(100svh - var(--nav-h)), 760px); max-height: calc(100svh - var(--nav-h)); }
+/* Trim the copy's vertical rhythm so it never out-grows the viewport (which
+   would stretch the photo column past the fold and clip the CTAs). */
+.hero-copy { padding-top: clamp(1.75rem, 4vw, 3rem); padding-bottom: clamp(1.75rem, 4vw, 3rem); }
+.hero-title { font-size: clamp(2.4rem, 4.8vw, 4.2rem); margin-bottom: 1.15rem; }
+.hero-sub { margin-bottom: 1.75rem; }
+.hero-actions { margin-bottom: 0; }
 .hero-media img { object-position: center 32%; animation-duration: 26s; }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.045); } }
 /* darker, readable overlay so the photo tag + credential pop */

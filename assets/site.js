@@ -395,37 +395,25 @@
     openChat(a.getAttribute('href') || FORM_PAGE);
   });
 
-  // ---- Proactive auto-open (once per session; never on the form page) ----
+  // ---- Proactive auto-open: open the assistant immediately on load.
+  //      Gated once per session so it doesn't re-pop on every internal page
+  //      navigation, and skipped on the form page (already the full survey). ----
   if (!onFormPage) {
     var KEY = 'nmbau_chat_nudged';
     var autoDone = false;
     try { autoDone = sessionStorage.getItem(KEY) === '1'; } catch (err) {}
 
-    var autoOpen = function () {
-      if (autoDone) return;
-      var l = document.querySelector('.faq-chat-launcher');
-      if (l && l.classList.contains('active')) { autoDone = true; return; }
-      autoDone = true;
-      try { sessionStorage.setItem(KEY, '1'); } catch (err) {}
-      openChat();
-    };
-
-    // A) visitor scrolls into a high-intent conversion section
-    var intentTarget = document.querySelector('#cta-band, #compare');
-    if (intentTarget && 'IntersectionObserver' in window) {
-      var aio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting && !autoDone) setTimeout(autoOpen, 700);
-        });
-      }, { threshold: 0.4 });
-      aio.observe(intentTarget);
+    if (!autoDone) {
+      var launcherNow = document.querySelector('.faq-chat-launcher');
+      if (launcherNow && launcherNow.classList.contains('active')) {
+        autoDone = true; // already open — nothing to do
+      } else {
+        autoDone = true;
+        try { sessionStorage.setItem(KEY, '1'); } catch (err) {}
+        // openChat() polls for the launcher until the widget mounts, then opens it.
+        openChat();
+      }
     }
-
-    // B) desktop exit-intent (cursor leaves through the top of the viewport)
-    document.addEventListener('mouseout', function (e) {
-      if (autoDone) return;
-      if (!e.relatedTarget && e.clientY <= 0) autoOpen();
-    });
   }
 
 })();
