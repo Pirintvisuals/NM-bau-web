@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="NM Bau">
+  <rect width="48" height="48" rx="10" fill="#1C1917"/>
+  <path d="M9 41V20.5L24 8.5l15 12V41Z" fill="none" stroke="#E0A82E" stroke-width="3.2" stroke-linejoin="round"/>
+  <rect x="20" y="28" width="8" height="13" fill="#E0A82E"/>
+</svg>

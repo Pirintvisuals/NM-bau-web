@@ -1622,6 +1622,12 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .hero-media::after { background: linear-gradient(115deg, rgba(28,25,23,0.12) 0%, transparent 32%), linear-gradient(0deg, rgba(28,25,23,0.42) 0%, transparent 26%); }
 .hero-credential { left: 1.5rem; bottom: 1.5rem; }
 @media (max-width: 920px) { .hero-credential { left: var(--pad-x); right: var(--pad-x); bottom: 1.25rem; } }
+/* Re-assert the single-column hero on mobile — must come AFTER the override
+   above, otherwise its 2-column grid leaks down to phones (equal specificity,
+   later rule wins) and squishes the headline next to the photo. */
+@media (max-width: 920px) {
+  .hero-inner { grid-template-columns: 1fr; min-height: 0; }
+}
 
 /* Hero entrance — eases in on load (independent of scroll-reveal) */
 @keyframes heroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
@@ -1647,3 +1653,24 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 /* Consistent centered section intros (cohesion) */
 .sec-hd-center .kicker { justify-content: center; margin-bottom: 1.25rem; }
 .sec-hd-center .kicker .kicker-label { white-space: normal; }
+
+/* ==========================================================
+   SERVICE-AREA MAP (contact page)
+   ========================================================== */
+.map-section { background: var(--bg-cream); }
+.map-head { max-width: 56ch; margin-bottom: clamp(1.75rem, 4vw, 2.75rem); }
+.map-title { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 0.75rem; }
+.map-sub { color: var(--text-2); font-size: 1.0625rem; line-height: 1.7; }
+.map-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 6.5;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 56px rgba(28,25,23,0.09);
+  background: var(--bg-card);
+}
+.map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; filter: grayscale(0.15); }
+@media (max-width: 760px) { .map-frame { aspect-ratio: 4 / 3; border-radius: 14px; } }
+@media (max-width: 460px) { .map-frame { aspect-ratio: 3 / 4; } }
