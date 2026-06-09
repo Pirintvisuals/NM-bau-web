@@ -1659,7 +1659,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 }
 
 /* Rotating word — single element, clean fade swap (fixes the overlap/ghost bug) */
-.rotate-word { display: inline-block; position: static; min-height: 0; color: var(--accent); font-style: italic;
+.rotate-word { display: inline-block; position: static; min-height: 0; white-space: nowrap; color: var(--accent); font-style: italic;
   transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
 
 /* Consistent centered section intros (cohesion) */
