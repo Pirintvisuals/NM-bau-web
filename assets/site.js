@@ -32,12 +32,16 @@
       mobileNav.classList.toggle('open', open);
       burger.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
     };
-    burger.addEventListener('click', function () { toggleMobile(); });
+    burger.addEventListener('click', function (e) { e.stopPropagation(); toggleMobile(); });
+    mobileNav.addEventListener('click', function (e) { e.stopPropagation(); });
     mobileNav.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () { toggleMobile(false); });
     });
+    // Close the dropdown on outside tap, scroll, or Escape.
+    document.addEventListener('click', function () { if (open) toggleMobile(false); });
+    window.addEventListener('scroll', function () { if (open) toggleMobile(false); }, { passive: true });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) toggleMobile(false); });
   }
 
   /* ---------- Scroll reveal ---------- */
