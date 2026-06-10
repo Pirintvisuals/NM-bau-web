@@ -30,17 +30,9 @@
     var toggleMobile = function (force) {
       open = force !== undefined ? force : !open;
       mobileNav.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open);
       document.body.style.overflow = open ? 'hidden' : '';
-      var spans = burger.querySelectorAll('span');
-      if (open) {
-        spans[0].style.transform = 'rotate(45deg) translate(4.5px, 4.5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(4.5px, -4.5px)';
-      } else {
-        spans[0].style.transform = spans[2].style.transform = '';
-        spans[1].style.opacity = '';
-      }
     };
     burger.addEventListener('click', function () { toggleMobile(); });
     mobileNav.querySelectorAll('a').forEach(function (a) {
@@ -397,8 +389,11 @@
 
   // ---- Proactive auto-open: open the assistant immediately on load.
   //      Gated once per session so it doesn't re-pop on every internal page
-  //      navigation, and skipped on the form page (already the full survey). ----
-  if (!onFormPage) {
+  //      navigation, skipped on the form page (already the full survey), and
+  //      skipped on phones — the takeover panel is intrusive on a small screen,
+  //      so there the assistant only opens when the visitor taps a CTA. ----
+  var isPhone = window.matchMedia('(max-width: 768px)').matches;
+  if (!onFormPage && !isPhone) {
     var KEY = 'nmbau_chat_nudged';
     var autoDone = false;
     try { autoDone = sessionStorage.getItem(KEY) === '1'; } catch (err) {}
