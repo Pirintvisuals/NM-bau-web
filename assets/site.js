@@ -392,12 +392,14 @@
   });
 
   // ---- Proactive auto-open: open the assistant immediately on load.
-  //      Gated once per session so it doesn't re-pop on every internal page
-  //      navigation, skipped on the form page (already the full survey), and
-  //      skipped on phones — the takeover panel is intrusive on a small screen,
-  //      so there the assistant only opens when the visitor taps a CTA. ----
+  //      Only on the home page — internal pages never auto-pop. Still gated
+  //      once per session, skipped on the form page (already the full survey),
+  //      and skipped on phones — the takeover panel is intrusive on a small
+  //      screen, so there the assistant only opens when the visitor taps a CTA. ----
+  var path = location.pathname.replace(/\/+$/, '');
+  var onHomePage = path === '' || /\/index\.html$/.test(path);
   var isPhone = window.matchMedia('(max-width: 768px)').matches;
-  if (!onFormPage && !isPhone) {
+  if (onHomePage && !onFormPage && !isPhone) {
     var KEY = 'nmbau_chat_nudged';
     var autoDone = false;
     try { autoDone = sessionStorage.getItem(KEY) === '1'; } catch (err) {}
