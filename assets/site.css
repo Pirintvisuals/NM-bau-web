@@ -803,13 +803,20 @@ section { padding: var(--section-py) 0; }
   max-width: 600px;
 }
 
-/* Subpage hero banner — wide & short on purpose, so a subpage reads
-   instantly as a subpage and never gets mistaken for the tall split
-   hero on the home page. Shared by every subpage for consistency. */
+/* Subpage hero — compact split: a little text with a small image
+   beside it. Deliberately smaller than the home page's tall, full-bleed
+   split hero, so a subpage always reads as a subpage. Shared by every
+   subpage for consistency. */
+.lead-hero-inner.lead-hero-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+.lead-hero-copy { min-width: 0; }
 .lead-hero-media {
   position: relative;
-  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
-  aspect-ratio: 24 / 7;
+  aspect-ratio: 4 / 3;
   background: var(--bg-cream);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -820,7 +827,7 @@ section { padding: var(--section-py) 0; }
   justify-content: center;
   gap: 0.6rem;
   color: var(--text-3);
-  box-shadow: 0 18px 55px rgba(28,25,23,0.10);
+  box-shadow: 0 18px 50px rgba(28,25,23,0.10);
 }
 .lead-hero-media svg { width: 30px; height: 30px; opacity: 0.32; }
 .lead-hero-media .lhm-label {
@@ -837,7 +844,10 @@ section { padding: var(--section-py) 0; }
   background: linear-gradient(105deg, rgba(28,25,23,0.22) 0%, transparent 45%);
   pointer-events: none;
 }
-@media (max-width: 720px) { .lead-hero-media { aspect-ratio: 16 / 9; } }
+@media (max-width: 760px) {
+  .lead-hero-inner.lead-hero-split { grid-template-columns: 1fr; gap: 1.5rem; }
+  .lead-hero-media { aspect-ratio: 16 / 10; max-width: 460px; }
+}
 
 #lead-body { background: var(--bg-cream); }
 .lead-grid {
@@ -1240,10 +1250,11 @@ section { padding: var(--section-py) 0; }
 .grain > * { position: relative; z-index: 1; }
 .s-dark.grain::after { opacity: 0.06; }
 
-/* Hero upgrade — bigger, more editorial (applies to .lead-hero pages) */
-.lead-hero { padding: clamp(2.75rem, 5vw, 5rem) 0 clamp(2.75rem, 5vw, 5rem); }
-.lead-hero-inner { max-width: 940px; }
-.lead-h1 { font-size: clamp(2.75rem, 8vw, 6rem); line-height: 0.96; letter-spacing: -0.035em; }
+/* Subpage hero sizing — compact split (text + small image beside it),
+   noticeably smaller than the home page's tall full-bleed hero. */
+.lead-hero { padding: clamp(2rem, 3.5vw, 3.25rem) 0 clamp(2.25rem, 4vw, 3.5rem); }
+.lead-hero-inner { max-width: 1080px; }
+.lead-h1 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.02; letter-spacing: -0.03em; }
 
 /* Kicker row (index • label • rule) */
 .kicker { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
