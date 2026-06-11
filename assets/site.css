@@ -803,6 +803,42 @@ section { padding: var(--section-py) 0; }
   max-width: 600px;
 }
 
+/* Subpage hero banner — wide & short on purpose, so a subpage reads
+   instantly as a subpage and never gets mistaken for the tall split
+   hero on the home page. Shared by every subpage for consistency. */
+.lead-hero-media {
+  position: relative;
+  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  aspect-ratio: 24 / 7;
+  background: var(--bg-cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: var(--text-3);
+  box-shadow: 0 18px 55px rgba(28,25,23,0.10);
+}
+.lead-hero-media svg { width: 30px; height: 30px; opacity: 0.32; }
+.lead-hero-media .lhm-label {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.lead-hero-media .lhm-tag {
+  position: absolute; top: 1rem; left: 1rem; z-index: 2;
+  background: var(--accent); color: #FAFAF7;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.4rem 0.8rem; border-radius: 50px;
+}
+.lead-hero-media.has-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(28,25,23,0.22) 0%, transparent 45%);
+  pointer-events: none;
+}
+@media (max-width: 720px) { .lead-hero-media { aspect-ratio: 16 / 9; } }
+
 #lead-body { background: var(--bg-cream); }
 .lead-grid {
   display: grid;
