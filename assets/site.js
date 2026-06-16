@@ -379,10 +379,10 @@
   }
   window.nmbauOpenChat = openChat; // reusable hook for any inline trigger
 
-  // Repoint prominent CTAs (hero, CTA band, comparison, nav button, and
-  // anything tagged [data-open-chat]) to open the assistant. Footer, mobile
-  // menu and plain text links keep going to the full form page.
-  var CHAT_CTA = 'a.nav-cta, a.btn-primary[href$="' + FORM_PAGE + '"], [data-open-chat]';
+  // Only the nav-bar CTA ("Azonnali felmeres") and anything explicitly tagged
+  // [data-open-chat] open the assistant. Every other CTA ("Ingyenes ajanlat")
+  // is a plain link to the full form page.
+  var CHAT_CTA = 'a.nav-cta, [data-open-chat]';
   document.addEventListener('click', function (e) {
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     var a = e.target && e.target.closest ? e.target.closest(CHAT_CTA) : null;

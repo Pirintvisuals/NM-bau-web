@@ -32,6 +32,7 @@
   --pill:          50px;
   --font-serif:    'Playfair Display', Georgia, serif;
   --font-sans:     'DM Sans', system-ui, sans-serif;
+  --font-brand:    'Montserrat', system-ui, sans-serif;
 }
 
 /* ==========================================================
@@ -1330,7 +1331,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .brand-mark { width: 46px; height: 46px; flex-shrink: 0; display: block; }
 .brand-wordmark { display: flex; flex-direction: column; line-height: 1; }
 .brand-name {
-  font-family: var(--font-serif); font-weight: 700; font-size: 1.5rem;
+  font-family: var(--font-brand); font-weight: 700; font-size: 1.5rem;
   letter-spacing: 0.02em; color: var(--text); line-height: 0.95;
 }
 .brand-tag {
