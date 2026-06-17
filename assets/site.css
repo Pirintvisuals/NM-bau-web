@@ -1538,7 +1538,18 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .ba-tag-after { right: 1rem; background: var(--accent); }
 
 /* ---------- TESTIMONIALS ---------- */
-.tm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 820px; margin: 0 auto; }
+.tm-grid { columns: 3 300px; column-gap: 1.25rem; max-width: 1040px; margin: 0 auto; }
+.tm-card { break-inside: avoid; margin: 0 0 1.25rem; }
+.tm-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
+.tm-top .tm-stars { margin: 0; }
+.tm-g { flex-shrink: 0; width: 18px; height: 18px; }
+/* Google rating summary badge under the section heading */
+.tm-rating-wrap { text-align: center; margin-top: 1.1rem; }
+.tm-rating { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.5rem 1.05rem; border: 1px solid var(--border); border-radius: 50px; background: var(--bg-card, #fff); box-shadow: 0 6px 18px rgba(28,25,23,0.06); }
+.tm-rating-score { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+.tm-rating-stars { display: inline-flex; color: #F5B400; }
+.tm-rating-stars svg { width: 15px; height: 15px; }
+.tm-rating-meta { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-2); }
 .tm-card {
   background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px;
   padding: clamp(1.5rem, 3vw, 2.25rem); display: flex; flex-direction: column;
@@ -1552,7 +1563,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .tm-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(184,134,11,0.25); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 0.95rem; flex-shrink: 0; }
 .tm-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
 .tm-meta { font-size: 0.78rem; color: var(--text-3); }
-@media (max-width: 880px) { .tm-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+@media (max-width: 880px) { .tm-grid { columns: 1; max-width: 480px; margin: 0 auto; } }
 
 /* ---------- TRUST MARQUEE (trades strip) ---------- */
 .marquee { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.25rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
