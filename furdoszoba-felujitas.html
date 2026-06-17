@@ -29,9 +29,13 @@
         </span>
       </a>
       <ul class="nav-links">
-        <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
-        <li><a href="furdoszoba-felujitas.html" class="current">Fürdőszoba felújítás</a></li>
-        <li><a href="ingatlan-felujitas.html">Ingatlanfelújítás</a></li>
+        <li class="has-dropdown">
+          <a href="szolgaltatasok.html" class="current" aria-haspopup="true">Szolgáltatások<svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="furdoszoba-felujitas.html" class="current">Fürdőszoba felújítás</a></li>
+            <li><a href="ingatlan-felujitas.html">Ingatlanfelújítás</a></li>
+          </ul>
+        </li>
         <li><a href="referenciak.html">Referenciák</a></li>
         <li><a href="rolunk.html">Rólunk</a></li>
         <li><a href="ingyenes-felmeres.html">Kapcsolat</a></li>
@@ -76,6 +80,7 @@
             Bontástól a kulcsátadásig minden munkafázis nálunk fut össze: gépészet,
             vízszigetelés, burkolás, villanyszerelés és szaniterek — egyetlen felelős
             kivitelezővel, prémium anyagokból, 2 év garanciával.
+            <strong style="color:var(--text);font-weight:600;">És végig kínosan tisztán dolgozunk: pormentes kivitelezés, napi takarítás, védett otthon.</strong>
           </p>
           <div class="hero-actions" style="margin-top:1.75rem;margin-bottom:0;">
             <a href="ingyenes-felmeres.html" class="btn btn-primary">Ingyenes ajánlat<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -84,7 +89,7 @@
         </div>
         <!-- PHASE 2: replace hero.jpg with a real bathroom reference photo -->
         <div class="lead-hero-media has-photo">
-          <span class="lhm-tag">2 év munkagarancia</span>
+          <span class="lhm-tag">Pormentes, tiszta kivitelezés</span>
           <img src="assets/img/img-2786.jpg" alt="Komplett fürdőszoba-felújítás Sopronban – NM Bau referenciamunka">
         </div>
       </div>
@@ -115,6 +120,38 @@
           <span class="pkg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>SPC / PVC falpanel</span>
           <span class="pkg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Geberit rendszer</span>
           <span class="pkg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Háttérvilágítású tükör</span>
+          <span class="pkg-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Pormentes munkaterület</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CLEAN-WORK HIGHLIGHT ===================== -->
+    <section class="s-white">
+      <div class="container">
+        <div class="clean-band reveal">
+          <div class="clean-band-copy">
+            <div class="eyebrow">A munkánk védjegye</div>
+            <h2 class="section-title" style="max-width:16ch;">Kínosan tisztán dolgozunk — az otthonában.</h2>
+            <p class="section-sub" style="max-width:52ch;margin-top:1rem;">
+              Egy fürdőszoba-felújítás a lakott otthonában zajlik. Ezért a precizitás
+              mellett a tisztaság a másik védjegyünk: a munka minden napján rendet
+              hagyunk magunk után, és a por a fürdőszobában marad — nem a lakásában.
+            </p>
+          </div>
+          <ul class="clean-points">
+            <li>
+              <span class="clean-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 4v5c0 4.5-3 7.5-8 9-5-1.5-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
+              <div><strong>Pormentes kivitelezés</strong><span>Porvédő ajtó, takarás és csúszásmentes padlóvédelem a lakott helyiségek felé.</span></div>
+            </li>
+            <li>
+              <span class="clean-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M6 21V9l6-4 6 4v12"/><path d="M9 13l2 2 4-4"/></svg></span>
+              <div><strong>Napi takarítás</strong><span>A munkaterületet minden nap rendezetten, kitakarítva hagyjuk el.</span></div>
+            </li>
+            <li>
+              <span class="clean-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 7L9 18l-5-5"/></svg></span>
+              <div><strong>Védett lakókörnyezet</strong><span>Bútorok, közlekedési útvonalak és a meglévő padló végig védve maradnak.</span></div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -252,10 +289,10 @@
           <div>
             <div class="eyebrow">Miért választanak minket?</div>
             <div class="why-choose-list">
+              <div class="wc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Kiemelten tiszta, pormentes munkavégzés</div>
               <div class="wc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Komplett kivitelezés egy kézben</div>
               <div class="wc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Pontos, átgondolt munkaszervezés</div>
               <div class="wc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Modern, praktikus megoldások</div>
-              <div class="wc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tiszta, kulturált munkavégzés</div>
               <div class="wc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Folyamatos kommunikáció</div>
               <div class="wc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2 év munkagarancia minden munkára</div>
             </div>
@@ -323,6 +360,18 @@
     <div class="quote-bar-text"><strong>Ingyenes felmérés</strong><span>Sopron · 2 év garancia</span></div>
     <a href="ingyenes-felmeres.html" class="btn btn-primary">Ingyenes ajánlat<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
+
+  <!-- Page-specific styles: clean-work highlight band -->
+  <style>
+    .clean-band { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+    .clean-points { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+    .clean-points li { display: flex; gap: 1rem; align-items: flex-start; }
+    .clean-ico { flex-shrink: 0; width: 46px; height: 46px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(184,134,11,0.22); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+    .clean-ico svg { width: 22px; height: 22px; }
+    .clean-points strong { display: block; color: var(--text); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.2rem; letter-spacing: -0.01em; }
+    .clean-points span { display: block; color: var(--text-2); font-size: 0.9rem; line-height: 1.6; }
+    @media (max-width: 780px) { .clean-band { grid-template-columns: 1fr; gap: 2rem; } }
+  </style>
 
   <script src="assets/site.js"></script>
 </body>

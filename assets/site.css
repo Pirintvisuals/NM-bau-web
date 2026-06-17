@@ -250,9 +250,54 @@ section { padding: var(--section-py) 0; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 2rem;
   list-style: none;
 }
+
+/* Szolgáltatások dropdown */
+.nav-links .has-dropdown { position: relative; }
+.nav-links .has-dropdown > a { display: inline-flex; align-items: center; gap: 0.32rem; }
+.nav-caret { width: 12px; height: 12px; flex-shrink: 0; transition: transform 0.28s ease; }
+.has-dropdown:hover > a .nav-caret,
+.has-dropdown:focus-within > a .nav-caret { transform: rotate(180deg); }
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: -0.9rem;
+  margin-top: 0;
+  padding: 0.4rem;
+  min-width: 230px;
+  list-style: none;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 18px 44px rgba(28, 25, 23, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  z-index: 120;
+}
+/* invisible hover bridge so the menu doesn't close in the gap */
+.has-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 0.9rem; }
+.has-dropdown:hover .nav-dropdown,
+.has-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown a {
+  display: block;
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-2);
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s;
+}
+.nav-dropdown a::after { display: none; }
+.nav-dropdown a:hover,
+.nav-dropdown a.current { background: var(--accent-dim); color: var(--accent); }
 .nav-links a {
   font-size: 0.875rem;
   font-weight: 500;
@@ -282,9 +327,6 @@ section { padding: var(--section-py) 0; }
 .nav-phone { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--text); white-space: nowrap; flex-shrink: 0; transition: color 0.2s; }
 .nav-phone svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
 .nav-phone:hover { color: var(--accent); }
-/* Six nav items leave no room for the number text in the bar — keep the icon
-   (still tap-to-call); the full number stays in the hero, footer, CTA + mobile menu. */
-.nav-phone .np-text { display: none; }
 .nav-mobile-phone { font-size: 1.5rem !important; font-weight: 600; color: var(--accent) !important; }
 
 .nav-burger {
@@ -364,12 +406,12 @@ section { padding: var(--section-py) 0; }
   .nav-mobile, .nav-burger span { transition-duration: 0.01ms; }
 }
 
-/* Six links + CTA need a wide bar; below this the full menu moves into the burger. */
-@media (max-width: 1180px) {
+@media (max-width: 820px) {
   .nav-links, .nav-cta { display: none; }
   .nav-burger { display: flex; }
   /* tap-to-call stays in the header; icon-only to save room next to the burger */
   .nav-phone { margin-left: auto; margin-right: 0.25rem; }
+  .nav-phone .np-text { display: none; }
   .nav-phone svg { width: 20px; height: 20px; }
 }
 
