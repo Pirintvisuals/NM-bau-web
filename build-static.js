@@ -34,6 +34,11 @@ for (const file of pages) {
   fs.copyFileSync(file, path.join('dist', file));
 }
 
+// SEO / crawler files
+for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt']) {
+  if (fs.existsSync(file)) fs.copyFileSync(file, path.join('dist', file));
+}
+
 // Shared assets
 fs.copyFileSync('hero.jpg', path.join('dist', 'hero.jpg'));
 fs.copyFileSync('new logo.png', path.join('dist', 'new logo.png'));
