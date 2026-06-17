@@ -1,9 +1,9 @@
 /* ==========================================================
-   NM BAU — shared JS for sub-pages with forms
+   NM BAU – shared JS for sub-pages with forms
    (kapcsolat.html, ingyenes-felmeres.html)
    Handles: sticky nav, mobile menu, scroll-reveal,
    photo upload (preview + remove, drag & drop), form submit.
-   NOTE: forms are visual-only for now — submit shows a
+   NOTE: forms are visual-only for now – submit shows a
    client-side confirmation. PHASE 2 wires them to a backend.
    ========================================================== */
 (function () {
@@ -126,7 +126,7 @@
     };
 
     input.addEventListener('change', function () {
-      // The browser put freshly picked files on input.files — merge then resync.
+      // The browser put freshly picked files on input.files – merge then resync.
       addFiles(input.files);
     });
 
@@ -329,7 +329,7 @@
 })();
 
 /* ==========================================================
-   NM BAU — Árajánló asszisztens (embedded chat widget)
+   NM BAU – Árajánló asszisztens (embedded chat widget)
    Loads the external quoting widget, repoints the primary
    "árajánlat" CTAs to open the chat, and proactively nudges
    it open at the first high-intent moment. The full on-site
@@ -392,9 +392,9 @@
   });
 
   // ---- Proactive auto-open: open the assistant immediately on load.
-  //      Only on the home page — internal pages never auto-pop. Still gated
+  //      Only on the home page – internal pages never auto-pop. Still gated
   //      once per session, skipped on the form page (already the full survey),
-  //      and skipped on phones — the takeover panel is intrusive on a small
+  //      and skipped on phones – the takeover panel is intrusive on a small
   //      screen, so there the assistant only opens when the visitor taps a CTA. ----
   var path = location.pathname.replace(/\/+$/, '');
   var onHomePage = path === '' || /\/index\.html$/.test(path);
@@ -407,7 +407,7 @@
     if (!autoDone) {
       var launcherNow = document.querySelector('.faq-chat-launcher');
       if (launcherNow && launcherNow.classList.contains('active')) {
-        autoDone = true; // already open — nothing to do
+        autoDone = true; // already open – nothing to do
       } else {
         autoDone = true;
         try { sessionStorage.setItem(KEY, '1'); } catch (err) {}

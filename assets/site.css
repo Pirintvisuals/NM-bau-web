@@ -1,12 +1,12 @@
 /* ==========================================================
-   NM BAU — shared stylesheet for sub-pages (package pages)
+   NM BAU – shared stylesheet for sub-pages (package pages)
    Mirrors the design tokens, nav, footer and motion of index.html
    so every page feels like one site. Page-specific blocks live
    inline in each HTML file.
    ========================================================== */
 
 /* ==========================================================
-   CSS VARIABLES — light warm luxury palette
+   CSS VARIABLES – light warm luxury palette
    ========================================================== */
 :root {
   --bg:            #FAFAF7;
@@ -102,7 +102,7 @@ section { padding: var(--section-py) 0; }
 }
 
 /* ==========================================================
-   BUTTONS — pill shape
+   BUTTONS – pill shape
    ========================================================== */
 .btn {
   display: inline-flex;
@@ -209,7 +209,7 @@ section { padding: var(--section-py) 0; }
 }
 
 /* ==========================================================
-   NAVIGATION — frosted, hides on scroll-down
+   NAVIGATION – frosted, hides on scroll-down
    ========================================================== */
 #nav {
   position: fixed;
@@ -298,7 +298,7 @@ section { padding: var(--section-py) 0; }
 .nav-dropdown a::after { display: none; }
 .nav-dropdown a:hover,
 .nav-dropdown a.current { background: var(--accent-dim); color: var(--accent); }
-/* "Összes szolgáltatás" overview link — flagged so it's clearly clickable */
+/* "Összes szolgáltatás" overview link – flagged so it's clearly clickable */
 .nav-dropdown a.nav-dd-all {
   display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
   color: var(--accent); font-weight: 600;
@@ -385,7 +385,7 @@ section { padding: var(--section-py) 0; }
 .nav-burger.open span:nth-child(2) { width: 24px; opacity: 0; transform: scaleX(0.2); }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Compact dropdown panel anchored under the nav — not a full-screen takeover */
+/* Compact dropdown panel anchored under the nav – not a full-screen takeover */
 .nav-mobile {
   position: fixed;
   top: calc(var(--nav-h) - 10px);
@@ -444,7 +444,7 @@ section { padding: var(--section-py) 0; }
 }
 
 /* ==========================================================
-   FOOTER — dark charcoal
+   FOOTER – dark charcoal
    ========================================================== */
 #footer {
   background: var(--bg-dark);
@@ -526,7 +526,7 @@ section { padding: var(--section-py) 0; }
 }
 
 /* ==========================================================
-   PACKAGE PAGE — shared header / breadcrumb
+   PACKAGE PAGE – shared header / breadcrumb
    ========================================================== */
 .pkg-page { padding-top: var(--nav-h); }
 
@@ -646,7 +646,7 @@ section { padding: var(--section-py) 0; }
 }
 
 /* ==========================================================
-   PACKAGE — "what's included" + scope
+   PACKAGE – "what's included" + scope
    ========================================================== */
 #pkg-includes { background: var(--bg-cream); }
 .pkg-includes-grid {
@@ -725,7 +725,7 @@ section { padding: var(--section-py) 0; }
 .pkg-chip svg { width: 14px; height: 14px; color: var(--accent); }
 
 /* ==========================================================
-   PACKAGE — compare / other options
+   PACKAGE – compare / other options
    ========================================================== */
 #pkg-compare { background: var(--bg-cream); }
 .pkg-compare-grid {
@@ -795,7 +795,7 @@ section { padding: var(--section-py) 0; }
 }
 
 /* ==========================================================
-   PACKAGE — closing CTA (gold band, reused from index)
+   PACKAGE – closing CTA (gold band, reused from index)
    ========================================================== */
 #pkg-cta {
   padding: clamp(4.5rem, 10vw, 8rem) 0;
@@ -845,7 +845,7 @@ section { padding: var(--section-py) 0; }
 }
 
 /* ==========================================================
-   LEAD / CONTACT PAGES — shared header + layout
+   LEAD / CONTACT PAGES – shared header + layout
    (kapcsolat.html, ingyenes-felmeres.html)
    ========================================================== */
 .lead-page { padding-top: var(--nav-h); }
@@ -877,7 +877,7 @@ section { padding: var(--section-py) 0; }
   max-width: 600px;
 }
 
-/* Subpage hero — compact split: a little text with a small image
+/* Subpage hero – compact split: a little text with a small image
    beside it. Deliberately smaller than the home page's tall, full-bleed
    split hero, so a subpage always reads as a subpage. Shared by every
    subpage for consistency. */
@@ -972,7 +972,7 @@ section { padding: var(--section-py) 0; }
 .lead-badge svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
 
 /* ==========================================================
-   FORMS — shared (used by lead/contact pages)
+   FORMS – shared (used by lead/contact pages)
    ========================================================== */
 .form-card {
   background: var(--bg-card);
@@ -1313,7 +1313,7 @@ section { padding: var(--section-py) 0; }
 @media (max-width: 820px) { .teaser-split { grid-template-columns: 1fr; } }
 
 /* ==========================================================
-   EDITORIAL LAYER — richer, less "template" pages
+   EDITORIAL LAYER – richer, less "template" pages
    ========================================================== */
 /* Grain / paper texture overlay (add class .grain to a section) */
 .grain { position: relative; isolation: isolate; }
@@ -1324,7 +1324,7 @@ section { padding: var(--section-py) 0; }
 .grain > * { position: relative; z-index: 1; }
 .s-dark.grain::after { opacity: 0.06; }
 
-/* Subpage hero sizing — compact split (text + small image beside it),
+/* Subpage hero sizing – compact split (text + small image beside it),
    noticeably smaller than the home page's tall full-bleed hero. */
 .lead-hero { padding: clamp(2rem, 3.5vw, 3.25rem) 0 clamp(2.25rem, 4vw, 3.5rem); }
 .lead-hero-inner { max-width: 1080px; }
@@ -1396,7 +1396,7 @@ section { padding: var(--section-py) 0; }
    Playfair tuning. Bathroom-only.
    ========================================================== */
 
-/* Playfair runs a touch tighter than DM Serif — relax tracking */
+/* Playfair runs a touch tighter than DM Serif – relax tracking */
 h1, h2, h3, h4 { letter-spacing: -0.015em; }
 
 /* ---------- Brand / logo (bigger, crisp SVG lockup) ---------- */
@@ -1421,7 +1421,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
   .brand-name { font-size: 1.3rem; }
 }
 
-/* ---------- HERO — editorial split ---------- */
+/* ---------- HERO – editorial split ---------- */
 #hero { position: relative; padding-top: var(--nav-h); background: var(--bg); overflow: hidden; }
 .hero-inner {
   display: grid; grid-template-columns: 1.02fr 0.98fr; align-items: stretch;
@@ -1550,6 +1550,20 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .tm-rating-stars { display: inline-flex; color: #F5B400; }
 .tm-rating-stars svg { width: 15px; height: 15px; }
 .tm-rating-meta { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--text-2); }
+
+/* Related-services grid (shared across service pages) */
+.rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: clamp(2rem, 4vw, 3rem); }
+.rel-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px; padding: clamp(1.5rem, 3vw, 2rem); display: flex; flex-direction: column; align-items: flex-start; transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), box-shadow 0.32s, border-color 0.25s; }
+.rel-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(28,25,23,0.1); border-color: var(--border); }
+.rel-ico { width: 46px; height: 46px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(184,134,11,0.22); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 1.125rem; transition: background 0.25s, color 0.25s; }
+.rel-card:hover .rel-ico { background: var(--accent); color: #FAFAF7; }
+.rel-ico svg { width: 21px; height: 21px; }
+.rel-name { font-family: var(--font-serif); font-size: 1.25rem; color: var(--text); margin-bottom: 0.5rem; line-height: 1.2; }
+.rel-desc { font-size: 0.9rem; color: var(--text-2); line-height: 1.65; margin-bottom: 1.25rem; flex-grow: 1; }
+.rel-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); transition: gap 0.22s; }
+.rel-card:hover .rel-link { gap: 0.85rem; }
+.rel-link svg { width: 13px; height: 13px; }
+@media (max-width: 800px) { .rel-grid { grid-template-columns: 1fr; } }
 .tm-card {
   background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px;
   padding: clamp(1.5rem, 3vw, 2.25rem); display: flex; flex-direction: column;
@@ -1655,7 +1669,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .compare-c .cmp-label { display: none; }
 /* criterion column */
 .compare-c.crit { font-weight: 600; color: var(--text); background: var(--bg); }
-/* our (highlighted) column — continuous gold strip */
+/* our (highlighted) column – continuous gold strip */
 .compare-c.us { background: var(--accent-dim); color: var(--text); font-weight: 500; position: relative; }
 .compare-c.us svg { color: #2e7d32; }
 /* competitor column */
@@ -1782,7 +1796,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 }
 
 /* ==========================================================
-   HERO FIXES + SECTION COHESION  (overrides — keep at end)
+   HERO FIXES + SECTION COHESION  (overrides – keep at end)
    ========================================================== */
 /* Hero fits the viewport instead of overflowing / looking huge */
 .hero-inner { grid-template-columns: 1.05fr 0.95fr; min-height: clamp(540px, calc(100svh - var(--nav-h)), 760px); max-height: calc(100svh - var(--nav-h)); }
@@ -1804,7 +1818,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
    Must come AFTER the desktop override above (equal specificity, later wins). */
 @media (max-width: 920px) {
   /* Let the stacked hero grow with its content instead of being squeezed into
-     one viewport — that cram was what made the copy + photo look squished. */
+     one viewport – that cram was what made the copy + photo look squished. */
   .hero-inner {
     display: flex; flex-direction: column;
     min-height: 0; max-height: none;
@@ -1832,7 +1846,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
   .hero-media { aspect-ratio: 3 / 4; }
 }
 
-/* Hero entrance — eases in on load (independent of scroll-reveal) */
+/* Hero entrance – eases in on load (independent of scroll-reveal) */
 @keyframes heroUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 @keyframes heroReveal { from { opacity: 0; transform: translateX(34px) scale(1.03); } to { opacity: 1; transform: none; } }
 #hero .hero-copy > * { opacity: 0; animation: heroUp 0.85s cubic-bezier(0.16,1,0.3,1) forwards; }
@@ -1849,7 +1863,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
   .hero-media img { animation: none; }
 }
 
-/* Rotating word — single element, clean fade swap (fixes the overlap/ghost bug) */
+/* Rotating word – single element, clean fade swap (fixes the overlap/ghost bug) */
 .rotate-word { display: inline-block; position: static; min-height: 0; white-space: nowrap; color: var(--accent); font-style: italic;
   transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
 
