@@ -458,3 +458,24 @@
   window.addEventListener('resize', onScroll);
   update();
 })();
+
+/* ===== Reference gallery category filter ===== */
+(function () {
+  var filter = document.querySelector('.gal-filter');
+  var grid = document.getElementById('gallery-grid');
+  if (!filter || !grid) return;
+  var items = Array.prototype.slice.call(grid.querySelectorAll('.gal-item'));
+  filter.addEventListener('click', function (e) {
+    var btn = e.target && e.target.closest ? e.target.closest('.gal-chip') : null;
+    if (!btn) return;
+    var cat = btn.getAttribute('data-filter');
+    filter.querySelectorAll('.gal-chip').forEach(function (c) {
+      var on = c === btn;
+      c.classList.toggle('is-active', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    items.forEach(function (it) {
+      it.classList.toggle('is-hidden', cat !== 'all' && it.getAttribute('data-cat') !== cat);
+    });
+  });
+})();
