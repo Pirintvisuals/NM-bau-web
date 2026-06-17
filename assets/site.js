@@ -418,3 +418,43 @@
   }
 
 })();
+
+/* ===== Scroll progress bar + back-to-top (sticky page furniture) ===== */
+(function () {
+  var doc = document.documentElement;
+
+  // Progress bar
+  var prog = document.createElement('div');
+  prog.className = 'scroll-progress';
+  var fill = document.createElement('div');
+  fill.className = 'scroll-progress-fill';
+  prog.appendChild(fill);
+  document.body.appendChild(prog);
+
+  // Back-to-top button
+  var top = document.createElement('button');
+  top.className = 'to-top';
+  top.type = 'button';
+  top.setAttribute('aria-label', 'Vissza az elejére');
+  top.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  top.addEventListener('click', function () {
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+  });
+  document.body.appendChild(top);
+
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var st = window.pageYOffset || doc.scrollTop || 0;
+    var max = (doc.scrollHeight - doc.clientHeight) || 1;
+    fill.style.transform = 'scaleX(' + Math.min(1, Math.max(0, st / max)) + ')';
+    top.classList.toggle('show', st > 600);
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
