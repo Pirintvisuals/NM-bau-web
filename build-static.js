@@ -23,7 +23,9 @@ fs.mkdirSync(path.join('dist', 'assets'), { recursive: true });
 // HTML pages
 const pages = [
   'index.html',
+  'szolgaltatasok.html',
   'furdoszoba-felujitas.html',
+  'ingatlan-felujitas.html',
   'referenciak.html',
   'rolunk.html',
   'ingyenes-felmeres.html',
@@ -38,3 +40,15 @@ fs.copyFileSync('new logo.png', path.join('dist', 'new logo.png'));
 fs.copyFileSync(path.join('assets', 'site.css'), path.join('dist', 'assets', 'site.css'));
 fs.copyFileSync(path.join('assets', 'site.js'), path.join('dist', 'assets', 'site.js'));
 fs.copyFileSync(path.join('assets', 'favicon.svg'), path.join('dist', 'assets', 'favicon.svg'));
+
+// Project photos (assets/img). Copy the web JPEGs, but skip the _thumbs preview dir.
+const imgSrc = path.join('assets', 'img');
+const imgOut = path.join('dist', 'assets', 'img');
+if (fs.existsSync(imgSrc)) {
+  fs.mkdirSync(imgOut, { recursive: true });
+  for (const entry of fs.readdirSync(imgSrc)) {
+    if (entry.startsWith('_')) continue; // _thumbs/, _manifest.json
+    const from = path.join(imgSrc, entry);
+    if (fs.statSync(from).isFile()) fs.copyFileSync(from, path.join(imgOut, entry));
+  }
+}
