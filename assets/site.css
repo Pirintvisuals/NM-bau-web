@@ -1230,7 +1230,7 @@ section { padding: var(--section-py) 0; }
 
 /* ---------- Values (why-feat) ---------- */
 .why-features { display: grid; gap: 1.5rem; }
-.why-feat { display: grid; grid-template-columns: 44px 1fr; gap: 1.125rem; align-items: start; }
+.why-feat { display: grid; grid-template-columns: 44px 1fr; gap: 1.125rem; align-items: center; }
 .why-feat-icon { width: 44px; height: 44px; background: #fff; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; margin-top: 2px; transition: background 0.2s, border-color 0.2s, transform 0.22s; box-shadow: 0 2px 8px rgba(28,25,23,0.06); }
 .why-feat:hover .why-feat-icon { background: var(--accent); border-color: var(--accent); color: #FAFAF7; transform: scale(1.08); }
 .why-feat-icon svg { width: 17px; height: 17px; }
@@ -1564,6 +1564,24 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .rel-card:hover .rel-link { gap: 0.85rem; }
 .rel-link svg { width: 13px; height: 13px; }
 @media (max-width: 800px) { .rel-grid { grid-template-columns: 1fr; } }
+
+/* Flagship service cards (shared: szolgáltatások + service-page footers) */
+.flag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: clamp(2rem, 4vw, 3rem); }
+.flag-card { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: clamp(1.75rem, 3.5vw, 2.5rem); display: flex; flex-direction: column; align-items: flex-start; overflow: hidden; transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), box-shadow 0.32s, border-color 0.25s; }
+.flag-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform 0.35s cubic-bezier(0.16,1,0.3,1); }
+.flag-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(28,25,23,0.12); border-color: var(--border); }
+.flag-card:hover::before { transform: scaleY(1); }
+.flag-badge { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border: 1px solid rgba(184,134,11,0.22); padding: 0.35rem 0.75rem; border-radius: 50px; margin-bottom: 1.25rem; }
+.flag-ico { width: 54px; height: 54px; border-radius: 50%; background: var(--bg-cream); border: 1px solid var(--border); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 1.125rem; transition: background 0.25s, color 0.25s; }
+.flag-card:hover .flag-ico { background: var(--accent); color: #FAFAF7; }
+.flag-ico svg { width: 25px; height: 25px; }
+.flag-name { font-size: clamp(1.3rem, 2.4vw, 1.65rem); color: var(--text); margin-bottom: 0.65rem; line-height: 1.12; }
+.flag-desc { font-size: 0.95rem; color: var(--text-2); line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1; }
+.flag-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); transition: gap 0.22s; }
+.flag-card:hover .flag-link { gap: 0.9rem; }
+.flag-link svg { width: 13px; height: 13px; }
+@media (max-width: 720px) { .flag-grid { grid-template-columns: 1fr; } }
+
 .tm-card {
   background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px;
   padding: clamp(1.5rem, 3vw, 2.25rem); display: flex; flex-direction: column;
@@ -1728,7 +1746,7 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 /* popup directions */
 .pop-down .hs-pop { top: 150%; left: 50%; transform: translateX(-50%) translateY(6px); }
 .pop-down:hover .hs-pop, .pop-down.active .hs-pop { transform: translateX(-50%); }
-.pop-up .hs-pop { bottom: 150%; left: 50%; transform: translateX(-50%) translateY(-6px); }
+.pop-up .hs-pop { bottom: calc(100% + 16px); left: 50%; transform: translateX(-50%) translateY(8px); }
 .pop-up:hover .hs-pop, .pop-up.active .hs-pop { transform: translateX(-50%); }
 .pop-left .hs-pop { right: 150%; top: 50%; transform: translateY(-50%) translateX(-6px); }
 .pop-left:hover .hs-pop, .pop-left.active .hs-pop { transform: translateY(-50%); }
