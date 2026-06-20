@@ -58,6 +58,19 @@
     reveals.forEach(function (el) { el.classList.add('in-view'); });
   }
 
+  /* ---------- Review carousel: clone cards for a seamless loop ---------- */
+  document.querySelectorAll('[data-tm-track]').forEach(function (track) {
+    var originals = Array.prototype.slice.call(track.children);
+    if (!originals.length) return;
+    originals.forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+    // Only animate once the duplicate set is in place (keeps no-JS static + tidy).
+    track.classList.add('is-ready');
+  });
+
   /* ---------- Photo upload (preview, remove, drag & drop) ---------- */
   var MAX_FILES = 5;
   var MAX_SIZE = 12 * 1024 * 1024; // 12 MB per file
@@ -478,4 +491,49 @@
       it.classList.toggle('is-hidden', cat !== 'all' && it.getAttribute('data-cat') !== cat);
     });
   });
+})();
+
+/* ==========================================================
+   NM BAU – Süti / adatkezelési sáv (cookie consent bar)
+   Injected on every page that loads this file. The site uses
+   only strictly-necessary browser storage (no analytics or
+   ad cookies), so this is an informational acknowledgement
+   with a link to the full Adatkezelési tájékoztató. The choice
+   is remembered in localStorage so it shows only once.
+   ========================================================== */
+(function () {
+  'use strict';
+  var KEY = 'nmbau_cookie_consent';
+  try { if (localStorage.getItem(KEY) === '1') return; } catch (e) {}
+
+  function build() {
+    if (document.getElementById('cookie-bar')) return;
+    var bar = document.createElement('div');
+    bar.className = 'cookie-bar';
+    bar.id = 'cookie-bar';
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Süti tájékoztató');
+    bar.innerHTML =
+      '<p class="cookie-bar-text">Ez a weboldal a működéséhez szükséges böngészőtárolót (sütiket) használ, ' +
+      'és egy árajánló asszisztenst, amely az Ön üzeneteit feldolgozza. Elemző- és reklámsütit nem alkalmazunk. ' +
+      'Részletek az <a href="adatkezeles.html">Adatkezelési tájékoztatóban</a>.</p>' +
+      '<div class="cookie-bar-actions">' +
+      '<a class="cookie-bar-link" href="adatkezeles.html">Részletek</a>' +
+      '<button class="btn btn-primary cookie-bar-accept" type="button">Rendben</button>' +
+      '</div>';
+    document.body.appendChild(bar);
+    requestAnimationFrame(function () { bar.classList.add('is-in'); });
+
+    bar.querySelector('.cookie-bar-accept').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, '1'); } catch (e) {}
+      bar.classList.remove('is-in');
+      setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 350);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
 })();

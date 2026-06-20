@@ -1538,8 +1538,15 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .ba-tag-after { right: 1rem; background: var(--accent); }
 
 /* ---------- TESTIMONIALS ---------- */
-.tm-grid { columns: 3 300px; column-gap: 1.25rem; max-width: 1040px; margin: 0 auto; }
-.tm-card { break-inside: avoid; margin: 0 0 1.25rem; }
+/* Auto-scrolling review carousel: overflow-clipped track with edge fade. */
+.tm-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.tm-track { display: flex; gap: 1.25rem; padding: 0.5rem 0.25rem; }
+/* JS adds .is-ready once the track is cloned, so the -50% loop is seamless. */
+.tm-track.is-ready { width: max-content; animation: tm-scroll 70s linear infinite; }
+.tm-marquee:hover .tm-track.is-ready { animation-play-state: paused; }
+.tm-track .tm-card { width: 350px; flex-shrink: 0; }
+@keyframes tm-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .tm-track.is-ready { animation: none; } }
 .tm-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
 .tm-top .tm-stars { margin: 0; }
 .tm-g { flex-shrink: 0; width: 18px; height: 18px; }
@@ -1593,9 +1600,9 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .tm-quote { font-family: var(--font-serif); font-size: 1.0625rem; line-height: 1.55; color: var(--text); margin-bottom: 1.5rem; flex-grow: 1; }
 .tm-author { display: flex; align-items: center; gap: 0.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); }
 .tm-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(184,134,11,0.25); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 0.95rem; flex-shrink: 0; }
-.tm-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
-.tm-meta { font-size: 0.78rem; color: var(--text-3); }
-@media (max-width: 880px) { .tm-grid { columns: 1; max-width: 480px; margin: 0 auto; } }
+.tm-name { display: block; font-size: 0.9rem; font-weight: 600; color: var(--text); }
+.tm-meta { display: block; margin-top: 0.15rem; font-size: 0.78rem; color: var(--text-3); }
+@media (max-width: 880px) { .tm-track .tm-card { width: 300px; } .tm-track { gap: 1rem; } }
 
 /* ---------- TRUST MARQUEE (trades strip) ---------- */
 .marquee { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.25rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
@@ -1909,3 +1916,28 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; filter: grayscale(0.15); }
 @media (max-width: 760px) { .map-frame { aspect-ratio: 4 / 3; border-radius: 14px; } }
 @media (max-width: 460px) { .map-frame { aspect-ratio: 3 / 4; } }
+
+/* ===== Süti / adatkezelési sáv (cookie consent bar) ===== */
+.cookie-bar {
+  position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 2147483000;
+  max-width: 720px; margin-inline: auto;
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-dark); color: var(--on-dark);
+  border: 1px solid rgba(255,255,255,0.10); border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(28,25,23,0.30);
+  transform: translateY(140%); opacity: 0;
+  transition: transform .4s cubic-bezier(.16,1,.3,1), opacity .4s ease;
+}
+.cookie-bar.is-in { transform: translateY(0); opacity: 1; }
+.cookie-bar-text { margin: 0; font-size: .88rem; line-height: 1.55; color: rgba(245,240,232,0.82); }
+.cookie-bar-text a { color: var(--accent-h); text-decoration: underline; text-underline-offset: 2px; }
+.cookie-bar-actions { display: flex; align-items: center; gap: .85rem; flex-shrink: 0; }
+.cookie-bar-link { color: rgba(245,240,232,0.70); font-size: .85rem; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.cookie-bar-link:hover { color: var(--on-dark); }
+.cookie-bar-accept { padding: .6rem 1.4rem; font-size: .85rem; white-space: nowrap; }
+@media (max-width: 620px) {
+  .cookie-bar { flex-direction: column; align-items: stretch; gap: .9rem; bottom: .75rem; padding: 1rem; }
+  .cookie-bar-actions { justify-content: space-between; }
+  .cookie-bar-accept { flex: 1; }
+}

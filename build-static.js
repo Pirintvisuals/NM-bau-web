@@ -29,6 +29,7 @@ const pages = [
   'referenciak.html',
   'rolunk.html',
   'ingyenes-felmeres.html',
+  'adatkezeles.html',
 ];
 for (const file of pages) {
   fs.copyFileSync(file, path.join('dist', file));
