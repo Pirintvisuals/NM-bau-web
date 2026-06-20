@@ -1547,6 +1547,13 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 .tm-track .tm-card { width: 350px; flex-shrink: 0; }
 @keyframes tm-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .tm-track.is-ready { animation: none; } }
+/* "Read all reviews" link below the carousel */
+.tm-more { text-align: center; margin-top: clamp(2rem, 4vw, 3rem); }
+.tm-more-link { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.6rem; border: 1px solid var(--border); border-radius: 50px; background: var(--bg-card, #fff); font-size: 0.9rem; font-weight: 600; color: var(--text); box-shadow: 0 6px 18px rgba(28,25,23,0.06); transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, border-color 0.25s; }
+.tm-more-link:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(28,25,23,0.1); border-color: var(--accent); }
+.tm-more-link .tm-g { width: 17px; height: 17px; }
+.tm-more-link > svg:last-child { width: 15px; height: 15px; color: var(--accent); transition: transform 0.22s; }
+.tm-more-link:hover > svg:last-child { transform: translateX(3px); }
 .tm-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
 .tm-top .tm-stars { margin: 0; }
 .tm-g { flex-shrink: 0; width: 18px; height: 18px; }
