@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 trükk, amivel egy kis fürdőszoba is tágasnak hat — NM Bau (előnézet)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Montserrat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .blog-wrap { max-width: 820px; margin: 0 auto; padding: calc(var(--nav-h) + 3.5rem) var(--pad-x) 5rem; }
+    .blog-hero { max-width: 1240px; margin: 0 auto; padding: calc(var(--nav-h) + 3.5rem) var(--pad-x) 1rem; }
+    .blog-back { display: inline-flex; align-items: center; gap: .5rem; color: #6b6258; font-family: var(--font-sans); font-size: .9rem; text-decoration: none; margin-bottom: 2rem; }
+    .blog-back:hover { color: var(--accent); }
+    .blog-eyebrow { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; color: var(--accent); margin: 0 0 1rem; }
+    .blog-title { font-family: var(--font-serif); font-weight: 600; line-height: 1.08; font-size: clamp(2.1rem, 5vw, 3.4rem); color: var(--text); margin: 0 0 1rem; }
+    .blog-meta { font-family: var(--font-sans); color: #8A857B; font-size: .92rem; margin: 0 0 2rem; }
+    .blog-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 14px; border: 1px solid var(--border); margin: 1.5rem auto 0; display: block; max-width: 1240px; }
+    .blog-body { font-family: var(--font-sans); color: #2c2823; font-size: 1.12rem; line-height: 1.85; }
+    .blog-body h2 { font-family: var(--font-serif); font-weight: 600; font-size: 1.7rem; color: var(--text); margin: 2.6rem 0 1rem; }
+    .blog-body h3 { font-family: var(--font-serif); font-weight: 600; font-size: 1.35rem; color: var(--text); margin: 2rem 0 .75rem; }
+    .blog-body p { margin: 0 0 1.35rem; }
+    .blog-body ul, .blog-body ol { margin: 0 0 1.35rem 1.25rem; }
+    .blog-body li { margin: .4rem 0; }
+    .blog-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .blog-body img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); margin: 1.5rem 0; }
+    .blog-body blockquote { border-left: 3px solid var(--accent); margin: 1.5rem 0; padding: .4rem 0 .4rem 1.4rem; font-family: var(--font-serif); font-style: italic; font-size: 1.25rem; color: var(--text); }
+    .blog-index { max-width: 1240px; margin: 0 auto; padding: calc(var(--nav-h) + 4rem) var(--pad-x) 5rem; }
+    .blog-index-head { text-align: center; margin: 0 auto 3.5rem; max-width: 640px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+    .blog-card { display: flex; flex-direction: column; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(28,25,23,0.10); }
+    .blog-card-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: var(--bg-cream); }
+    .blog-card-body { padding: 1.5rem 1.6rem 1.8rem; display: flex; flex-direction: column; flex: 1; }
+    .blog-card-date { font-family: var(--font-sans); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin: 0 0 .6rem; }
+    .blog-card-title { font-family: var(--font-serif); font-weight: 600; font-size: 1.4rem; line-height: 1.2; color: var(--text); margin: 0 0 .7rem; }
+    .blog-card-excerpt { font-family: var(--font-sans); color: #6b6258; font-size: .98rem; line-height: 1.6; margin: 0; }
+  </style>
+</head>
+<body>
+<nav id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="NM Bau, kezdőlap">
+        <span class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M6 44 6 20 24 6 42 20 42 44Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+            <rect x="16.5" y="26" width="7.5" height="18" stroke="currentColor" stroke-width="2.2"/>
+            <rect x="21.5" y="33" width="14" height="11" stroke="#B6B0A6" stroke-width="2.2"/>
+          </svg>
+          <span class="brand-wordmark">
+            <span class="brand-name">NM BAU</span>
+            <span class="brand-tag">Sopron</span>
+          </span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li class="has-dropdown">
+          <a href="szolgaltatasok.html" aria-haspopup="true">Szolgáltatások<svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="szolgaltatasok.html" class="nav-dd-all">Összes szolgáltatás<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+            <li><a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a></li>
+            <li><a href="ingatlan-felujitas.html">Ingatlanfelújítás</a></li>
+          </ul>
+        </li>
+        <li><a href="referenciak.html">Referenciák</a></li>
+        <li><a href="blog-preview.html">Blog</a></li>
+        <li><a href="rolunk.html">Rólunk</a></li>
+        <li><a href="ingyenes-felmeres.html">Kapcsolat</a></li>
+      </ul>
+      <a href="tel:+36202546624" class="nav-phone" aria-label="Hívjon minket: +36 20 254 6624">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="np-text">+36 20 254 6624</span>
+      </a>
+      <a href="ingyenes-felmeres.html" class="btn btn-primary nav-cta">Azonnali árajánlat</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="szolgaltatasok.html">Szolgáltatások</a>
+    <a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a>
+    <a href="ingatlan-felujitas.html">Ingatlanfelújítás</a>
+    <a href="referenciak.html">Referenciák</a>
+    <a href="blog-preview.html">Blog</a>
+    <a href="rolunk.html">Rólunk</a>
+    <a href="ingyenes-felmeres.html" style="color:var(--accent)">Ingyenes felmérés</a>
+    <a href="tel:+36202546624" class="nav-mobile-phone">+36 20 254 6624</a>
+  </div>
+  <article class="blog-hero">
+    <a href="blog-preview.html" class="blog-back"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Vissza a bloghoz</a>
+    <p class="blog-eyebrow">NM Bau Blog</p>
+    <h1 class="blog-title">5 trükk, amivel egy kis fürdőszoba is tágasnak hat</h1>
+    <p class="blog-meta">2026. 06. 18.</p>
+    <img class="blog-cover" src="assets/img/img-2839.jpg" alt="Felújított fürdőszoba Sopronban">
+  </article>
+  <div class="blog-wrap">
+    <div class="blog-body">
+      <p>Sokan azt hiszik, hogy egy kis fürdőszobából nem lehet sokat kihozni. A tapasztalatunk épp az ellenkezője: jó tervezéssel néhány négyzetméter is lehet tágas, világos és kényelmes. Íme öt megoldás, amit a soproni projektjeinkben rendszeresen alkalmazunk.</p>
+      <h2>1. Nagy méretű burkolólapok</h2>
+      <p>A kevesebb fuga nyugodtabb, egységesebb felületet ad — ettől a tér azonnal nagyobbnak tűnik. Ráadásul könnyebb is tisztán tartani.</p>
+      <h2>2. Falra szerelt szaniterek</h2>
+      <p>A fali WC és a lebegő mosdó alól kilátszik a padló, ami vizuálisan megnöveli a teret. Tisztításnál is hálás megoldás.</p>
+      <blockquote>A jó fürdőszoba nem a méretről szól, hanem az arányokról és a részletek precizitásáról.</blockquote>
+      <h2>3. Tükör, ami dolgozik</h2>
+      <p>Egy nagy, jól elhelyezett tükör megduplázza a fényt és a látható teret. Beépített világítással még otthonosabb a hatás.</p>
+      <h2>4. Beépített tárolás</h2>
+      <p>A falsíkba simuló szekrények rendet tartanak anélkül, hogy helyet vennének el. A káosz az, ami igazán kicsivé tesz egy teret.</p>
+      <h2>5. Átgondolt világítás</h2>
+      <p>Réteges világítással — mennyezeti, tükör-, és hangulatfény — a fürdőszoba bármilyen napszakban barátságos marad.</p>
+      <p>Felújítást tervezel? <a href="ingyenes-felmeres.html">Kérj ingyenes felmérést</a>, és személyesen átbeszéljük, hogyan hozhatjuk ki a maximumot a teredből.</p>
+    </div>
+  </div>
+<footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="ft-logo ft-brand" aria-label="NM Bau">
+            <span class="brand">
+              <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M6 44 6 20 24 6 42 20 42 44Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+                <rect x="16.5" y="26" width="7.5" height="18" stroke="currentColor" stroke-width="2.2"/>
+                <rect x="21.5" y="33" width="14" height="11" stroke="#8A857B" stroke-width="2.2"/>
+              </svg>
+              <span class="brand-wordmark"><span class="brand-name">NM BAU</span><span class="brand-tag">Sopron</span></span>
+            </span>
+          </a>
+          <p class="ft-tagline">Komplett fürdőszoba-felújítás Sopronban, egyetlen felelős csapattal. Szeretünk építeni.</p>
+          <div class="ft-social">
+            <a class="ft-social-a" href="https://www.facebook.com/" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-2c0-.6.4-1 1-1z"/></svg></a>
+            <a class="ft-social-a" href="https://www.instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">Oldalak</div>
+          <ul class="ft-links">
+            <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+            <li><a href="furdoszoba-felujitas.html">Fürdőszoba felújítás</a></li>
+            <li><a href="ingatlan-felujitas.html">Ingatlanfelújítás</a></li>
+            <li><a href="referenciak.html">Referenciák</a></li>
+            <li><a href="rolunk.html">Rólunk</a></li>
+            <li><a href="ingyenes-felmeres.html">Ingyenes felmérés</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="ft-col-title">Kapcsolat</div>
+          <ul class="ft-links">
+            <li><a href="tel:+36202546624">+36 20 254 6624</a></li>
+            <li><a href="mailto:nmbau@nmbau.hu">nmbau@nmbau.hu</a></li>
+            <li class="plain">Sopron és környéke</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="ft-copy">© 2026 NM Bau. Minden jog fenntartva.</span>
+        <div class="ft-legal">
+          <a href="adatkezeles.html">Adatkezelés</a>
+          <a href="adatkezeles.html#impresszum">Impresszum</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky quote bar -->
+  <div class="quote-bar" id="quote-bar">
+    <div class="quote-bar-text"><strong>Ingyenes felmérés</strong><span>Sopron · 2 év garancia</span></div>
+    <a href="ingyenes-felmeres.html" class="btn btn-primary">Ingyenes ajánlat<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <script src="assets/site.js"></script>
+</body>
+</html>

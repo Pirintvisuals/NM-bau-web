@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bejegyzések — NM Bau Blog (előnézet)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1C1917;--card:#262220;--line:#3a3531;--text:#F5F0E8;--muted:#a39c92;--accent:#D4A017;--accent2:#B8860B;--danger:#c0563f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+  .preview-banner{background:var(--accent2);color:#1C1917;text-align:center;font-weight:600;padding:.6rem 1rem;font-size:.9rem}
+  .wrap{max-width:880px;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+  h1{font-family:'Playfair Display',serif;font-weight:600;font-size:1.9rem;margin:0}
+  .muted{color:var(--muted)} .small{font-size:.85rem}
+  .btn-primary,.btn-ghost,.btn-danger{cursor:pointer;font:inherit;font-weight:600;border-radius:9px;padding:.7rem 1.3rem;text-decoration:none;display:inline-block;border:1px solid transparent}
+  .btn-primary{background:var(--accent2);color:#1C1917;border:none}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--accent)}
+  .btn-danger{background:transparent;color:var(--danger);border:1px solid var(--danger);padding:.55rem 1rem;font-size:.9rem}
+  .btn-danger:hover{background:var(--danger);color:#fff}
+  .dash-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+  .dash-top > div{display:flex;gap:.6rem;flex-wrap:wrap}
+  .post-list{list-style:none;padding:0;margin:1.5rem 0 0}
+  .post-list li{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:1rem 1.25rem;margin-bottom:.75rem}
+  .pl-title{font-weight:600;display:block}
+  .pl-meta{color:var(--muted);font-size:.85rem}
+  .pl-actions{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="preview-banner">ELŐNÉZET — ezt látja a tulajdonos belépés után. Kattints a „+ Új bejegyzés” gombra a szerkesztő megnyitásához.</div>
+<div class="wrap">
+  <div class="dash-top">
+    <h1>Blog bejegyzések</h1>
+    <div>
+      <a href="admin-create-preview.html" class="btn-primary">+ Új bejegyzés</a>
+      <a href="blog-preview.html" class="btn-ghost">Blog megtekintése</a>
+      <a href="#" class="btn-ghost" onclick="return false">Kilépés</a>
+    </div>
+  </div>
+
+  <ul class="post-list">
+    <li>
+      <div><span class="pl-title">5 trükk, amivel egy kis fürdőszoba is tágasnak hat</span><span class="pl-meta">2026. 06. 18.</span></div>
+      <div class="pl-actions">
+        <a href="admin-create-preview.html" class="btn-ghost">Szerkesztés</a>
+        <a href="blog-post-preview.html" class="btn-ghost">Megnyitás</a>
+        <button class="btn-danger" onclick="return false">Törlés</button>
+      </div>
+    </li>
+    <li>
+      <div><span class="pl-title">Burkolatválasztás: matt vagy fényes? Nagy vagy kis lap?</span><span class="pl-meta">2026. 06. 10.</span></div>
+      <div class="pl-actions">
+        <a href="admin-create-preview.html" class="btn-ghost">Szerkesztés</a>
+        <a href="blog-post-preview.html" class="btn-ghost">Megnyitás</a>
+        <button class="btn-danger" onclick="return false">Törlés</button>
+      </div>
+    </li>
+    <li>
+      <div><span class="pl-title">Üdvözlünk az NM Bau blogon</span><span class="pl-meta">2026. 06. 21. · <em>piszkozat</em></span></div>
+      <div class="pl-actions">
+        <a href="admin-create-preview.html" class="btn-ghost">Szerkesztés</a>
+        <a href="blog-post-preview.html" class="btn-ghost">Megnyitás</a>
+        <button class="btn-danger" onclick="return false">Törlés</button>
+      </div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

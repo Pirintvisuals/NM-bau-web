@@ -1,0 +1,10 @@
+# A feltöltött képek megjeleníthetők, de itt SEMMILYEN szkript nem futhat.
+<FilesMatch "\.(php|phtml|phar|php[0-9]|cgi|pl|py|sh|html?)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

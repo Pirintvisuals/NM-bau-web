@@ -1,0 +1,7 @@
+# A jelszó a szerveren jön létre — soha ne kerüljön a repóba.
+data/password.php
+
+# A feltöltött képek a szerveren keletkeznek.
+uploads/*
+!uploads/.htaccess
+!uploads/.gitkeep

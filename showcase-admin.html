@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Új bejegyzés — NM Bau Blog (bemutató)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1C1917;--card:#262220;--line:#3a3531;--text:#F5F0E8;--muted:#a39c92;--accent:#D4A017;--accent2:#B8860B;--danger:#c0563f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+  .demo-bar{position:sticky;top:0;z-index:200;background:var(--accent2);color:#1C1917;font-weight:600;font-size:.9rem;text-align:center;padding:.55rem 1rem}
+  .demo-bar a{color:#1C1917}
+  .wrap{max-width:880px;margin:0 auto;padding:2rem 1.25rem 5rem}
+  h1{font-family:'Playfair Display',serif;font-weight:600;font-size:1.9rem;margin:0 0 .4rem}
+  .muted{color:var(--muted)} .small{font-size:.85rem}
+  label{display:block;margin:1.1rem 0 .35rem;font-weight:500;font-size:.95rem}
+  label.big{font-size:1rem}
+  input[type=text],input[type=date],textarea{width:100%;background:#1f1c1a;border:1px solid var(--line);border-radius:9px;color:var(--text);padding:.75rem .85rem;font:inherit}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{resize:vertical}
+  .check{display:flex;align-items:center;gap:.5rem;font-weight:400;margin-top:1.1rem}
+  .check input{width:auto}
+  button,.btn-primary,.btn-ghost{cursor:pointer;font:inherit;font-weight:600;border-radius:9px;padding:.7rem 1.3rem;text-decoration:none;display:inline-block;border:1px solid transparent}
+  .btn-primary{background:var(--accent2);color:#1C1917;border:none}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .row{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-end}
+  .row > label{flex:1;min-width:180px}
+  .cover-drop{border:1.5px dashed var(--line);border-radius:10px;padding:1.2rem;text-align:center;color:var(--muted);margin-top:.4rem;cursor:pointer}
+  .cover-drop:hover{border-color:var(--accent)}
+  .cover-prev{max-width:260px;border-radius:9px;border:1px solid var(--line);margin-top:.6rem;display:none}
+  .editor-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+  .back{color:var(--muted);text-decoration:none}.back:hover{color:var(--accent)}
+  .actions{margin-top:1.6rem;display:flex;gap:.7rem;align-items:center}
+</style>
+</head>
+<body>
+<div class="demo-bar">BEMUTATÓ — ez a „/admin” szerkesztő. Írd meg a bejegyzést, tölts fel képet, majd <b>Közzététel</b> → azonnal megjelenik a blogon. (<a href="showcase-blog.html">Blog megtekintése</a> · <a href="#" onclick="localStorage.removeItem('nmbau_demo_posts');alert('Bemutató visszaállítva.');return false;">Visszaállítás</a>)</div>
+<div class="wrap">
+  <div class="editor-top">
+    <a href="showcase-blog.html" class="back">← Vissza a bejegyzésekhez</a>
+    <span class="muted small">A „Közzététel” után azonnal él a weboldalon.</span>
+  </div>
+
+  <h1>Új bejegyzés</h1>
+
+  <label class="big">Cím
+    <input type="text" id="f-title" value="Így újítottunk fel egy panel fürdőszobát 3 hét alatt">
+  </label>
+
+  <div class="row">
+    <label>Dátum
+      <input type="date" id="f-date">
+    </label>
+    <label class="check">
+      <input type="checkbox" id="f-draft">
+      Piszkozat (még NE jelenjen meg a weboldalon)
+    </label>
+  </div>
+
+  <label>Borítókép</label>
+  <div class="cover-drop" id="cover-drop">📷 Kattints ide egy borítókép feltöltéséhez</div>
+  <input type="file" id="f-cover" accept="image/*" style="display:none">
+  <img class="cover-prev" id="cover-prev" alt="">
+
+  <label>Rövid összefoglaló
+    <textarea id="f-excerpt" rows="2">Egy soproni panellakás fürdőszobájának teljes felújítása — lépésről lépésre, képekkel.</textarea>
+  </label>
+
+  <label>Tartalom</label>
+  <textarea id="editor">
+    <h2>A kiindulás</h2>
+    <p>A megrendelőnk egy elavult, sötét panel fürdőszobát szeretett volna világos, modern térré alakítani. Három hét alatt, egy kézben tartva az egészet, ezt meg is valósítottuk.</p>
+    <p>Próbáld ki: jelölj ki egy szót, és tedd <strong>félkövérré</strong>, vagy válts a fenti menüben „Címsor”-ra.</p>
+    <h3>Mit cseréltünk?</h3>
+    <ul>
+      <li>Teljes gépészet és vízszigetelés</li>
+      <li>Új burkolatok, falra szerelt szaniterek</li>
+      <li>LED világítás, beépített tükör</li>
+    </ul>
+  </textarea>
+
+  <div class="actions">
+    <button class="btn-primary" id="publish">Közzététel</button>
+    <span class="muted small">— ennyi az egész.</span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js"></script>
+<script>
+  const NMBAU_KEY = 'nmbau_demo_posts';
+
+  // dátum: ma
+  document.getElementById('f-date').value = new Date().toISOString().slice(0,10);
+
+  // borítókép kezelése (kicsinyítve dataURL-be, hogy beférjen a böngészőbe)
+  let coverData = '';
+  const drop = document.getElementById('cover-drop');
+  const fileInput = document.getElementById('f-cover');
+  const prev = document.getElementById('cover-prev');
+  drop.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        const max = 1200;
+        const scale = Math.min(1, max / img.width);
+        const c = document.createElement('canvas');
+        c.width = img.width * scale; c.height = img.height * scale;
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        coverData = c.toDataURL('image/jpeg', 0.82);
+        prev.src = coverData; prev.style.display = 'block';
+        drop.textContent = '✓ Borítókép kiválasztva — kattints a cseréhez';
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  tinymce.init({
+    selector: '#editor',
+    height: 460,
+    menubar: false,
+    branding: false,
+    promotion: false,
+    plugins: 'link lists image autoresize',
+    toolbar: 'undo redo | blocks | bold italic | bullist numlist | link image | removeformat',
+    block_formats: 'Bekezdés=p; Címsor=h2; Alcím=h3; Idézet=blockquote',
+    content_style: 'body{font-family:DM Sans,system-ui,sans-serif;font-size:17px;line-height:1.7}'
+  });
+
+  document.getElementById('publish').addEventListener('click', () => {
+    const title = document.getElementById('f-title').value.trim();
+    if (!title) { alert('Adj meg egy címet.'); return; }
+    const post = {
+      id: 'user-' + Date.now(),
+      title: title,
+      date: document.getElementById('f-date').value || new Date().toISOString().slice(0,10),
+      excerpt: document.getElementById('f-excerpt').value.trim(),
+      cover: coverData,
+      html: tinymce.get('editor').getContent(),
+      draft: document.getElementById('f-draft').checked
+    };
+    let stored = [];
+    try { stored = JSON.parse(localStorage.getItem(NMBAU_KEY) || '[]'); } catch (e) {}
+    stored.unshift(post);
+    try {
+      localStorage.setItem(NMBAU_KEY, JSON.stringify(stored));
+    } catch (e) {
+      alert('A bemutatóban a böngésző tárhelye megtelt (valószínűleg túl nagy kép). Próbáld kisebb képpel.');
+      return;
+    }
+    if (post.draft) {
+      alert('Piszkozatként elmentve — ez nem jelenik meg a blogon. Vedd ki a pipát a közzétételhez.');
+    }
+    location.href = 'showcase-blog.html';
+  });
+</script>
+</body>
+</html>

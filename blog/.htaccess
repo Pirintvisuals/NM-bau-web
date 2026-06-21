@@ -1,0 +1,16 @@
+# Szép URL-ek a bloghoz: /blog/<bejegyzes-slug>
+Options -MultiViews
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /blog/
+
+  # Létező fájl vagy mappa (pl. admin/, uploads/) átmegy érintetlenül
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # /blog/<slug> -> post.php?slug=<slug>
+  RewriteRule ^([a-z0-9-]+)/?$ post.php?slug=$1 [L,QSA]
+</IfModule>

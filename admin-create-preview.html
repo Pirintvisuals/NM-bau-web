@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Új bejegyzés — NM Bau Blog (előnézet)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1C1917;--card:#262220;--line:#3a3531;--text:#F5F0E8;--muted:#a39c92;--accent:#D4A017;--accent2:#B8860B;--danger:#c0563f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+  .preview-banner{background:var(--accent2);color:#1C1917;text-align:center;font-weight:600;padding:.6rem 1rem;font-size:.9rem}
+  .wrap{max-width:880px;margin:0 auto;padding:2rem 1.25rem 5rem}
+  h1{font-family:'Playfair Display',serif;font-weight:600;font-size:1.9rem;margin:0 0 .4rem}
+  .muted{color:var(--muted)} .small{font-size:.85rem}
+  label{display:block;margin:1.1rem 0 .35rem;font-weight:500;font-size:.95rem}
+  label.big{font-size:1rem}
+  input[type=text],input[type=date],textarea{width:100%;background:#1f1c1a;border:1px solid var(--line);border-radius:9px;color:var(--text);padding:.75rem .85rem;font:inherit}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{resize:vertical}
+  .check{display:flex;align-items:center;gap:.5rem;font-weight:400;margin-top:1.1rem}
+  .check input{width:auto}
+  button,.btn-primary,.btn-ghost{cursor:pointer;font:inherit;font-weight:600;border-radius:9px;padding:.7rem 1.3rem;text-decoration:none;display:inline-block;border:1px solid transparent}
+  .btn-primary{background:var(--accent2);color:#1C1917;border:none}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .row{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-end}
+  .row > label{flex:1;min-width:180px}
+  .cover-drop{border:1.5px dashed var(--line);border-radius:10px;padding:1.4rem;text-align:center;color:var(--muted);margin-top:.4rem;cursor:pointer}
+  .cover-drop:hover{border-color:var(--accent)}
+  .editor-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+  .back{color:var(--muted);text-decoration:none}.back:hover{color:var(--accent)}
+  .actions{margin-top:1.6rem;display:flex;gap:.7rem;align-items:center}
+</style>
+</head>
+<body>
+<div class="preview-banner">ELŐNÉZET — így néz ki a felület, amikor a tulajdonos blogot ír. Próbáld ki: gépelj a szövegmezőbe, formázz a gombokkal!</div>
+<div class="wrap">
+  <div class="editor-top">
+    <a href="admin-dashboard-preview.html" class="back">← Vissza a bejegyzésekhez</a>
+    <span class="muted small">A „Közzététel” után pár másodperccel él a weboldalon.</span>
+  </div>
+
+  <h1>Új bejegyzés</h1>
+
+  <label class="big">Cím
+    <input type="text" value="5 trükk, amivel egy kis fürdőszoba is tágasnak hat">
+  </label>
+
+  <div class="row">
+    <label>Dátum
+      <input type="date" value="2026-06-18">
+    </label>
+    <label class="check">
+      <input type="checkbox">
+      Piszkozat (még NE jelenjen meg a weboldalon)
+    </label>
+  </div>
+
+  <label>Borítókép</label>
+  <div class="cover-drop" onclick="alert('Az éles oldalon itt töltöd fel a borítóképet a gépedről.')">📷 Kattints ide, vagy húzz ide egy képet a borítóhoz</div>
+
+  <label>Rövid összefoglaló
+    <textarea rows="2">A jó tervezéssel néhány négyzetméter is lehet látványos és kényelmes. Megmutatjuk, mire figyelünk.</textarea>
+  </label>
+
+  <label>Tartalom</label>
+  <textarea id="editor">
+    <h2>Kezdjük a lényeggel</h2>
+    <p>Sokan azt hiszik, hogy egy kis fürdőszobából nem lehet sokat kihozni. A tapasztalatunk épp az ellenkezője: jó tervezéssel néhány négyzetméter is lehet tágas és világos.</p>
+    <ul>
+      <li>Nagy méretű burkolólapok — kevesebb fuga, nyugodtabb felület</li>
+      <li>Falra szerelt szaniterek — kilátszik a padló, így tágasabb a hatás</li>
+      <li>Nagy tükör, beépített világítással</li>
+    </ul>
+    <p>Próbáld ki: jelölj ki szöveget, és tedd <strong>félkövérré</strong>, vagy szúrj be egy linket a fenti gombokkal.</p>
+  </textarea>
+
+  <div class="actions">
+    <button class="btn-primary" onclick="alert('Az éles oldalon ettől azonnal megjelenik a bejegyzés a www.nmbau.hu/blog oldalon.')">Közzététel</button>
+    <span class="muted small">— ennyi az egész.</span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+    selector: '#editor',
+    height: 460,
+    menubar: false,
+    branding: false,
+    promotion: false,
+    plugins: 'link lists image autoresize',
+    toolbar: 'undo redo | blocks | bold italic | bullist numlist | link image | removeformat',
+    block_formats: 'Bekezdés=p; Címsor=h2; Alcím=h3; Idézet=blockquote',
+    content_style: 'body{font-family:DM Sans,system-ui,sans-serif;font-size:17px;line-height:1.7}'
+  });
+</script>
+</body>
+</html>
