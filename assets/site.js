@@ -493,6 +493,97 @@
   });
 })();
 
+/* ===== Gallery lightbox (click a reference photo to enlarge) ===== */
+(function () {
+  var grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+
+  // Inject styles once.
+  var css = '\
+    #lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(18,16,13,.92);opacity:0;transition:opacity .25s}\
+    #lightbox.is-open{display:flex;opacity:1}\
+    #lightbox .lb-img{max-width:92vw;max-height:86vh;border-radius:6px;box-shadow:0 24px 80px rgba(0,0,0,.55);transition:opacity .18s}\
+    #lightbox .lb-cap{position:absolute;left:0;right:0;bottom:max(1rem,env(safe-area-inset-bottom));text-align:center;color:#f5f0e8;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.6);pointer-events:none}\
+    #lightbox button{position:absolute;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18);color:#fff;cursor:pointer;border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}\
+    #lightbox button:hover{background:rgba(0,0,0,.6);border-color:#fff}\
+    #lightbox button svg{width:24px;height:24px}\
+    #lightbox .lb-close{top:max(1rem,env(safe-area-inset-top));right:1rem;width:46px;height:46px}\
+    #lightbox .lb-prev{left:1rem;top:50%;transform:translateY(-50%)}\
+    #lightbox .lb-next{right:1rem;top:50%;transform:translateY(-50%)}\
+    @media (max-width:560px){#lightbox .lb-prev{left:.4rem}#lightbox .lb-next{right:.4rem}#lightbox button{width:44px;height:44px}}\
+    @media (prefers-reduced-motion:reduce){#lightbox,#lightbox .lb-img{transition:none}}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+
+  // Build overlay.
+  var box = document.createElement('div');
+  box.id = 'lightbox';
+  box.setAttribute('aria-hidden', 'true');
+  box.innerHTML = '\
+    <button class="lb-close" aria-label="Bezárás"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>\
+    <button class="lb-prev" aria-label="Előző kép"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>\
+    <img class="lb-img" alt="">\
+    <button class="lb-next" aria-label="Következő kép"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>\
+    <div class="lb-cap"></div>';
+  document.body.appendChild(box);
+
+  var lbImg = box.querySelector('.lb-img');
+  var lbCap = box.querySelector('.lb-cap');
+  var idx = 0;
+
+  function visibleItems() {
+    return Array.prototype.slice.call(grid.querySelectorAll('.gal-item'))
+      .filter(function (it) { return !it.classList.contains('is-hidden'); });
+  }
+
+  function show(i) {
+    var its = visibleItems();
+    if (!its.length) return;
+    idx = (i + its.length) % its.length;
+    var img = its[idx].querySelector('img');
+    var cap = its[idx].querySelector('.gal-cap');
+    lbImg.style.opacity = '0';
+    var full = img.getAttribute('src');
+    var pre = new Image();
+    pre.onload = function () { lbImg.src = full; lbImg.alt = img.alt || ''; lbImg.style.opacity = '1'; };
+    pre.src = full;
+    lbCap.textContent = cap ? cap.textContent : (img.alt || '');
+  }
+
+  function open(i) {
+    show(i);
+    box.classList.add('is-open');
+    box.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    box.classList.remove('is-open');
+    box.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  grid.addEventListener('click', function (e) {
+    var fig = e.target && e.target.closest ? e.target.closest('.gal-item') : null;
+    if (!fig) return;
+    var its = visibleItems();
+    var at = its.indexOf(fig);
+    if (at !== -1) open(at);
+  });
+
+  box.querySelector('.lb-close').addEventListener('click', close);
+  box.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+  box.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+  box.addEventListener('click', function (e) { if (e.target === box) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!box.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+
+  // Make the tiles feel clickable.
+  grid.style.cursor = 'zoom-in';
+})();
+
 /* ==========================================================
    NM BAU – Süti / adatkezelési sáv (cookie consent bar)
    Injected on every page that loads this file. The site uses
