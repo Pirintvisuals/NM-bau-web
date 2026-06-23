@@ -41,10 +41,11 @@ for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt']) {
 }
 
 // Shared assets
-fs.copyFileSync('hero.jpg', path.join('dist', 'hero.jpg'));
+fs.copyFileSync('furdoszoba-felujitas-sopron.jpg', path.join('dist', 'furdoszoba-felujitas-sopron.jpg'));
 fs.copyFileSync('new logo.png', path.join('dist', 'new logo.png'));
 fs.copyFileSync(path.join('assets', 'site.css'), path.join('dist', 'assets', 'site.css'));
 fs.copyFileSync(path.join('assets', 'site.js'), path.join('dist', 'assets', 'site.js'));
+fs.copyFileSync(path.join('assets', 'i18n.js'), path.join('dist', 'assets', 'i18n.js'));
 fs.copyFileSync(path.join('assets', 'favicon.svg'), path.join('dist', 'assets', 'favicon.svg'));
 
 // Project photos (assets/img). Copy the web JPEGs, but skip the _thumbs preview dir.

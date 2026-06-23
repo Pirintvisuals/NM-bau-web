@@ -12,13 +12,25 @@
   /* ---------- Sticky nav: hide on scroll-down ---------- */
   var nav = document.getElementById('nav');
   if (nav) {
-    var lastY = 0;
-    window.addEventListener('scroll', function () {
-      var y = window.scrollY;
-      if (y > 80) nav.classList.toggle('nav-hidden', y > lastY);
-      else nav.classList.remove('nav-hidden');
+    var lastY = window.scrollY || 0;
+    var navTicking = false;
+    var updateNav = function () {
+      navTicking = false;
+      var y = window.scrollY < 0 ? 0 : window.scrollY;   // clamp overscroll
       nav.classList.toggle('scrolled', y > 50);
-      lastY = y;
+      var delta = y - lastY;
+      // Ignore small deltas so the mobile address-bar collapse/expand
+      // (which fires jittery scroll events) can't flip the nav up/down.
+      if (Math.abs(delta) > 8) {
+        if (y > 140 && delta > 0) nav.classList.add('nav-hidden');    // scrolling down
+        else nav.classList.remove('nav-hidden');                      // scrolling up
+        lastY = y;
+      } else if (y <= 140) {
+        nav.classList.remove('nav-hidden');
+      }
+    };
+    window.addEventListener('scroll', function () {
+      if (!navTicking) { navTicking = true; requestAnimationFrame(updateNav); }
     }, { passive: true });
   }
 
@@ -58,10 +70,14 @@
     reveals.forEach(function (el) { el.classList.add('in-view'); });
   }
 
-  /* ---------- Review carousel: clone cards for a seamless loop ---------- */
+  /* ---------- Review carousel ----------
+     Desktop: clone cards for a seamless auto-scrolling marquee.
+     Touch / small screens: no clones, no auto-scroll — the user swipes
+     through the reviews with their finger (native horizontal scroll). */
+  var tmAutoScroll = !window.matchMedia('(max-width: 880px)').matches;
   document.querySelectorAll('[data-tm-track]').forEach(function (track) {
     var originals = Array.prototype.slice.call(track.children);
-    if (!originals.length) return;
+    if (!originals.length || !tmAutoScroll) return;
     originals.forEach(function (card) {
       var clone = card.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
