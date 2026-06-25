@@ -36,7 +36,7 @@ for (const file of pages) {
 }
 
 // SEO / crawler files
-for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt']) {
+for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt', '.htaccess']) {
   if (fs.existsSync(file)) fs.copyFileSync(file, path.join('dist', file));
 }
 

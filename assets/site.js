@@ -333,21 +333,34 @@
   (function () {
     var host = document.querySelector('.rotate-word');
     if (!host) return;
-    var words = (host.getAttribute('data-words') || '').split('|').filter(Boolean);
-    if (words.length < 2) return;
+    // Read fresh each time so the language switcher (which rewrites data-words)
+    // is always reflected, even after init.
+    function getWords() {
+      return (host.getAttribute('data-words') || '').split('|').filter(Boolean);
+    }
+    if (getWords().length < 2) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var idx = 0;
-    host.textContent = words[0];
+    host.textContent = getWords()[0];
     setInterval(function () {
       host.style.opacity = '0';
       host.style.transform = 'translateY(0.32em)';
       setTimeout(function () {
+        var words = getWords();
         idx = (idx + 1) % words.length;
         host.textContent = words[idx];
         host.style.opacity = '1';
         host.style.transform = 'none';
       }, 400);
     }, 3000);
+    // When the language switcher rewrites data-words, swap the visible word
+    // immediately instead of waiting for the next 3s tick.
+    if (window.MutationObserver) {
+      new MutationObserver(function () {
+        var words = getWords();
+        if (words.length) host.textContent = words[idx % words.length];
+      }).observe(host, { attributes: true, attributeFilter: ['data-words'] });
+    }
   })();
 
   /* ---------- Sticky quote bar (retired) ----------

@@ -1,0 +1,9 @@
+# nmbau.hu — kanonikus domain: mindig www + https
+# A www nélküli (nmbau.hu) és http kérések 301-gyel a www-re mennek,
+# így a megosztott linkek (Facebook/Messenger stb.) egyetlen címen,
+# egyetlen előnézettel jelennek meg.
+RewriteEngine On
+
+# nmbau.hu  ->  https://www.nmbau.hu  (host-alapú, nincs hurok)
+RewriteCond %{HTTP_HOST} ^nmbau\.hu$ [NC]
+RewriteRule ^(.*)$ https://www.nmbau.hu/$1 [R=301,L]
