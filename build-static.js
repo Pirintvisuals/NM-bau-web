@@ -40,6 +40,11 @@ for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt', '.htaccess']) {
   if (fs.existsSync(file)) fs.copyFileSync(file, path.join('dist', file));
 }
 
+// Referenciák PHP renderer. The .htaccess rewrites referenciak.html -> referenciak.php,
+// so this MUST ship or the page 404s on Apache. It requires blog/inc/references.php,
+// which lives in the separately-deployed blog/ app on the server (Rackhost).
+if (fs.existsSync('referenciak.php')) fs.copyFileSync('referenciak.php', path.join('dist', 'referenciak.php'));
+
 // Shared assets
 fs.copyFileSync('furdoszoba-felujitas-sopron.jpg', path.join('dist', 'furdoszoba-felujitas-sopron.jpg'));
 fs.copyFileSync('new logo.png', path.join('dist', 'new logo.png'));

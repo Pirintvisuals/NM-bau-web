@@ -11,4 +11,7 @@ RewriteRule ^(.*)$ https://www.nmbau.hu/$1 [R=301,L]
 # A referenciák galériát a tulajdonos a /blog/admin felületről tölti fel.
 # A /referenciak.html címet belsőleg a referenciak.php szolgálja ki, amely a
 # feltöltött képeket rendereli. A cím és a belső linkek változatlanok maradnak.
+# CSAK akkor irányítunk a PHP-ra, ha az tényleg fent van — különben a statikus
+# referenciak.html szolgál ki (nincs 404, ha a PHP fájl nincs feltöltve).
+RewriteCond %{DOCUMENT_ROOT}/referenciak.php -f
 RewriteRule ^referenciak\.html$ referenciak.php [L]
