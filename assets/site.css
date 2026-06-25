@@ -1460,8 +1460,8 @@ h1, h2, h3, h4 { letter-spacing: -0.015em; }
 }
 .brand-tag {
   font-family: var(--font-sans); font-size: 0.5rem; font-weight: 700;
-  letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-top: 4px;
-  line-height: 1.5;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-top: 5px;
+  white-space: nowrap;
 }
 #nav .brand-mark { color: var(--text); }
 .nav-logo { line-height: 0; }

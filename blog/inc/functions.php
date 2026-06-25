@@ -177,7 +177,7 @@ function site_chrome() {
   static $cache = null;
   if ($cache !== null) return $cache;
 
-  $navFallback = '<nav id="nav"><div class="nav-inner"><a href="/" class="nav-logo"><span class="brand"><span class="brand-wordmark"><span class="brand-name">NM BAU</span><span class="brand-tag">Sopron<br>Burgenland</span></span></span></a><ul class="nav-links"><li><a href="/szolgaltatasok.html">Szolgáltatások</a></li><li><a href="/referenciak.html">Referenciák</a></li><li><a href="/blog/">Blog</a></li><li><a href="/rolunk.html">Rólunk</a></li><li><a href="/ingyenes-felmeres.html">Kapcsolat</a></li></ul><a href="/ingyenes-felmeres.html" class="btn btn-primary nav-cta">Azonnali árajánlat</a></div></nav>';
+  $navFallback = '<nav id="nav"><div class="nav-inner"><a href="/" class="nav-logo"><span class="brand"><span class="brand-wordmark"><span class="brand-name">NM BAU</span><span class="brand-tag">Sopron &middot; Burgenland</span></span></span></a><ul class="nav-links"><li><a href="/szolgaltatasok.html">Szolgáltatások</a></li><li><a href="/referenciak.html">Referenciák</a></li><li><a href="/blog/">Blog</a></li><li><a href="/rolunk.html">Rólunk</a></li><li><a href="/ingyenes-felmeres.html">Kapcsolat</a></li></ul><a href="/ingyenes-felmeres.html" class="btn btn-primary nav-cta">Azonnali árajánlat</a></div></nav>';
   $footerFallback = '<footer id="footer"><div class="container"><div class="footer-bottom"><span class="ft-copy">© ' . date('Y') . ' NM Bau. Minden jog fenntartva.</span></div></div></footer>';
 
   $file = SITE_ROOT . '/index.html';
