@@ -1,0 +1,182 @@
+[
+  {
+    "id": "seed-01",
+    "src": "assets/img/furdoszoba-felujitas-sopron-57.jpg",
+    "cat": "falpanel",
+    "alt": "Üvegfalas walk-in zuhany fehér márványhatású falpanellal és melegfa padlóval, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-02",
+    "src": "assets/img/furdoszoba-felujitas-sopron-46.jpg",
+    "cat": "mosdo",
+    "alt": "Fehér márványhatású burkolat, kerek tükör, fa mosdópult és üvegfalas zuhany, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-03",
+    "src": "assets/img/furdoszoba-felujitas-sopron-49.jpg",
+    "cat": "mosdo",
+    "alt": "Fa mosdópult kerek háttérvilágítású tükörrel, fehér márványhatású falon, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-04",
+    "src": "assets/img/furdoszoba-felujitas-sopron-48.jpg",
+    "cat": "walkin",
+    "alt": "Üvegfalas walk-in zuhany fehér márvány- és fahatású burkolattal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-05",
+    "src": "assets/img/furdoszoba-felujitas-sopron-04.jpg",
+    "cat": "walkin",
+    "alt": "Fahatású bordázott burkolat, walk-in zuhany és fali WC fehér márványhatású burkolattal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-06",
+    "src": "assets/img/furdoszoba-felujitas-sopron-06.jpg",
+    "cat": "walkin",
+    "alt": "Walk-in zuhany fahatású bordázott zuhanyfallal és fehér létrafűtőtesttel, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-07",
+    "src": "assets/img/furdoszoba-felujitas-sopron-11.jpg",
+    "cat": "walkin",
+    "alt": "Walk-in zuhany fahatású bordázott burkolattal és fehér törölközőszárítóval, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-08",
+    "src": "assets/img/furdoszoba-felujitas-sopron-07.jpg",
+    "cat": "wc",
+    "alt": "Fali WC fahatású bordázott burkolattal és bézs márványhatású csempével, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-09",
+    "src": "assets/img/furdoszoba-felujitas-sopron-08.jpg",
+    "cat": "wc",
+    "alt": "Magas fa fürdőszobaszekrény és fali WC fahatású burkolattal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-10",
+    "src": "assets/img/furdoszoba-felujitas-sopron-10.jpg",
+    "cat": "mosdo",
+    "alt": "Fa mosdópult és magas szekrény bézs márványhatású burkolattal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-11",
+    "src": "assets/img/furdoszoba-felujitas-sopron-17.jpg",
+    "cat": "mosdo",
+    "alt": "Trópusi leveles mintás díszburkolat, pultra ültetett fekete mosdó, fa és antracit bútor, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-12",
+    "src": "assets/img/furdoszoba-felujitas-sopron-18.jpg",
+    "cat": "walkin",
+    "alt": "Walk-in zuhany trópusi leveles mintás díszfallal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-13",
+    "src": "assets/img/furdoszoba-felujitas-sopron-26.jpg",
+    "cat": "mosdo",
+    "alt": "Zsályazöld csempe, kerek háttérvilágítású tükör, sárgaréz csaptelep és pultra ültetett mosdó, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-14",
+    "src": "assets/img/furdoszoba-felujitas-sopron-27.jpg",
+    "cat": "wc",
+    "alt": "Külön WC zöld csempével, sárgaréz csaptelep és kis fa mosdóbútor, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-15",
+    "src": "assets/img/furdoszoba-felujitas-sopron-32.jpg",
+    "cat": "mosdo",
+    "alt": "Antracit nagyformátumú burkolat, kerek háttérvilágítású tükör, fekete csaptelep és fali WC, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-16",
+    "src": "assets/img/furdoszoba-felujitas-sopron-35.jpg",
+    "cat": "mosdo",
+    "alt": "Antracit burkolat, fa tükrös szekrény és széles mosdó fekete csaptelepekkel, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-17",
+    "src": "assets/img/furdoszoba-felujitas-sopron-39.jpg",
+    "cat": "kad",
+    "alt": "Beépített fürdőkád bézs travertin burkolattal, geometriai díszcsíkkal és fa mosdóbútorral, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-18",
+    "src": "assets/img/furdoszoba-felujitas-sopron-38.jpg",
+    "cat": "kad",
+    "alt": "Beépített fürdőkád bézs travertin burkolattal és geometriai mintás díszcsíkkal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-19",
+    "src": "assets/img/furdoszoba-felujitas-sopron-58.jpg",
+    "cat": "walkin",
+    "alt": "Mikrocement walk-in zuhany teakfa ülőkével és ablakkal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-20",
+    "src": "assets/img/furdoszoba-felujitas-sopron-59.jpg",
+    "cat": "mosdo",
+    "alt": "Mikrocement fürdőszoba fa mosdóbútorral és walk-in zuhannyal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-21",
+    "src": "assets/img/furdoszoba-felujitas-sopron-42.jpg",
+    "cat": "walkin",
+    "alt": "Walk-in zuhany bézs betonhatású burkolattal, geometriai díszcsíkkal és fa paddal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-22",
+    "src": "assets/img/furdoszoba-felujitas-sopron-61.jpg",
+    "cat": "walkin",
+    "alt": "Tetőtéri walk-in zuhany szürke csíkos burkolattal és üvegfallal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-23",
+    "src": "assets/img/furdoszoba-felujitas-sopron-19.jpg",
+    "cat": "walkin",
+    "alt": "Walk-in zuhany szürke kőhatású burkolattal és klasszikus fehér mosdóbútorral, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-24",
+    "src": "assets/img/furdoszoba-felujitas-sopron-14.jpg",
+    "cat": "falpanel",
+    "alt": "Fali mosdó kerek tükörrel, szürke márványhatású falpanel előtt, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-25",
+    "src": "assets/img/furdoszoba-felujitas-sopron-53.jpg",
+    "cat": "falpanel",
+    "alt": "Külön WC bézs kőhatású falpanellel, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-26",
+    "src": "assets/img/furdoszoba-felujitas-sopron-43.jpg",
+    "cat": "wc",
+    "alt": "Szűk WC fahatású bordázott burkolattal, kis mosdóval és tükörrel, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-27",
+    "src": "assets/img/furdoszoba-felujitas-sopron-45.jpg",
+    "cat": "wc",
+    "alt": "Fali WC vízszintes fahatású burkolattal, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-28",
+    "src": "assets/img/furdoszoba-felujitas-sopron-01.jpg",
+    "cat": "kad",
+    "alt": "Beépített fürdőkád bézs mintás burkolattal, mosdóbútorral és mosógéppel, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-29",
+    "src": "assets/img/furdoszoba-felujitas-sopron-36.jpg",
+    "cat": "mosdo",
+    "alt": "Szürke betonhatású burkolat, fekete mosdóbútor és sarokzuhany, NM Bau, Sopron"
+  },
+  {
+    "id": "seed-30",
+    "src": "assets/img/furdoszoba-felujitas-sopron-02.jpg",
+    "cat": "wc",
+    "alt": "Vendég-WC fehér márványhatású metrócsempével és mosdóbútorral, NM Bau, Sopron"
+  }
+]

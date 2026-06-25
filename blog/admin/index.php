@@ -233,6 +233,7 @@ admin_head('Bejegyzések');
     <h1>Blog bejegyzések</h1>
     <div>
       <a href="index.php?action=new" class="btn-primary">+ Új bejegyzés</a>
+      <a href="references.php" class="btn-ghost">Referencia-galéria</a>
       <a href="/blog/" target="_blank" class="btn-ghost">Blog megtekintése</a>
       <a href="index.php?action=logout" class="btn-ghost">Kilépés</a>
     </div>

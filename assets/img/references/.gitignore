@@ -1,0 +1,4 @@
+# A tulajdonos által feltöltött referencia-képek a szerveren keletkeznek — ezeket nem követjük a repóban.
+*
+!.gitignore
+!.gitkeep
