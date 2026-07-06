@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Montserrat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/favicon.svg">
-  <link rel="stylesheet" href="assets/site.css?v=6">
+  <link rel="stylesheet" href="assets/site.css?v=8">
   <link rel="canonical" href="https://www.nmbau.hu/referenciak.html">
   <meta name="theme-color" content="#FAFAF7">
   <meta property="og:type" content="website">
@@ -64,10 +64,10 @@
         <li><a href="rolunk.html">Rólunk</a></li>
         <li><a href="ingyenes-felmeres.html">Kapcsolat</a></li>
       </ul>
-      <a href="tel:+36202546624" class="nav-phone" aria-label="Hívjon minket: +36 20 254 6624">
+      <div class="nav-phone" aria-label="Telefonszámaink">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="np-text">+36 20 254 6624</span>
-      </a>
+        <span class="np-text"><a href="tel:+36202546624"><span class="cc">HU</span> +36 20 254 6624</a><a href="tel:+436606304703"><span class="cc">AT</span> +43 660 6304703</a></span>
+      </div>
       <a href="ingyenes-felmeres.html" class="btn btn-primary nav-cta">Azonnali árajánlat</a>
       <div class="lang-switch" role="group" aria-label="Nyelv / Language / Sprache">
         <button type="button" class="lang-btn active" data-lang="hu" aria-pressed="true">HU</button>
@@ -85,7 +85,8 @@
     <a href="blog/">Blog</a>
     <a href="rolunk.html">Rólunk</a>
     <a href="ingyenes-felmeres.html" style="color:var(--accent)">Ingyenes felmérés</a>
-    <a href="tel:+36202546624" class="nav-mobile-phone">+36 20 254 6624</a>
+    <a href="tel:+36202546624" class="nav-mobile-phone"><span class="cc">HU</span> +36 20 254 6624</a>
+    <a href="tel:+436606304703" class="nav-mobile-phone"><span class="cc">AT</span> +43 660 6304703</a>
   </div>
 
   <main class="lead-page">
@@ -139,11 +140,109 @@
       </div>
     </section>
 
+    <!-- ===================== PROJECT WALKTHROUGH (terv → valóság) ===================== -->
+    <!-- PHASE 2: real project story photos — Nagyné Ragasits Ágnes fürdőszoba -->
+    <section class="s-cream pw">
+      <div class="container">
+        <div class="ed-head reveal">
+          <span class="ed-num">02</span>
+          <div class="kicker"><span class="kicker-label">Egy projekt közelről</span><span class="kicker-rule"></span></div>
+          <h2 class="section-title" style="max-width:20ch;">Egy projekt levezetése — így lesz a tervekből valóság</h2>
+          <p class="section-sub" style="max-width:62ch;margin-top:1rem;">Egy soproni fürdőszoba teljes újjászületése, lépésről lépésre — a látványtervtől a bontáson és a kivitelezésen át a kész fürdőszobáig. Hogy lássa, mennyire pontosan tartjuk, amit a terven megígérünk.</p>
+        </div>
+
+        <!-- A terv és a valóság egymás mellett -->
+        <div class="pw-promise reveal">
+          <div class="pw-promise-plan">
+            <figure class="pw-shot pw-shot-plan">
+              <img loading="lazy" src="assets/img/projekt-1-alaprajz.jpg" alt="A felújítandó soproni fürdőszoba eredeti alaprajza méretekkel, NM Bau">
+              <figcaption>Az alaprajz — innen indul minden</figcaption>
+            </figure>
+            <figure class="pw-shot">
+              <img loading="lazy" src="assets/img/projekt-1-terv-zuhany.jpg" alt="3D látványterv a tervezett fürdőszobáról: fahatású bordázott zuhanyfal, márványhatású burkolat és üvegfalas walk-in zuhany, NM Bau">
+              <figcaption>A 3D látványterv</figcaption>
+            </figure>
+          </div>
+          <figure class="pw-shot pw-shot-reality">
+            <span class="pw-badge">A valóság</span>
+            <img loading="lazy" src="assets/img/projekt-1-kesz-atlo.jpg" alt="A kész fürdőszoba pontosan a látványterv szerint: fahatású bordázott zuhanyfal, márványhatású burkolat, üvegfalas walk-in zuhany és fali WC, NM Bau, Sopron">
+            <figcaption>…és ugyanaz megépítve. A látványterv annyira kész, mint a kész fürdőszoba — pontosan ezt hangsúlyozzuk.</figcaption>
+          </figure>
+        </div>
+
+        <!-- A projekt levezetése lépésről lépésre -->
+        <ol class="pw-timeline">
+          <li class="pw-step reveal">
+            <div class="pw-step-body">
+              <div class="pw-step-head"><span class="pw-step-num">01</span><span class="pw-step-phase">Előtte</span></div>
+              <h3 class="pw-step-title">Ahonnan indultunk</h3>
+              <p class="pw-step-text">Egy jellegzetes, évtizedekkel ezelőtt kialakított fürdőszoba: rózsaszín kád, elöregedett csempe, zsúfolt és sötét tér. Funkcionálisan még működött, hangulatában viszont már régen nem az volt, amire a tulajdonos vágyott. Ez volt a kiindulópont.</p>
+            </div>
+            <div class="pw-step-media pw-media-2">
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-elotte-1.jpg" alt="A régi fürdőszoba a felújítás előtt: rózsaszín fürdőkád, elöregedett fehér csempe és függöny, NM Bau, Sopron"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-elotte-2.jpg" alt="A régi fürdőszoba mosdóval és tükrös szekrénnyel a felújítás előtt, NM Bau, Sopron"></figure>
+            </div>
+          </li>
+
+          <li class="pw-step reveal">
+            <div class="pw-step-body">
+              <div class="pw-step-head"><span class="pw-step-num">02</span><span class="pw-step-phase">Tervezés</span></div>
+              <h3 class="pw-step-title">Előbb megterveztük, aztán megépítettük</h3>
+              <p class="pw-step-text">Mielőtt egyetlen csempét is megbontottunk volna, fotórealisztikus 3D látványtervben rögzítettünk minden döntést: a burkolatok elrendezését, a fahatású bordázott díszfalat, a bútorokat és a szaniterek pontos helyét. Így a megrendelő nem a fantáziájára volt utalva — pontosan előre látta, mit kap. Ez a látványterv lett a megállapodásunk a végeredménnyel.</p>
+            </div>
+            <div class="pw-step-media pw-media-3">
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-terv-zuhany-2.jpg" alt="Látványterv a walk-in zuhányról fahatású bordázott díszfallal és márványhatású burkolattal, NM Bau"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-terv-wc.jpg" alt="Látványterv a fali WC-ről fahatású bordázott burkolattal és márványhatású csempével, NM Bau"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-terv-mosdo.jpg" alt="Látványterv a mosdóról és a magas fürdőszobabútorról márványhatású burkolat előtt, NM Bau"></figure>
+            </div>
+          </li>
+
+          <li class="pw-step reveal">
+            <div class="pw-step-body">
+              <div class="pw-step-head"><span class="pw-step-num">03</span><span class="pw-step-phase">Bontás és előkészítés</span></div>
+              <h3 class="pw-step-title">A rendezett munkaterület fél siker</h3>
+              <p class="pw-step-text">A régi burkolat és berendezés bontása előtt letakartuk a lakás közlekedőit, fóliáztuk a nyílászárókat és védőburkolatot fektettünk a padlóra. Új, korszerű ablak került a helyére, a gépészeti nyomvonalakat pedig újragondoltuk. A precíz, tiszta munkaterület nálunk nem extra — ez az alap.</p>
+            </div>
+            <div class="pw-step-media pw-media-2">
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-bontas-1.jpg" alt="A megbontott fürdőszoba az előkészítés alatt: új ablak, csupasz falak és szerszámok, NM Bau, Sopron"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-bontas-2.jpg" alt="Fóliával és takarással védett közlekedő a bontási munkák idejére, NM Bau, Sopron"></figure>
+            </div>
+          </li>
+
+          <li class="pw-step reveal">
+            <div class="pw-step-body">
+              <div class="pw-step-head"><span class="pw-step-num">04</span><span class="pw-step-phase">Kivitelezés</span></div>
+              <h3 class="pw-step-title">Ahol a precizitás eldől</h3>
+              <p class="pw-step-text">Új vízszigetelés, gépészet és elektromos hálózat, majd nedvességálló hordozófelület került a falakra. A nagyformátumú márványhatású lapokat és a fahatású bordázott díszcsempét szintezőékekkel, milliméterre igazítva raktuk fel — a síkok, hézagok és fugavonalak minden ponton pontosan illeszkednek. Ez az a szakasz, amit a kész fürdőn már nem látni, de minden nap érezni.</p>
+            </div>
+            <div class="pw-step-media pw-media-3">
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-kivitelezes-1.jpg" alt="Csupaszra bontott fal új gépészeti csonkokkal a kivitelezés elején, NM Bau, Sopron"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-kivitelezes-2.jpg" alt="Nedvességálló gipszkarton falburkolat a beépített vízvételi helyekkel, NM Bau, Sopron"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-kivitelezes-3.jpg" alt="A fali WC előfalának burkolása márványhatású és fahatású bordázott lapokkal, szintezőékekkel, NM Bau, Sopron"></figure>
+            </div>
+          </li>
+
+          <li class="pw-step reveal">
+            <div class="pw-step-body">
+              <div class="pw-step-head"><span class="pw-step-num">05</span><span class="pw-step-phase">Az eredmény</span></div>
+              <h3 class="pw-step-title">A látványterv életre kelt</h3>
+              <p class="pw-step-text">És így néz ki a kész fürdőszoba, még a festés előtt: üvegfalas walk-in zuhany, fahatású bordázott díszfal, fali WC rejtett tartállyal és nagyformátumú márványhatású burkolat. Tegye egymás mellé a látványtervet és a fotót — alig lehet megkülönböztetni őket. Nálunk pontosan ezt jelenti a precizitás: amit a terven megígérünk, azt építjük meg.</p>
+            </div>
+            <div class="pw-step-media pw-media-3">
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-kesz-zuhany-wc.jpg" alt="A kész fürdőszoba fali WC-vel és üvegfalas walk-in zuhannyal, fahatású bordázott díszfallal, NM Bau, Sopron"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-kesz-zuhany.jpg" alt="A kész üvegfalas walk-in zuhany fahatású bordázott díszfallal és esőztető zuhannyal, NM Bau, Sopron"></figure>
+              <figure class="pw-shot"><img loading="lazy" src="assets/img/projekt-1-kesz-wc.jpg" alt="A kész fali WC fahatású bordázott burkolattal és márványhatású csempével, NM Bau, Sopron"></figure>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <!-- ===================== GALLERY (filterable) ===================== -->
     <section class="s-white">
       <div class="container">
         <div class="ed-head reveal">
-          <span class="ed-num">02</span>
+          <span class="ed-num">03</span>
           <div class="kicker"><span class="kicker-label">A galéria</span><span class="kicker-rule"></span></div>
           <h2 class="section-title">Befejezett munkáink</h2>
           <p class="section-sub" style="max-width:58ch;margin-top:1rem;">Válasszon kategóriát, és csak a hozzá tartozó referenciákat látja, walk-in zuhanyok, kádas fürdők, mosdók és WC-k Sopronból és környékéről.</p>
@@ -239,7 +338,8 @@
         <p class="cta-sub">Ingyenes helyszíni felmérés és pontos árajánlat, 48 órán belül visszahívjuk.</p>
         <div class="cta-actions">
           <a href="ingyenes-felmeres.html" class="btn btn-primary">Helyszíni felmérés<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <a href="tel:+36202546624" class="btn btn-ghost">+36 20 254 6624</a>
+          <a href="tel:+36202546624" class="btn btn-ghost"><span class="cc">HU</span>&nbsp;+36 20 254 6624</a>
+          <a href="tel:+436606304703" class="btn btn-ghost"><span class="cc">AT</span>&nbsp;+43 660 6304703</a>
         </div>
       </div>
     </section>
@@ -267,7 +367,8 @@
         <div>
           <div class="ft-col-title">Kapcsolat</div>
           <ul class="ft-links">
-            <li><a href="tel:+36202546624">+36 20 254 6624</a></li>
+            <li><a href="tel:+36202546624"><span class="cc">HU</span> +36 20 254 6624</a></li>
+            <li><a href="tel:+436606304703"><span class="cc">AT</span> +43 660 6304703</a></li>
             <li><a href="mailto:nmbau@nmbau.hu">nmbau@nmbau.hu</a></li>
             <li class="plain">Sopron és Burgenland</li>
           </ul>
@@ -320,9 +421,49 @@
     .gal-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 0.85rem 0.7rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: linear-gradient(to top, rgba(20,18,15,0.8), transparent); opacity: 0; transition: opacity 0.25s; pointer-events: none; }
     .gal-item:hover .gal-cap { opacity: 1; }
     @media (max-width: 560px) { .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); } }
+
+    /* ===================== PROJECT WALKTHROUGH ===================== */
+    .pw-shot { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: var(--bg-cream); }
+    .pw-shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+    .pw-shot:hover img { transform: scale(1.04); }
+    .pw-shot figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.4rem 1rem 0.85rem; font-size: 0.82rem; line-height: 1.4; color: #fff; background: linear-gradient(to top, rgba(20,18,15,0.82), rgba(20,18,15,0.15) 70%, transparent); }
+
+    /* Terv → valóság */
+    .pw-promise { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(1.75rem, 4vw, 2.75rem); align-items: start; }
+    .pw-promise-plan { display: grid; gap: 16px; grid-template-rows: auto auto; }
+    .pw-shot-plan { aspect-ratio: 3 / 2; }
+    .pw-shot-plan img { object-fit: contain; background: #fff; }
+    .pw-promise-plan .pw-shot:not(.pw-shot-plan) { aspect-ratio: 3 / 2; }
+    .pw-shot-reality { aspect-ratio: 3 / 4; }
+    .pw-badge { position: absolute; top: 14px; left: 14px; z-index: 2; background: var(--accent); color: #fff; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: var(--pill); box-shadow: 0 6px 18px rgba(28,25,23,0.22); }
+
+    /* Timeline */
+    .pw-timeline { list-style: none; margin: clamp(2.5rem, 6vw, 4.5rem) 0 0; padding: 0; display: flex; flex-direction: column; gap: clamp(2.5rem, 6vw, 4.5rem); }
+    .pw-step { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+    .pw-timeline .pw-step:nth-child(even) .pw-step-media { order: -1; }
+    .pw-step-head { display: flex; align-items: baseline; gap: 0.9rem; margin-bottom: 0.9rem; }
+    .pw-step-num { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.1rem); line-height: 1; color: var(--accent); opacity: 0.5; }
+    .pw-step-phase { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+    .pw-step-title { font-family: var(--font-serif); font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.15; color: var(--text); margin: 0 0 0.9rem; }
+    .pw-step-text { color: var(--text-2); font-size: 1.02rem; line-height: 1.7; max-width: 46ch; }
+    .pw-step-media { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+    .pw-media-2 .pw-shot { aspect-ratio: 4 / 5; }
+    .pw-media-3 .pw-shot { aspect-ratio: 1 / 1; }
+    .pw-media-3 .pw-shot:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+
+    @media (max-width: 860px) {
+      .pw-promise { grid-template-columns: 1fr; }
+      .pw-shot-reality { aspect-ratio: 4 / 5; max-height: 78vh; }
+      .pw-step { grid-template-columns: 1fr; gap: 1.5rem; }
+      .pw-timeline .pw-step:nth-child(even) .pw-step-media { order: 0; }
+      .pw-step-text { max-width: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pw-shot img, .pw-shot:hover img { transition: none; transform: none; }
+    }
   </style>
 
-  <script src="assets/i18n.js?v=6"></script>
-  <script src="assets/site.js?v=6"></script>
+  <script src="assets/i18n.js?v=8"></script>
+  <script src="assets/site.js?v=8"></script>
 </body>
 </html>

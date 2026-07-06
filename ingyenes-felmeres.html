@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Don't let the browser restore a previous scroll position (which made the
+    // page jump to the bottom on reopen). Start at the top on a fresh open —
+    // unless we're returning from a submit (?elkuldve=1) or following an anchor.
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (!location.hash && new URLSearchParams(location.search).get('elkuldve') !== '1') {
+      window.addEventListener('load', function () { window.scrollTo(0, 0); });
+    }
+  </script>
   <title>Ingyenes Helyszíni Felmérés - Fürdőszoba Felújítás | NM Bau Sopron</title>
   <meta name="description" content="Kérjen ingyenes helyszíni felmérést fürdőszoba-felújításra Sopronban. Töltse ki az űrlapot, 48 órán belül jelentkezünk, kötelezettség nélkül.">
 
@@ -11,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Montserrat:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/favicon.svg">
-  <link rel="stylesheet" href="assets/site.css?v=6">
+  <link rel="stylesheet" href="assets/site.css?v=8">
   <link rel="canonical" href="https://www.nmbau.hu/ingyenes-felmeres.html">
   <meta name="theme-color" content="#FAFAF7">
   <meta property="og:type" content="website">
@@ -64,10 +73,10 @@
         <li><a href="rolunk.html">Rólunk</a></li>
         <li><a href="ingyenes-felmeres.html" class="current">Kapcsolat</a></li>
       </ul>
-      <a href="tel:+36202546624" class="nav-phone" aria-label="Hívjon minket: +36 20 254 6624">
+      <div class="nav-phone" aria-label="Telefonszámaink">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="np-text">+36 20 254 6624</span>
-      </a>
+        <span class="np-text"><a href="tel:+36202546624"><span class="cc">HU</span> +36 20 254 6624</a><a href="tel:+436606304703"><span class="cc">AT</span> +43 660 6304703</a></span>
+      </div>
       <a href="ingyenes-felmeres.html" class="btn btn-primary nav-cta current">Azonnali árajánlat</a>
       <div class="lang-switch" role="group" aria-label="Nyelv / Language / Sprache">
         <button type="button" class="lang-btn active" data-lang="hu" aria-pressed="true">HU</button>
@@ -85,7 +94,8 @@
     <a href="blog/">Blog</a>
     <a href="rolunk.html">Rólunk</a>
     <a href="ingyenes-felmeres.html" style="color:var(--accent)">Ingyenes felmérés</a>
-    <a href="tel:+36202546624" class="nav-mobile-phone">+36 20 254 6624</a>
+    <a href="tel:+36202546624" class="nav-mobile-phone"><span class="cc">HU</span> +36 20 254 6624</a>
+    <a href="tel:+436606304703" class="nav-mobile-phone"><span class="cc">AT</span> +43 660 6304703</a>
   </div>
 
   <main class="lead-page">
@@ -141,7 +151,7 @@
             <div class="ci-list" style="margin-top:2rem;">
               <div class="ci-item">
                 <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.42 2 2 0 013.6 1.24h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9a16 16 0 006 6l.94-.94a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0121.73 16.92z"/></svg></span>
-                <div><div class="ci-label">Inkább telefonálnál?</div><div class="ci-val big"><a href="tel:+36202546624">+36 20 254 6624</a></div></div>
+                <div><div class="ci-label">Inkább telefonálnál?</div><div class="ci-val big"><a href="tel:+36202546624"><span class="cc">HU</span> +36 20 254 6624</a></div><div class="ci-val big" style="margin-top:0.4rem;"><a href="tel:+436606304703"><span class="cc">AT</span> +43 660 6304703</a></div></div>
               </div>
             </div>
           </div>
@@ -153,12 +163,12 @@
                    (the client then clicks FormSubmit's one-time activation email).
                    After sending, FormSubmit redirects back to ?elkuldve=1, where a small
                    inline script shows the success card below. -->
-              <form id="survey-form" enctype="multipart/form-data" method="POST" action="https://formsubmit.co/pirint.milan@gmail.com">
+              <form id="survey-form" enctype="multipart/form-data" method="POST" action="#">
                 <!-- FormSubmit configuration -->
                 <input type="hidden" name="_subject" value="Új felmérési kérelem – nmbau.hu">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://dist-omega-virid-38.vercel.app/ingyenes-felmeres.html?elkuldve=1">
+                <input type="hidden" name="_next" value="https://www.nmbau.hu/ingyenes-felmeres.html?elkuldve=1">
                 <!-- Honeypot: bots fill this, humans never see it -->
                 <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
                 <h2 class="form-h">Felmérés kérése</h2>
@@ -232,7 +242,8 @@
                     <span class="f-upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span>
                     <span class="f-upload-text"><span>Tallózás</span> vagy húzd ide a képeket</span>
                     <span class="f-upload-hint">JPG, PNG vagy HEIC, legfeljebb 5 kép. A fotók sokat segítenek a pontos ajánlatban.</span>
-                    <input type="file" id="s-files" name="photos[]" accept="image/*" multiple>
+                    <!-- FormSubmit only accepts uploads under name="attachment" — "photos[]" makes it 500 -->
+                    <input type="file" id="s-files" name="attachment" accept="image/*" multiple>
                   </label>
                   <div class="f-previews" id="s-previews" aria-live="polite"></div>
                 </div>
@@ -247,7 +258,7 @@
               <div class="form-success" id="survey-success" role="status">
                 <div class="fs-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
                 <h3>Köszönjük a megkeresést!</h3>
-                <p>Megkaptuk a felmérési kérelmedet. Munkatársunk általában 48 órán belül felhív, hogy egyeztessünk egy időpontot. Sürgős esetben hívj: +36 20 254 6624.</p>
+                <p>Megkaptuk a felmérési kérelmedet. Munkatársunk általában 48 órán belül felhív, hogy egyeztessünk egy időpontot. Sürgős esetben hívj: +36 20 254 6624 (HU) vagy +43 660 6304703 (AT).</p>
               </div>
             </div>
           </div>
@@ -301,7 +312,8 @@
         <div>
           <div class="ft-col-title">Kapcsolat</div>
           <ul class="ft-links">
-            <li><a href="tel:+36202546624">+36 20 254 6624</a></li>
+            <li><a href="tel:+36202546624"><span class="cc">HU</span> +36 20 254 6624</a></li>
+            <li><a href="tel:+436606304703"><span class="cc">AT</span> +43 660 6304703</a></li>
             <li><a href="mailto:nmbau@nmbau.hu">nmbau@nmbau.hu</a></li>
             <li class="plain">Sopron és Burgenland</li>
           </ul>
@@ -314,9 +326,15 @@
     </div>
   </footer>
 
-  <script src="assets/i18n.js?v=6"></script>
-  <script src="assets/site.js?v=6"></script>
+  <script src="assets/i18n.js?v=8"></script>
+  <script src="assets/site.js?v=8"></script>
   <script>
+    // Route the form to its inbox at runtime so the address never appears
+    // in the page source (keeps it out of reach of email-harvesting bots).
+    (function () {
+      var f = document.getElementById('survey-form');
+      if (f) f.setAttribute('action', 'https://formsubmit.co/' + atob('dHJhdW1iYWRkZXNpZ25AZ21haWwuY29t'));
+    })();
     // After FormSubmit sends the email it redirects to ?elkuldve=1 —
     // hide the form and reveal the existing success card.
     (function () {

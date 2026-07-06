@@ -27,6 +27,13 @@ yarn-error.log*
 Nm bau website pics/
 more pics/
 Before and after/
+Bontás előkészítés*/
+Előtte képek*/
+Kivitelezés közben*/
+Kész fürdőszoba*/
+Látványtervek*/
+alaprajz*.jpeg
+*.pdf
 *.zip
 *.HEIC
 *.heic
@@ -35,6 +42,8 @@ _review/
 assets/img/_thumbs/
 assets/img/_manifest.json
 convert-pics.js
+convert-project.js
+patch-phones.js
 contact-sheet.js
 patch-images.js
 package-lock.json
