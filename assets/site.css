@@ -25,7 +25,7 @@
   --on-dark:       #F5F0E8;
   --on-dark-2:     rgba(245,240,232,0.65);
   --on-dark-3:     rgba(245,240,232,0.38);
-  --nav-h:         86px;
+  --nav-h:         92px;
   --max-w:         1240px;
   --pad-x:         clamp(1.25rem, 5vw, 3.25rem);
   --section-py:    clamp(5rem, 10vw, 8.5rem);
@@ -498,6 +498,19 @@ section { padding: var(--section-py) 0; }
   /* keep the language switch reachable, just a touch tighter */
   .nav-inner { gap: 0.6rem; }
   .lang-btn { padding: 0.32rem 0.42rem; font-size: 0.66rem; }
+}
+
+/* Breathable 3-zone desktop nav: logo far left · links + CTA + language
+   centred · phone numbers far right. Two equal auto-margins (one after the
+   logo, one before the phone) push the middle cluster to dead-centre.
+   Scoped to ≥821px so the mobile/hamburger layout above is untouched. */
+@media (min-width: 821px) {
+  .nav-logo    { order: 0; }
+  .nav-links   { order: 1; margin-left: auto; margin-right: 0; }
+  .nav-cta     { order: 2; }
+  .lang-switch { order: 3; }
+  .nav-phone   { order: 4; margin-left: auto; }
+  .nav-burger  { order: 5; }
 }
 
 /* ==========================================================
