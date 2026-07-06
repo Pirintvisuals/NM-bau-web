@@ -44,6 +44,7 @@ assets/img/_manifest.json
 convert-pics.js
 convert-project.js
 patch-phones.js
+apply-journey.js
 contact-sheet.js
 patch-images.js
 package-lock.json
