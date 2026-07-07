@@ -241,21 +241,22 @@ section { padding: var(--section-py) 0; }
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: clamp(0.9rem, 1.6vw, 1.5rem);
+  justify-content: space-between;
+  gap: clamp(1rem, 2vw, 2.25rem);
 }
 
 .nav-logo { flex-shrink: 0; display: block; line-height: 0; }
 
+/* Breathable 3-zone nav: logo pinned left, menu fills & centres the middle,
+   the action cluster (CTA · phone · language) pinned right. */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(2rem, 3vw, 3.25rem);
+  justify-content: center;
+  flex: 1 1 auto;
+  gap: clamp(1.75rem, 2.8vw, 3rem);
   list-style: none;
-  /* push the action cluster (phone · CTA · language) to the far right,
-     so the links sit calmly next to the logo instead of stretched edge-to-edge */
-  margin-left: clamp(1.25rem, 3.5vw, 3rem);
-  margin-right: auto;
+  margin: 0;
 }
 
 /* Szolgáltatások dropdown */
@@ -476,8 +477,8 @@ section { padding: var(--section-py) 0; }
 /* Tablet / narrow desktop: keep the whole nav cluster on one line before the
    hamburger kicks in, so the (longest, Hungarian) CTA never clips. */
 @media (max-width: 1180px) {
-  .nav-links { gap: clamp(1.35rem, 2vw, 2rem); margin-left: clamp(0.75rem, 1.8vw, 1.5rem); }
-  .nav-inner { gap: clamp(0.7rem, 1.2vw, 1.1rem); }
+  .nav-links { gap: clamp(1.1rem, 1.8vw, 1.75rem); }
+  .nav-inner { gap: clamp(0.75rem, 1.4vw, 1.3rem); }
   .nav-cta { padding: 0.6rem 1rem; }
   .nav-phone { font-size: 0.82rem; }
 }
