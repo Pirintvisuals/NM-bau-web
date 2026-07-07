@@ -236,9 +236,9 @@ section { padding: var(--section-py) 0; }
 
 .nav-inner {
   position: relative;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--pad-x);
+  max-width: none;
+  margin: 0;
+  padding: 0 clamp(1.25rem, 2.5vw, 2.25rem);
   width: 100%;
   display: flex;
   align-items: center;
