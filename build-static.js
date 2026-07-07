@@ -27,6 +27,7 @@ const pages = [
   'furdoszoba-felujitas.html',
   'ingatlan-felujitas.html',
   'referenciak.html',
+  'projekt-1.html',
   'rolunk.html',
   'ingyenes-felmeres.html',
   'adatkezeles.html',
