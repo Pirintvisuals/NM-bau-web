@@ -235,28 +235,42 @@ section { padding: var(--section-py) 0; }
 }
 
 .nav-inner {
+  position: relative;
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--pad-x);
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: clamp(1rem, 2vw, 2.25rem);
 }
 
-.nav-logo { flex-shrink: 0; display: block; line-height: 0; }
+.nav-logo { flex: 0 0 auto; display: block; line-height: 0; }
 
 /* Breathable 3-zone nav: logo pinned left, menu fills & centres the middle,
    the action cluster (CTA · phone · language) pinned right. */
+/* Menu: a fixed-size block that sits dead-centre between two equal-width
+   side zones (logo-zone and action-zone both flex:1), so it is truly centred. */
+/* Menu fills the space between the logo and the action cluster and centres
+   its items there — always breathable, never overlapping the sides. */
 .nav-links {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
-  gap: clamp(1.75rem, 2.8vw, 3rem);
+  gap: clamp(1.4rem, 2.4vw, 2.5rem);
   list-style: none;
   margin: 0;
+}
+
+/* Right-hand action cluster: phone · CTA · language, pinned to the far right. */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.85rem, 1.5vw, 1.6rem);
+  flex: 0 0 auto;
 }
 
 /* Szolgáltatások dropdown */
@@ -460,7 +474,7 @@ section { padding: var(--section-py) 0; }
   transform: translateY(-50%); width: 1px; height: 20px;
   background: var(--border);
 }
-@media (max-width: 820px) { .lang-switch::before { display: none; } }
+@media (max-width: 1200px) { .lang-switch::before { display: none; } }
 .lang-btn {
   font-family: inherit; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
   line-height: 1; text-transform: uppercase; color: var(--text-3);
@@ -476,7 +490,7 @@ section { padding: var(--section-py) 0; }
 
 /* Tablet / narrow desktop: keep the whole nav cluster on one line before the
    hamburger kicks in, so the (longest, Hungarian) CTA never clips. */
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
   .nav-links { gap: clamp(1.1rem, 1.8vw, 1.75rem); }
   .nav-inner { gap: clamp(0.75rem, 1.4vw, 1.3rem); }
   .nav-cta { padding: 0.6rem 1rem; }
@@ -489,11 +503,12 @@ section { padding: var(--section-py) 0; }
   .nav-phone svg { width: 18px; height: 18px; }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 1200px) {
   .nav-links, .nav-cta { display: none; }
   .nav-burger { display: flex; }
   /* tap-to-call stays in the header; icon-only to save room next to the burger */
-  .nav-phone { margin-left: auto; margin-right: 0.25rem; }
+  .nav-actions { gap: 0.55rem; }
+  .nav-phone { margin: 0; }
   .nav-phone .np-text { display: none; }
   .nav-phone svg { width: 20px; height: 20px; }
   /* keep the language switch reachable, just a touch tighter */
@@ -501,18 +516,6 @@ section { padding: var(--section-py) 0; }
   .lang-btn { padding: 0.32rem 0.42rem; font-size: 0.66rem; }
 }
 
-/* Breathable 3-zone desktop nav: logo far left · links + CTA + language
-   centred · phone numbers far right. Two equal auto-margins (one after the
-   logo, one before the phone) push the middle cluster to dead-centre.
-   Scoped to ≥821px so the mobile/hamburger layout above is untouched. */
-@media (min-width: 821px) {
-  .nav-logo    { order: 0; }
-  .nav-links   { order: 1; margin-left: auto; margin-right: 0; }
-  .nav-cta     { order: 2; }
-  .lang-switch { order: 3; }
-  .nav-phone   { order: 4; margin-left: auto; }
-  .nav-burger  { order: 5; }
-}
 
 /* ==========================================================
    FOOTER – dark charcoal
