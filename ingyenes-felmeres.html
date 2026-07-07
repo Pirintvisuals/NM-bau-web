@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     // Don't let the browser restore a previous scroll position (which made the
-    // page jump to the bottom on reopen). Start at the top on a fresh open —
+    // page jump to the bottom on reopen). Start at the top on a fresh open -
     // unless we're returning from a submit (?elkuldve=1) or following an anchor.
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     if (!location.hash && new URLSearchParams(location.search).get('elkuldve') !== '1') {
@@ -254,7 +254,7 @@
                     <span class="f-upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span>
                     <span class="f-upload-text"><span>Tallózás</span> vagy húzd ide a képeket</span>
                     <span class="f-upload-hint">JPG, PNG vagy HEIC, legfeljebb 5 kép. A fotók sokat segítenek a pontos ajánlatban.</span>
-                    <!-- FormSubmit only accepts uploads under name="attachment" — "photos[]" makes it 500 -->
+                    <!-- FormSubmit only accepts uploads under name="attachment" - "photos[]" makes it 500 -->
                     <input type="file" id="s-files" name="attachment" accept="image/*" multiple>
                   </label>
                   <div class="f-previews" id="s-previews" aria-live="polite"></div>
@@ -353,7 +353,7 @@
       var f = document.getElementById('survey-form');
       if (f) f.setAttribute('action', 'https://formsubmit.co/' + atob('dHJhdW1iYWRkZXNpZ25AZ21haWwuY29t'));
     })();
-    // After FormSubmit sends the email it redirects to ?elkuldve=1 —
+    // After FormSubmit sends the email it redirects to ?elkuldve=1 -
     // hide the form and reveal the existing success card.
     (function () {
       if (new URLSearchParams(location.search).get('elkuldve') === '1') {
