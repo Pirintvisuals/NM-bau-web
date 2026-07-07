@@ -246,32 +246,40 @@ section { padding: var(--section-py) 0; }
   gap: clamp(1rem, 2vw, 2.25rem);
 }
 
-.nav-logo { flex: 0 0 auto; display: block; line-height: 0; }
+/* 3-zone nav: logo zone (flex:1 left) · links (natural width, truly centred) · actions zone (flex:1 right) */
+.nav-logo { flex: 1 0 auto; display: block; line-height: 0; }
 
-/* Breathable 3-zone nav: logo pinned left, menu fills & centres the middle,
-   the action cluster (CTA · phone · language) pinned right. */
-/* Menu: a fixed-size block that sits dead-centre between two equal-width
-   side zones (logo-zone and action-zone both flex:1), so it is truly centred. */
-/* Menu fills the space between the logo and the action cluster and centres
-   its items there — always breathable, never overlapping the sides. */
 .nav-links {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   gap: clamp(1.4rem, 2.4vw, 2.5rem);
   list-style: none;
   margin: 0;
 }
 
-/* Right-hand action cluster: phone · CTA · language, pinned to the far right. */
+/* Right-hand action cluster: city · phone · CTA · language, pinned to the far right. */
 .nav-actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: clamp(0.85rem, 1.5vw, 1.6rem);
-  flex: 0 0 auto;
+  flex: 1 0 auto;
 }
+
+/* City / service-area badge in the nav right zone */
+.nav-city {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-3);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.nav-city svg { width: 13px; height: 13px; color: var(--accent); flex-shrink: 0; }
 
 /* Szolgáltatások dropdown */
 .nav-links .has-dropdown { position: relative; }
@@ -504,7 +512,7 @@ section { padding: var(--section-py) 0; }
 }
 
 @media (max-width: 1200px) {
-  .nav-links, .nav-cta { display: none; }
+  .nav-links, .nav-cta, .nav-city { display: none; }
   .nav-burger { display: flex; }
   /* tap-to-call stays in the header; icon-only to save room next to the burger */
   .nav-actions { gap: 0.55rem; }
