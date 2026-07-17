@@ -29,6 +29,7 @@ const pages = [
   'referenciak.html',
   'projekt-1.html',
   'rolunk.html',
+  'karrier.html',
   'ingyenes-felmeres.html',
   'adatkezeles.html',
 ];
