@@ -89,7 +89,7 @@
 
   /* ---------- Photo upload (preview, remove, drag & drop) ---------- */
   var MAX_FILES = 5;
-  var MAX_SIZE = 12 * 1024 * 1024; // 12 MB per file
+  var MAX_SIZE = 9 * 1024 * 1024; // 9 MB per file (FormSubmit caps total upload at 10 MB)
 
   document.querySelectorAll('input[type="file"]').forEach(function (input) {
     var zone = input.closest('.f-upload');
