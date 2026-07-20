@@ -1288,15 +1288,68 @@
     try { localStorage.setItem('nmlang', lang); } catch (e) {}
   }
 
+  /* --- URL <-> nyelv szinkron -----------------------------------------
+     A magyar a gyökéren él (nincs előtag), az angol a /en/… , a német a
+     /de/… alatt. A böngésző címét a History API-val írjuk át, oldalújratöltés
+     nélkül; oldalbetöltéskor pedig a címből olvassuk ki az aktív nyelvet. Az
+     .htaccess az /en/ és /de/ előtagot lecsupaszítja, így a relatív linkek és
+     az assetek mindkét előtag alatt működnek. */
+  var PREFIX_RE = /^\/(en|de)(\/|$)/;
+
+  // A cím útvonalából kiolvasott nyelv (előtag nélkül -> 'hu').
+  function urlLang() {
+    var m = location.pathname.match(PREFIX_RE);
+    return m ? m[1] : 'hu';
+  }
+
+  // Az útvonal nyelvi előtag nélküli ("csupasz") alakja.
+  function barePath() {
+    var p = location.pathname;
+    var m = p.match(PREFIX_RE);
+    if (!m) return p;
+    var rest = p.slice(1 + m[1].length); // "/en/x" -> "/x", "/en" -> ""
+    return rest || '/';
+  }
+
+  // A megadott nyelvhez tartozó teljes útvonal (search + hash megtartva).
+  function langPath(lang) {
+    var bare = barePath();
+    if (bare.charAt(0) !== '/') bare = '/' + bare;
+    var p;
+    if (lang === 'hu') p = bare;
+    else p = (bare === '/') ? ('/' + lang) : ('/' + lang + bare);
+    return p + location.search + location.hash;
+  }
+
+  function syncUrl(lang, replace) {
+    var target = langPath(lang);
+    var current = location.pathname + location.search + location.hash;
+    if (target === current) return;
+    try {
+      if (replace) history.replaceState({ nmlang: lang }, '', target);
+      else history.pushState({ nmlang: lang }, '', target);
+    } catch (e) {}
+  }
+
   function init() {
     takeSnapshot();
+    var fromUrl = urlLang();
     var saved = 'hu';
     try { saved = localStorage.getItem('nmlang') || 'hu'; } catch (e) {}
-    if (saved !== 'hu') apply(saved);
-    else apply('hu'); // sets button state
+    // A cím előtagja elsőbbséget élvez (megosztott/könyvjelzőzött link),
+    // különben a korábban választott nyelvet hozzuk vissza.
+    var lang = (fromUrl !== 'hu') ? fromUrl : saved;
+    apply(lang);
+    syncUrl(lang, true); // a címet igazítjuk, új history-bejegyzés nélkül
     document.querySelectorAll('.lang-btn').forEach(function (b) {
-      b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); });
+      b.addEventListener('click', function () {
+        var l = b.getAttribute('data-lang');
+        apply(l);
+        syncUrl(l, false);
+      });
     });
+    // Vissza/előre gombok: a címhez igazítjuk a nyelvet.
+    window.addEventListener('popstate', function () { apply(urlLang()); });
   }
 
   if (document.readyState === 'loading') {

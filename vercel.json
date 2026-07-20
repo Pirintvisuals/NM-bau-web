@@ -1,5 +1,11 @@
 {
   "buildCommand": "node build-static.js",
   "outputDirectory": "dist",
-  "framework": null
+  "framework": null,
+  "rewrites": [
+    { "source": "/en", "destination": "/index.html" },
+    { "source": "/de", "destination": "/index.html" },
+    { "source": "/en/(.*)", "destination": "/$1" },
+    { "source": "/de/(.*)", "destination": "/$1" }
+  ]
 }
