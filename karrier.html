@@ -13,7 +13,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-405489986"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-405489986');</script>
   <title>Karrier - Csatlakozz az NM Bau csapatához | Sopron &amp; Burgenland</title>
-  <meta name="description" content="Álláslehetőségek az NM Bau csapatában: hidegburkoló, német nyelven beszélő vízvezetékszerelő, burkoló segéd. Fürdőszoba-felújítás Sopronban és Burgenlandban.">
+  <meta name="description" content="Álláslehetőségek az NM Bau csapatában: értékesítő, vízvezeték szerelő, német nyelven beszélő vízvezeték szerelő, hidegburkoló, kőműves, segédmunkás. Sopron és Burgenland. Önéletrajz nélkül is jelentkezhetsz.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +104,30 @@
     .job-meta svg { width: 16px; height: 16px; }
     .job-cta-wrap .btn { white-space: nowrap; }
 
+    /* Featured job (German-speaking) — visually elevated so it reads as the priority role */
+    .job-card.featured {
+      border-left-width: 5px;
+      border-color: var(--accent, #b98a4b);
+      background:
+        linear-gradient(0deg, rgba(184,134,11,.06), rgba(184,134,11,.06)),
+        var(--surface, #fff);
+      box-shadow: 0 14px 36px -22px rgba(184,134,11,.6);
+    }
+    .job-card.featured:hover { box-shadow: 0 20px 44px -22px rgba(184,134,11,.7); }
+    .job-badge-de {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--accent, #b98a4b); color: #fff;
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700;
+      padding: .38rem .8rem; border-radius: 999px; margin-bottom: .8rem;
+    }
+    .job-badge-de svg { width: 14px; height: 14px; }
+    .job-de-highlight {
+      background: var(--accent-dim, rgba(184,134,11,.16));
+      color: var(--accent-strong, #8a6410);
+      padding: 0 .28em; border-radius: 5px; font-weight: 700;
+      box-decoration-break: clone; -webkit-box-decoration-break: clone;
+    }
+
     /* Hiring process */
     .hire-steps { display: grid; gap: 1.5rem; margin-top: 2.5rem; grid-template-columns: 1fr; counter-reset: hs; }
     @media (min-width: 760px) { .hire-steps { grid-template-columns: repeat(4, 1fr); } }
@@ -180,6 +204,7 @@
         </li>
         <li><a href="blog/">Blog</a></li>
         <li><a href="rolunk.html">Rólunk</a></li>
+        <li><a href="karrier.html" aria-current="page" style="color:var(--accent)">Karrier</a></li>
         <li><a href="ingyenes-felmeres.html">Kapcsolat</a></li>
       </ul>
       <div class="nav-actions">
@@ -241,9 +266,9 @@
           </div>
 
           <div class="career-stats">
-            <div class="career-stat"><div class="cs-num">2020</div><div class="cs-label">óta a szakmában</div></div>
+            <div class="career-stat"><div class="cs-num">2008</div><div class="cs-label">óta a szakmában</div></div>
             <div class="career-stat"><div class="cs-num">HU &amp; AT</div><div class="cs-label">Sopron és Burgenland</div></div>
-            <div class="career-stat"><div class="cs-num">3</div><div class="cs-label">nyitott pozíció</div></div>
+            <div class="career-stat"><div class="cs-num">7</div><div class="cs-label">nyitott pozíció</div></div>
             <div class="career-stat"><div class="cs-num">100%</div><div class="cs-label">hosszú távú munka</div></div>
           </div>
         </div>
@@ -299,11 +324,97 @@
         <div class="career-sec-head reveal">
           <div class="eyebrow">Nyitott pozíciók</div>
           <h2>Válaszd ki a hozzád illő szerepet.</h2>
-          <p>Kattints a &bdquo;Jelentkezem erre&rdquo; gombra &mdash; egy rövid űrlap nyílik meg, és pár perc alatt elküldheted a jelentkezésed.</p>
+          <p>Kattints a &bdquo;Jelentkezem erre&rdquo; gombra &mdash; egy rövid űrlap nyílik meg, és pár perc alatt elküldheted a jelentkezésed. <strong>Önéletrajz nélkül is jelentkezhetsz.</strong></p>
         </div>
         <div class="job-list">
 
-          <!-- JOB 1 -->
+          <!-- JOB: Értékesítő -->
+          <article class="job-card reveal">
+            <div>
+              <span class="job-tag">Értékesítés &middot; Ügyfélkapcsolat</span>
+              <h3>Értékesítő</h3>
+              <ul class="job-points">
+                <li>Fürdőszoba- és ingatlanfelújítási ajánlatok, ügyfélkapcsolat</li>
+                <li>Felmérések egyeztetése, ajánlatok követése, kapcsolattartás</li>
+                <li>Korrekt fizetés, hosszú távú, stabil háttér</li>
+                <li>Jó kommunikációs készség és igényes hozzáállás számít</li>
+              </ul>
+              <div class="job-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és Burgenland</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>B kategóriás jogosítvány</span>
+              </div>
+            </div>
+            <div class="job-cta-wrap">
+              <button type="button" class="btn btn-primary js-apply-open" data-position="Értékesítő">Jelentkezem erre</button>
+            </div>
+          </article>
+
+          <!-- JOB: Vízvezeték szerelő -->
+          <article class="job-card reveal">
+            <div>
+              <span class="job-tag">Szakember &middot; Gépészet</span>
+              <h3>Vízvezeték szerelő</h3>
+              <ul class="job-points">
+                <li>Víz- és csatorna alapszerelés, fürdőszobák szerelvényezése</li>
+                <li>Modern fürdőszoba-felújításokon, összeszokott csapatban</li>
+                <li>Ausztriai munkavégzés esetén osztrák órabér</li>
+                <li>Precíz, megbízható munkavégzést keresünk</li>
+              </ul>
+              <div class="job-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és Burgenland</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>B kategóriás jogosítvány, saját autó előny</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Teljes munkaidő</span>
+              </div>
+            </div>
+            <div class="job-cta-wrap">
+              <button type="button" class="btn btn-primary js-apply-open" data-position="Vízvezeték szerelő">Jelentkezem erre</button>
+            </div>
+          </article>
+
+          <!-- JOB: Német nyelven beszélő vízvezeték szerelő (FEATURED — German highlighted) -->
+          <article class="job-card featured reveal">
+            <div>
+              <span class="job-badge-de"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 7.1-1.01L12 2z"/></svg>Kiemelt pozíció &middot; Német nyelvtudás</span>
+              <span class="job-tag">Szakember &middot; Német nyelv</span>
+              <h3><span class="job-de-highlight">Német nyelven beszélő</span> vízvezeték szerelő</h3>
+              <ul class="job-points">
+                <li><strong>Ügyfelekkel németül kommunikálsz</strong> az ausztriai munkákon &mdash; ez a pozíció kulcsa</li>
+                <li>Víz- és csatorna alapszerelés, fürdőszobák szerelvényezése</li>
+                <li>Ausztriai munkavégzésnél osztrák órabér, kiemelt megbecsülés</li>
+                <li>Stabil, folyamatos, jól szervezett munka (nem káosz)</li>
+              </ul>
+              <div class="job-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és Burgenland</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>B kategóriás jogosítvány, saját autó szükséges</span>
+              </div>
+            </div>
+            <div class="job-cta-wrap">
+              <button type="button" class="btn btn-primary js-apply-open" data-position="Német nyelven beszélő vízvezeték szerelő">Jelentkezem erre</button>
+            </div>
+          </article>
+
+          <!-- JOB: Hidegburkoló -->
+          <article class="job-card reveal">
+            <div>
+              <span class="job-tag">Szakember &middot; Burkolás</span>
+              <h3>Hidegburkoló</h3>
+              <ul class="job-points">
+                <li>Csempe, nagyméretű lap, mikrocement &mdash; igényes burkolatok</li>
+                <li>Fürdőszoba-felújításokon és prémium kivitelezéseken dolgozol</li>
+                <li>Hosszú távú lehetőség, korrekt fizetés, stabil háttér</li>
+                <li>Precíz, minőségi munkavégzést keresünk</li>
+              </ul>
+              <div class="job-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és Burgenland</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Teljes munkaidő</span>
+              </div>
+            </div>
+            <div class="job-cta-wrap">
+              <button type="button" class="btn btn-primary js-apply-open" data-position="Hidegburkoló">Jelentkezem erre</button>
+            </div>
+          </article>
+
+          <!-- JOB: Pályakezdő hidegburkoló -->
           <article class="job-card reveal">
             <div>
               <span class="job-tag">Pályakezdő &middot; Betanulás</span>
@@ -312,10 +423,10 @@
                 <li>Betanítunk és segítjük a fejlődésedet, akár most végeztél</li>
                 <li>Modern fürdőszoba-felújításokon dolgozol</li>
                 <li>Hosszú távú munkalehetőség, korrekt fizetés és megbecsülés</li>
-                <li>Precíz, megbízható és igényes hozzáállást keresünk</li>
+                <li>Precíz, megbízható és tanulni akaró hozzáállást keresünk</li>
               </ul>
               <div class="job-meta">
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és környéke, Burgenland</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és Burgenland</span>
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Teljes munkaidő</span>
               </div>
             </div>
@@ -324,45 +435,45 @@
             </div>
           </article>
 
-          <!-- JOB 2 -->
+          <!-- JOB: Kőműves -->
           <article class="job-card reveal">
             <div>
-              <span class="job-tag">Szakember &middot; Német nyelvtudás</span>
-              <h3>Német nyelven beszélő vízvezetékszerelő</h3>
+              <span class="job-tag">Szakember &middot; Kőműves</span>
+              <h3>Kőműves</h3>
               <ul class="job-points">
-                <li>Ügyfelekkel német nyelven kommunikálsz, csapatban dolgozol</li>
-                <li>Víz- és csatorna alapszerelés, fürdőszobák szerelvényezése</li>
-                <li>Ausztriai munkavégzés esetén osztrák órabér</li>
-                <li>Stabil, folyamatos, jól szervezett munka (nem káosz)</li>
+                <li>Falazás, vakolás, aljzatkészítés, szerkezeti munkák</li>
+                <li>Fürdőszoba- és ingatlanfelújításokon, változatos feladatok</li>
+                <li>Hosszú távú, stabil munka, korrekt fizetés</li>
+                <li>Precíz, megbízható szakembert keresünk</li>
               </ul>
               <div class="job-meta">
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és Burgenland</span>
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>B jogosítvány, saját autó szükséges</span>
-              </div>
-            </div>
-            <div class="job-cta-wrap">
-              <button type="button" class="btn btn-primary js-apply-open" data-position="Német nyelvű vízvezetékszerelő">Jelentkezem erre</button>
-            </div>
-          </article>
-
-          <!-- JOB 3 -->
-          <article class="job-card reveal">
-            <div>
-              <span class="job-tag">Pályakezdő &middot; Burkoló segéd</span>
-              <h3>Pályakezdő burkoló / burkoló segéd</h3>
-              <ul class="job-points">
-                <li>Fürdőszoba-felújításokon és igényes kivitelezéseken dolgozol</li>
-                <li>Ausztriában és Sopron környékén, változatos munkák</li>
-                <li>Hosszú távú lehetőség, korrekt csapat, stabil háttér</li>
-                <li>Megbízhatóság, munkabírás és tanulni akarás számít</li>
-              </ul>
-              <div class="job-meta">
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron környéke, Ausztria</span>
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Teljes munkaidő</span>
               </div>
             </div>
             <div class="job-cta-wrap">
-              <button type="button" class="btn btn-primary js-apply-open" data-position="Pályakezdő burkoló / segéd">Jelentkezem erre</button>
+              <button type="button" class="btn btn-primary js-apply-open" data-position="Kőműves">Jelentkezem erre</button>
+            </div>
+          </article>
+
+          <!-- JOB: Segédmunkás -->
+          <article class="job-card reveal">
+            <div>
+              <span class="job-tag">Segédmunka &middot; Betanulás</span>
+              <h3>Segédmunkás</h3>
+              <ul class="job-points">
+                <li>Anyagmozgatás, bontás, munkaterület előkészítése és takarítása</li>
+                <li>Betanulási lehetőség, akár a szakma megtanulása felé is</li>
+                <li>Hosszú távú munkalehetőség, korrekt fizetés</li>
+                <li>Munkabírás, megbízhatóság és tanulni akarás számít</li>
+              </ul>
+              <div class="job-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Sopron és Burgenland</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Teljes munkaidő</span>
+              </div>
+            </div>
+            <div class="job-cta-wrap">
+              <button type="button" class="btn btn-primary js-apply-open" data-position="Segédmunkás">Jelentkezem erre</button>
             </div>
           </article>
 
@@ -381,7 +492,7 @@
           <div class="hire-step reveal"><div class="hs-num">01</div><h3>Jelentkezés</h3><p>Kitöltöd a rövid űrlapot &mdash; pár perc az egész. Önéletrajz nem kötelező.</p></div>
           <div class="hire-step reveal"><div class="hs-num">02</div><h3>Telefonos egyeztetés</h3><p>Felhívunk, és megbeszéljük az elvárásokat és a részleteket.</p></div>
           <div class="hire-step reveal"><div class="hs-num">03</div><h3>Személyes találkozó</h3><p>Megismerjük egymást, és megnézzük, hogyan illesz a csapatba.</p></div>
-          <div class="hire-step reveal"><div class="hs-num">04</div><h3>Első munkanap</h3><p>Betanítunk, és kezdheted is a valódi, igényes munkát.</p></div>
+          <div class="hire-step reveal"><div class="hs-num">04</div><h3>Első munkanap</h3><p>Beilleszkedsz a csapatba, és belevágsz a valódi, igényes munkába.</p></div>
         </div>
 
         <!-- Spontaneous application band -->
@@ -425,9 +536,13 @@
                   <label class="f-label" for="a-position">Melyik pozícióra jelentkezel? *</label>
                   <select class="f-select" id="a-position" name="position" required>
                     <option value="" disabled selected>Válassz...</option>
+                    <option value="Értékesítő">Értékesítő</option>
+                    <option value="Vízvezeték szerelő">Vízvezeték szerelő</option>
+                    <option value="Német nyelven beszélő vízvezeték szerelő">Német nyelven beszélő vízvezeték szerelő</option>
+                    <option value="Hidegburkoló">Hidegburkoló</option>
                     <option value="Pályakezdő hidegburkoló">Pályakezdő hidegburkoló</option>
-                    <option value="Német nyelvű vízvezetékszerelő">Német nyelven beszélő vízvezetékszerelő</option>
-                    <option value="Pályakezdő burkoló / segéd">Pályakezdő burkoló / burkoló segéd</option>
+                    <option value="Kőműves">Kőműves</option>
+                    <option value="Segédmunkás">Segédmunkás</option>
                     <option value="Egyéb / spontán">Egyéb / spontán jelentkezés</option>
                   </select>
                 </div>
@@ -580,10 +695,13 @@
   <script>
     // Route the form to its inbox at runtime so the address never appears in
     // the page source (keeps it out of reach of email-harvesting bots).
-    // TESTING inbox for now - swap the base64 for nmbau@nmbau.hu before go-live.
+    // TESTING inbox: pirint.milan@gmail.com (base64 below) so Pirint can verify
+    // end-to-end. On first submit FormSubmit sends a one-time activation email
+    // to this address that must be clicked before forwarding starts.
+    // Swap the base64 for nmbau@nmbau.hu before go-live.
     (function () {
       var f = document.getElementById('apply-form');
-      if (f) f.setAttribute('action', 'https://formsubmit.co/' + atob('dHJhdW1iYWRkZXNpZ25AZ21haWwuY29t'));
+      if (f) f.setAttribute('action', 'https://formsubmit.co/' + atob('cGlyaW50Lm1pbGFuQGdtYWlsLmNvbQ=='));
     })();
 
     // ---- Application modal: open, preselect position, close ----
