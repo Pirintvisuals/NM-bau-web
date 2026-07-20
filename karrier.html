@@ -695,13 +695,13 @@
   <script>
     // Route the form to its inbox at runtime so the address never appears in
     // the page source (keeps it out of reach of email-harvesting bots).
-    // TESTING inbox: pirint.milan@gmail.com (base64 below) so Pirint can verify
+    // TESTING inbox: traumbaddesign@gmail.com (base64 below) so it can be verified
     // end-to-end. On first submit FormSubmit sends a one-time activation email
     // to this address that must be clicked before forwarding starts.
     // Swap the base64 for nmbau@nmbau.hu before go-live.
     (function () {
       var f = document.getElementById('apply-form');
-      if (f) f.setAttribute('action', 'https://formsubmit.co/' + atob('cGlyaW50Lm1pbGFuQGdtYWlsLmNvbQ=='));
+      if (f) f.setAttribute('action', 'https://formsubmit.co/' + atob('dHJhdW1iYWRkZXNpZ25AZ21haWwuY29t'));
     })();
 
     // ---- Application modal: open, preselect position, close ----
