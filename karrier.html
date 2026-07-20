@@ -175,6 +175,8 @@
     .modal-close:hover { background: var(--bg-cream, #F0EAD8); transform: rotate(90deg); }
     .modal-close svg { width: 20px; height: 20px; }
     body.modal-open { overflow: hidden; }
+    .req-star { color: var(--accent, #b98a4b); font-weight: 700; }
+    .f-group[hidden], .req-star[hidden], .opt[hidden] { display: none !important; }
   </style>
 </head>
 <body>
@@ -599,7 +601,7 @@
 
                 <div class="form-row">
                   <div class="f-group">
-                    <label class="f-label" for="a-german">Német nyelvtudás</label>
+                    <label class="f-label" for="a-german">Német nyelvtudás<span class="req-star" id="german-star" hidden> *</span> <span class="opt" id="german-opt">(opcionális)</span></label>
                     <select class="f-select" id="a-german" name="german_level">
                       <option value="" disabled selected>Válassz...</option>
                       <option value="Nincs">Nincs</option>
@@ -618,6 +620,17 @@
                       <option value="5+ év">5+ év</option>
                     </select>
                   </div>
+                </div>
+
+                <!-- Csak az Értékesítő pozíciónál jelenik meg (JS kapcsolja) -->
+                <div class="f-group" id="grp-crm" hidden>
+                  <label class="f-label" for="a-crm">Van értékesítési, ügyfélkapcsolati vagy CRM tapasztalatod? *</label>
+                  <select class="f-select" id="a-crm" name="sales_crm_experience">
+                    <option value="" disabled selected>Válassz...</option>
+                    <option value="Igen, több éves tapasztalat">Igen, több éves tapasztalat</option>
+                    <option value="Igen, némi tapasztalat">Igen, némi tapasztalat</option>
+                    <option value="Nincs, de érdekel és tanulnék">Nincs, de érdekel és tanulnék</option>
+                  </select>
                 </div>
 
                 <div class="f-group">
@@ -728,9 +741,34 @@
         }
       }
 
+      // ---- Position-aware fields ----
+      // German stays visible for every role, but is required where it matters.
+      // The sales/CRM question only appears (and is required) for Értékesítő.
+      var GERMAN_REQUIRED = ['Értékesítő', 'Német nyelven beszélő vízvezeték szerelő'];
+      function updateFieldsForPosition(pos) {
+        var germanReq = GERMAN_REQUIRED.indexOf(pos) !== -1;
+        var german = document.getElementById('a-german');
+        var germanStar = document.getElementById('german-star');
+        var germanOpt = document.getElementById('german-opt');
+        if (german) german.required = germanReq;
+        if (germanStar) germanStar.hidden = !germanReq;
+        if (germanOpt) germanOpt.hidden = germanReq;
+
+        var crmShow = (pos === 'Értékesítő');
+        var crmGrp = document.getElementById('grp-crm');
+        var crm = document.getElementById('a-crm');
+        if (crmGrp) crmGrp.hidden = !crmShow;
+        if (crm) {
+          crm.required = crmShow;
+          if (!crmShow) crm.selectedIndex = 0; // don't submit a stale value when hidden
+        }
+      }
+      if (sel) sel.addEventListener('change', function () { updateFieldsForPosition(sel.value); });
+
       function openModal(pos) {
         lastFocused = document.activeElement;
         preselect(pos);
+        updateFieldsForPosition(sel ? sel.value : '');
         overlay.hidden = false;
         overlay.classList.add('open');
         document.body.classList.add('modal-open');
