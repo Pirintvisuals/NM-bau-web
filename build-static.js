@@ -52,6 +52,7 @@ fs.copyFileSync('furdoszoba-felujitas-sopron.jpg', path.join('dist', 'furdoszoba
 fs.copyFileSync('new logo.png', path.join('dist', 'new logo.png'));
 fs.copyFileSync(path.join('assets', 'site.css'), path.join('dist', 'assets', 'site.css'));
 fs.copyFileSync(path.join('assets', 'site.js'), path.join('dist', 'assets', 'site.js'));
+fs.copyFileSync(path.join('assets', 'site-analytics.js'), path.join('dist', 'assets', 'site-analytics.js'));
 fs.copyFileSync(path.join('assets', 'i18n.js'), path.join('dist', 'assets', 'i18n.js'));
 fs.copyFileSync(path.join('assets', 'favicon.svg'), path.join('dist', 'assets', 'favicon.svg'));
 

@@ -1,3 +1,15 @@
+/* Website analytics: page views, phone/email clicks and forms (PostHog).
+   Loaded from here because this file is on every page. Stores nothing in the
+   visitor's browser - see assets/site-analytics.js. */
+(function () {
+  if (document.querySelector('script[src*="site-analytics.js"]')) return;
+  var sa = document.createElement('script');
+  sa.src = '/assets/site-analytics.js';
+  sa.defer = true;
+  sa.setAttribute('data-site', 'nmbau');
+  document.head.appendChild(sa);
+})();
+
 /* ==========================================================
    NM BAU – shared JS for sub-pages with forms
    (kapcsolat.html, ingyenes-felmeres.html)
